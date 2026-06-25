@@ -1,0 +1,72 @@
+# Conduit pipeline configuration.
+#
+# Reads blocks from the algod follower node and writes them into PostgreSQL
+# for the Indexer API to serve. The bootstrap helper installs the pinned
+# upstream schema before this pipeline starts.
+#
+# Data flow:
+#   algod-follower (importer) → postgresql (exporter) → postgres
+
+# Log verbosity: PANIC, FATAL, ERROR, WARN, INFO, DEBUG, TRACE
+log-level: INFO
+
+# Retry transient follower/plugin errors forever. Docker restart remains a
+# fallback for process-level failures.
+retry-count: 0
+
+# Time duration to wait between retry attempts.
+retry-delay: "2s"
+
+# Whether or not to print the conduit banner on startup.
+hide-banner: false
+
+# Conduit health API. Used by the Docker healthcheck.
+api:
+    addr: ":8981"
+
+# Prometheus metrics (disabled by default).
+metrics:
+    mode: OFF
+    addr: ":9999"
+    prefix: "conduit"
+
+# The importer reads blocks from an algod follower node.
+importer:
+    name: algod
+    config:
+        # Follower mode: uses a lightweight non-archival node and provides
+        # ledger state deltas required by the postgresql exporter.
+        mode: "follower"
+
+        # Algod follower node address (Docker service name + port).
+        netaddr: "http://algod-follower:8080"
+
+        # Replaced by conduit-entrypoint.sh from the container environment.
+        token: "__ALGOD_TOKEN__"
+
+        # No catchup-config: the follower node performs its own fast catchup
+        # independently (triggered by the follower entrypoint). Conduit will
+        # start indexing from the follower's current round once it has
+        # synced. Conduit retries via its restart policy until the follower
+        # is ready.
+
+# No processors — data flows directly from the importer to the exporter.
+processors:
+
+# The exporter writes block data into PostgreSQL.
+exporter:
+    name: postgresql
+    config:
+        # Replaced by conduit-entrypoint.sh from the container environment.
+        connection-string: "host=__INDEXER_DB_HOST__ port=__INDEXER_DB_PORT__ user=__INDEXER_DB_USER__ password=__INDEXER_DB_PASSWORD__ dbname=__INDEXER_DB_NAME__ sslmode=disable"
+
+        # Maximum number of connections in the pool.
+        max-conn: 20
+
+        # Pruning is handled by the indexer-pruner service so transactions,
+        # transaction participation, and block headers are removed atomically.
+        # Keep Conduit's built-in transaction-only task disabled.
+        delete-task:
+            # 0 = disabled, -1 = run at startup, N = run every N rounds.
+            interval: 0
+            rounds: 0

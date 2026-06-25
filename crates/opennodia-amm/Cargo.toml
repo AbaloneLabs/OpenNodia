@@ -1,0 +1,15 @@
+[package]
+name = "opennodia-amm"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+description = "Native AMM math and pool model for OpenNodia"
+
+[dependencies]
+opennodia-core.workspace = true
+opennodia-swap.workspace = true
+thiserror.workspace = true
+serde.workspace = true
+sha2.workspace = true
+hex.workspace = true

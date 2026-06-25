@@ -1,0 +1,4352 @@
+{
+  "network": "testnet",
+  "genesis_id": "testnet-v1.0",
+  "genesis_hash_b64": "SGO1GKSzyE7IEPItTxCByw9x8FmnrCDexi9/cOUJOiI=",
+  "application_version": "0.1.0",
+  "asset_ids": [
+    764766481,
+    764780036
+  ],
+  "reconciliation": {
+    "source": "public",
+    "last_synced_round": 64511440,
+    "filled_orders": 15,
+    "cancelled_orders": 3,
+    "trade_rows": 15,
+    "resolved_orders_missing_evidence": 0,
+    "duplicate_trade_escrows": 0
+  },
+  "signed_e2e": {
+    "run_at_utc": "2026-06-19T09:35:24Z",
+    "owner_address": "YXOJ7I2YG52BR6TSI7CYBJEDPAYPSBZZVI2GZNI4BSL7HBU7SHAGFDMFCQ",
+    "filler_address": "RXIPEDB5Z5FSNLG2YNRWAKBEDRZNEHIAVQKSWE624MNBPXTPCVOLRIS7AE",
+    "asset_id": 764766481,
+    "sell_amount": 1000000,
+    "buy_asset_id": 0,
+    "buy_amount": 1000,
+    "orders": [
+      {
+        "case": "create_and_fill_asa_for_algo",
+        "escrow_address": "2GWBYGPHBDKAZBZZOANK3LR7ADPB6FFEQIOJX2IXSLBVXVEXGTQEOQWIQY",
+        "create_round": 64511425,
+        "create_tx_ids": [
+          "YIVWPHKRAZQZFOLXU64DUCC6GQRXGWM7JPGJ7L7TB7ZNCCCAQAKA",
+          "DHOL5VHQ7S7CMWA67RPW3ORNHEI7ZVA6AGA7CMBYYGJTJ2GKZ6XA",
+          "U2AAP4K3HAJHHLAE6VSSF25KP4XHW6LDXMZIYNM3GE4RW23Z7Z6A"
+        ],
+        "fill_tx_id": "AKRAZWSONMSKEE6UFU6RLFROTHLW7DPIF5U6T5HDYUELV7N6EFIA",
+        "fill_round": 64511428,
+        "db_status": "filled"
+      },
+      {
+        "case": "create_and_cancel_asa_for_algo",
+        "escrow_address": "2N5LURWRGX3ZDHQMUIT2DIQBN4ZIZP2RBK7CHSCYPM5WSP2YQ6I",
+        "create_round": 64511431,
+        "create_tx_ids": [
+          "5QLGH7M6ZOROYVHV6SCPUCEMRYLRVUOM6ZW4BFTWKN5UVESOQSTQ",
+          "OHQR4EHU4GKFTD64G5XEKOC7IB25QIKHY4MLOT7VM7VEMZEUIZDQ",
+          "O4M5V6DXHD5JCEK5YAKVSHGHKHHHDOJOCXRGY7SUIEA4D4GFB7VQ"
+        ],
+        "cancel_tx_id": "BP2XV544KYISVPMZ3KPIG3QSRIDIO4RCHUZFKEUPFGTYMQQZ32VA",
+        "cancel_round": 64511434,
+        "db_status": "cancelled"
+      }
+    ]
+  },
+  "asa_creation": {
+    "run_at_utc": "2026-06-19T10:17:06Z",
+    "creator_address": "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ",
+    "asset_id": 764780036,
+    "asset_name": "OpenNodia QA GVJ70",
+    "unit_name": "NODQA",
+    "total": 1,
+    "decimals": 0,
+    "url": "https://opennodia.local/qa",
+    "manager": null,
+    "reserve": null,
+    "freeze": null,
+    "clawback": null,
+    "tx_id": "SKL5OXFKDNUPI3G47PBGIIZXUZXDFB52AV5W3OKPZGPWNMTF2NUQ",
+    "confirmed_round": 64512401,
+    "created_asset_found_on_account": true,
+    "metadata_source": "algod"
+  },
+  "external_liquidity": {
+    "run_at_utc": "2026-06-20T05:38:20Z",
+    "route_candidates": {
+      "asset_in": 0,
+      "asset_out": 10458941,
+      "amount_in": 100000,
+      "candidate_count": 1,
+      "top_source": "external_tinyman",
+      "virtual_orderbook": true,
+      "executable_when_swap_enabled": true
+    },
+    "tinyman_swap": {
+      "source": "tinyman",
+      "pool_id": "UDFWT5DW3X5RZQYXKQEMZ6MRWAEYHWYP7YUAPZKPW6WJK3JH3OZPL7PO2Y",
+      "asset_in": 0,
+      "asset_out": 10458941,
+      "amount_in": 100000,
+      "prepared_amount_out": 817712,
+      "prepared_minimum_out": 813623,
+      "tx_id": "TB3XKBIT7YJY4I4G5SHZDRPMRCSJBMHLS65M2IJGHDBJVSVTN5NQ",
+      "confirmed_round": 64535905,
+      "asset_out_balance_after": 817712
+    },
+    "tinyman_add_liquidity": {
+      "source": "tinyman",
+      "pool_id": "UDFWT5DW3X5RZQYXKQEMZ6MRWAEYHWYP7YUAPZKPW6WJK3JH3OZPL7PO2Y",
+      "lp_asset_id": 148620458,
+      "amount_0": 49991,
+      "amount_1": 410000,
+      "minted_lp": 136918,
+      "minimum_lp": 136233,
+      "tx_id": "IGIL67XZAWYZRDWEJHWD3JOKZFHPMEMC542ZFNA6IZLVM4GLLDZQ",
+      "confirmed_round": 64536410
+    },
+    "tinyman_remove_liquidity": {
+      "source": "tinyman",
+      "pool_id": "UDFWT5DW3X5RZQYXKQEMZ6MRWAEYHWYP7YUAPZKPW6WJK3JH3OZPL7PO2Y",
+      "lp_asset_id": 148620458,
+      "burn_lp": 100000,
+      "amount_0": 36511,
+      "amount_1": 299448,
+      "minimum_0": 36328,
+      "minimum_1": 297950,
+      "tx_id": "PNP7FE6NUWIAA366BS3N3OODUU4ANGH4X6L4OII4SMWB5PSHO2UQ",
+      "confirmed_round": 64536419,
+      "lp_balance_after": 36919
+    },
+    "pact_discovery": {
+      "source": "pact",
+      "factory_app_id": 166540424,
+      "algod_url": "https://testnet-api.algonode.cloud",
+      "source_round": 64537415,
+      "factory_box_count": 207,
+      "tradable_pool_count": 116,
+      "example_tradable_pool": {
+        "pool_app_id": 167166658,
+        "asset_0": 0,
+        "asset_1": 14704676,
+        "fee_bps": 2,
+        "lp_asset_id": 167166663,
+        "reserve_0": 100000,
+        "reserve_1": 2000,
+        "total_lp_supply": 14142,
+        "pool_version": 201
+      }
+    },
+    "pact_swap": {
+      "source": "pact",
+      "pool_id": "167166658",
+      "asset_in": 0,
+      "asset_out": 14704676,
+      "amount_in": 1000,
+      "prepared_amount_out": 18,
+      "prepared_minimum_out": 17,
+      "prepared_source_round": 64538081,
+      "tx_id": "6KBUJKFKBYVOICSPAMPYS7K2LFNEKTQMFTCMPPNUYNT32VOEWCPA",
+      "confirmed_round": 64538090,
+      "confirmed_amount_out": 18,
+      "asset_out_balance_after": 18
+    },
+    "pact_add_liquidity": {
+      "source": "pact",
+      "pool_id": "167166658",
+      "lp_asset_id": 167166663,
+      "amount_0": 508,
+      "amount_1": 10,
+      "minted_lp": 71,
+      "minimum_lp": 67,
+      "tx_id": "SVB2PNGRWURYIN34YHKQZJFUGQFMMSMHRI3DV5BQS2NLYXKKK27A",
+      "confirmed_round": 64538102,
+      "lp_balance_after": 71
+    },
+    "pact_remove_liquidity": {
+      "source": "pact",
+      "pool_id": "167166658",
+      "lp_asset_id": 167166663,
+      "burn_lp": 71,
+      "amount_0": 507,
+      "amount_1": 9,
+      "minimum_0": 481,
+      "minimum_1": 8,
+      "tx_id": "MFKAQL7QHA4OOQYCMIAVAB3FYSU6OA4WHPLBQ42O3Q7NQ3I4BX2Q",
+      "confirmed_round": 64538114,
+      "lp_balance_after": 0
+    }
+  },
+  "transactions": [
+    {
+      "case": "cancel_asa_for_algo",
+      "tx_id": "NN3JH22XAN3ODALTL2KPDOJ4KMKRXU6X2YIO7U3URUI3DQESL3YA",
+      "confirmed_round": 64502811
+    },
+    {
+      "case": "fill_asa_for_algo",
+      "tx_id": "Y6NAO7ZIRYAFKQVIGJ5JJ5KBZSTFPYFTHBNPPA7DIBFX3Y2G2OGA",
+      "confirmed_round": 64502793
+    },
+    {
+      "case": "cancel_asa_for_algo",
+      "tx_id": "UNJWDKBPHXD5QQLX2RT4HGSBRISV5I26REOL5SNNNRFUGJRGDQLQ",
+      "confirmed_round": 64504431
+    },
+    {
+      "case": "fill_asa_for_algo",
+      "tx_id": "KK2NP5VGWJ57DALSSX4XDZJLSA5Z5PFZWLL4YSSO65BQRFK2PF4A",
+      "confirmed_round": 64504419
+    },
+    {
+      "case": "fill_asa_for_algo",
+      "tx_id": "PQ46D75EZB6QWUISDCMZWSJZXAM5VZQIID57RGOLWUCW37OXIDWA",
+      "confirmed_round": 64506347
+    },
+    {
+      "case": "fill_asa_for_algo",
+      "tx_id": "TLMCTJXJMFJZWXK7BWSN36KPN6LU4QXMEXPXJPVHX2P35S3T42ZA",
+      "confirmed_round": 64507071
+    },
+    {
+      "case": "fill_asa_for_algo",
+      "tx_id": "P3SGZADPVWWKSRY5SAQEPPVN6BJ5IAK6WT6LDEQSTBMJNLZBL3JA",
+      "confirmed_round": 64507399
+    },
+    {
+      "case": "fill_asa_for_algo",
+      "tx_id": "WJUTXT7OEY4MTOP5EIOXTH2MOB5MGRK4SJOHTMCAPPYZOQLWJEYQ",
+      "confirmed_round": 64507134
+    },
+    {
+      "case": "fill_algo_for_asa",
+      "tx_id": "QXS6P6K6Q3Q6GX6PXQURBBMWAEQJ3W5PTQG3HYARNSSKNW2JOIZQ",
+      "confirmed_round": 64507139
+    },
+    {
+      "case": "fill_asa_for_algo",
+      "tx_id": "CGOC2OTPC3RWPXV4HAY2ZJEI7OKW6MYTH7S6TT6NRINPL33SJHSQ",
+      "confirmed_round": 64507167
+    },
+    {
+      "case": "fill_asa_for_algo",
+      "tx_id": "LHMLLDCEXVDSCYA2ASGZA6XQLCZ752MSJUEZQN3GS35EO7GKKI6A",
+      "confirmed_round": 64507199
+    },
+    {
+      "case": "fill_asa_for_algo",
+      "tx_id": "KYUXGMZV6NOTLHLRCP7Z5OLXRNGLQWEEPY5RM4MY5W4G3G3MJAZA",
+      "confirmed_round": 64507313
+    },
+    {
+      "case": "fill_asa_for_algo",
+      "tx_id": "FYH6I6YSRKJFF4KTGI7LZBHRXBSCG6NDWXBZU4ZLQ4ULJ7FLWLEQ",
+      "confirmed_round": 64507348
+    },
+    {
+      "case": "fill_asa_for_algo",
+      "tx_id": "ZHG5JKJITFWYYCEFL2G723KPDBZFGC2AUB7JOPXYD3SCK4GRTO6A",
+      "confirmed_round": 64507350
+    },
+    {
+      "case": "fill_asa_for_algo",
+      "tx_id": "ER2QN5BJP7Z2FGSAV5CBQGUCTVWM4RDTQFB7RWC5UWSB7APBNHAA",
+      "confirmed_round": 64507544
+    },
+    {
+      "case": "fill_asa_for_algo",
+      "tx_id": "NU6VHV7IKDJMN5VHEAOO3YFODKRHDNYGMEMIGEJNSL4QUKPCA4CA",
+      "confirmed_round": 64507613
+    },
+    {
+      "case": "fill_asa_for_algo_signed_e2e",
+      "tx_id": "AKRAZWSONMSKEE6UFU6RLFROTHLW7DPIF5U6T5HDYUELV7N6EFIA",
+      "confirmed_round": 64511428
+    },
+    {
+      "case": "cancel_asa_for_algo_signed_e2e",
+      "tx_id": "BP2XV544KYISVPMZ3KPIG3QSRIDIO4RCHUZFKEUPFGTYMQQZ32VA",
+      "confirmed_round": 64511434
+    }
+  ],
+  "dex_additional_matrix": {
+    "run_at_utc": "2026-06-19T09:35:24Z",
+    "matrix": {
+      "two_wallet_create_fill_cancel": {
+        "passed": true,
+        "run_at_utc": "2026-06-19T09:35:24Z",
+        "evidence": "Real browser-signed Testnet two-wallet ASA order create/fill and create/cancel evidence from signed_e2e",
+        "fragment": {
+          "run_at_utc": "2026-06-19T09:35:24Z",
+          "owner_address": "YXOJ7I2YG52BR6TSI7CYBJEDPAYPSBZZVI2GZNI4BSL7HBU7SHAGFDMFCQ",
+          "filler_address": "RXIPEDB5Z5FSNLG2YNRWAKBEDRZNEHIAVQKSWE624MNBPXTPCVOLRIS7AE",
+          "asset_id": 764766481,
+          "sell_amount": 1000000,
+          "buy_asset_id": 0,
+          "buy_amount": 1000,
+          "orders": [
+            {
+              "case": "create_and_fill_asa_for_algo",
+              "escrow_address": "2GWBYGPHBDKAZBZZOANK3LR7ADPB6FFEQIOJX2IXSLBVXVEXGTQEOQWIQY",
+              "create_round": 64511425,
+              "create_tx_ids": [
+                "YIVWPHKRAZQZFOLXU64DUCC6GQRXGWM7JPGJ7L7TB7ZNCCCAQAKA",
+                "DHOL5VHQ7S7CMWA67RPW3ORNHEI7ZVA6AGA7CMBYYGJTJ2GKZ6XA",
+                "U2AAP4K3HAJHHLAE6VSSF25KP4XHW6LDXMZIYNM3GE4RW23Z7Z6A"
+              ],
+              "fill_tx_id": "AKRAZWSONMSKEE6UFU6RLFROTHLW7DPIF5U6T5HDYUELV7N6EFIA",
+              "fill_round": 64511428,
+              "db_status": "filled"
+            },
+            {
+              "case": "create_and_cancel_asa_for_algo",
+              "escrow_address": "2N5LURWRGX3ZDHQMUIT2DIQBN4ZIZP2RBK7CHSCYPM5WSP2YQ6I",
+              "create_round": 64511431,
+              "create_tx_ids": [
+                "5QLGH7M6ZOROYVHV6SCPUCEMRYLRVUOM6ZW4BFTWKN5UVESOQSTQ",
+                "OHQR4EHU4GKFTD64G5XEKOC7IB25QIKHY4MLOT7VM7VEMZEUIZDQ",
+                "O4M5V6DXHD5JCEK5YAKVSHGHKHHHDOJOCXRGY7SUIEA4D4GFB7VQ"
+              ],
+              "cancel_tx_id": "BP2XV544KYISVPMZ3KPIG3QSRIDIO4RCHUZFKEUPFGTYMQQZ32VA",
+              "cancel_round": 64511434,
+              "db_status": "cancelled"
+            }
+          ]
+        }
+      },
+      "artifact_secret_scan": {
+        "passed": true,
+        "run_at_utc": "2026-06-20T16:54:40Z",
+        "evidence": "Repository secret scanner passed after Testnet evidence merge",
+        "fragment": {
+          "artifact_scan_command": "./scripts/check-secrets.sh",
+          "artifact_scan_passed": true,
+          "artifact_scan_scope": "repository evidence and source tree"
+        }
+      },
+      "server_restart": {
+        "passed": true,
+        "run_at_utc": "2026-06-20T17:35:24Z",
+        "evidence": "OpenNodia Testnet API remained ready after docker compose service restart",
+        "fragment": {
+          "network": "testnet",
+          "run_at_utc": "2026-06-20T17:35:24Z",
+          "api_url": "http://192.168.0.36:30080/api/status",
+          "compose_service": "opennodia",
+          "status_before": {
+            "setup_complete": true,
+            "node_reachable": true,
+            "network": "testnet"
+          },
+          "status_after": {
+            "setup_complete": true,
+            "node_reachable": true,
+            "network": "testnet"
+          },
+          "restart_output_tail": "Container opennodia-server Restarting \n Container opennodia-server Started",
+          "matrix_case_hints": {
+            "dex_additional_matrix": [
+              "server_restart"
+            ],
+            "unified_routing": []
+          }
+        }
+      },
+      "stale_node_fallback": {
+        "passed": true,
+        "run_at_utc": "2026-06-20T17:38:43Z",
+        "evidence": "OpenNodia DEX reconciliation used the configured public Testnet source while keeping API status healthy",
+        "fragment": {
+          "network": "testnet",
+          "run_at_utc": "2026-06-20T17:38:43Z",
+          "api_url": "http://192.168.0.36:30080/api/status",
+          "compose_service": "opennodia",
+          "status": {
+            "setup_complete": true,
+            "node_reachable": true,
+            "network": "testnet"
+          },
+          "dex_reconciliation": {
+            "source": "public",
+            "round": 64554034,
+            "checked": 0,
+            "changes": 0,
+            "errors": 0,
+            "line_number": 52,
+            "lines_scanned": 52
+          },
+          "matrix_case_hints": {
+            "dex_additional_matrix": [
+              "stale_node_fallback"
+            ],
+            "unified_routing": []
+          }
+        }
+      },
+      "algo_asa_bid_ask_reverse": {
+        "passed": true,
+        "run_at_utc": "2026-06-21T03:02:52Z",
+        "evidence": "Real Testnet orderbook bid/ask reverse view for 0/764766481",
+        "fragment": {
+          "kind": "orderbook_view",
+          "run_at_utc": "2026-06-21T03:02:52Z",
+          "network": "testnet",
+          "wallet_address": "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ",
+          "pair": "0:764766481",
+          "base_asset_id": 0,
+          "quote_asset_id": 764766481,
+          "matrix_case_hints": {
+            "dex_additional_matrix": [
+              "algo_asa_bid_ask_reverse"
+            ],
+            "unified_routing": []
+          },
+          "current_view": {
+            "view_asset_id": 0,
+            "pair": "ALGO/764766481",
+            "source": "public",
+            "last_update_round": 64566507,
+            "spread": 0,
+            "last_price": 1000000000,
+            "bids": [
+              {
+                "price": 10000000,
+                "amount": 2000,
+                "total": 2000,
+                "order_count": 1
+              }
+            ],
+            "asks": [
+              {
+                "price": 10000000,
+                "amount": 2000,
+                "total": 2000,
+                "order_count": 1
+              }
+            ],
+            "synthetic_bids": [
+              {
+                "price": 200000000,
+                "amount": 10,
+                "total": 10,
+                "source": "native_amm",
+                "source_label": "OpenNodia AMM",
+                "pool_id": "1cb20528d4d71c4be0ff09429130677059911bc9d89b434cb472ea2e82192e48",
+                "app_id": 764784483,
+                "fee_bps": 30,
+                "price_impact_bps": 0,
+                "executable": true,
+                "source_round": 64566507
+              }
+            ],
+            "synthetic_asks": [
+              {
+                "price": 190921500,
+                "amount": 2000,
+                "total": 2000,
+                "source": "native_amm",
+                "source_label": "OpenNodia AMM",
+                "pool_id": "1cb20528d4d71c4be0ff09429130677059911bc9d89b434cb472ea2e82192e48",
+                "app_id": 764784483,
+                "fee_bps": 30,
+                "price_impact_bps": 68,
+                "executable": true,
+                "source_round": 64566507
+              }
+            ],
+            "warnings": [
+              "native pool 764783351 unavailable: application 764783351 is not an OpenNodia native pool: approval program mismatch",
+              "external AMM source Local differs from route ledger source Public",
+              "native pool 764783351 unavailable: application 764783351 is not an OpenNodia native pool: approval program mismatch",
+              "external AMM source Local differs from route ledger source Public"
+            ]
+          },
+          "reverse_view": {
+            "view_asset_id": 764766481,
+            "pair": "ALGO/764766481",
+            "source": "public",
+            "last_update_round": 64566508,
+            "spread": 0,
+            "last_price": 1000,
+            "bids": [
+              {
+                "price": 100000,
+                "amount": 20000,
+                "total": 20000,
+                "order_count": 1
+              }
+            ],
+            "asks": [
+              {
+                "price": 100000,
+                "amount": 20000,
+                "total": 20000,
+                "order_count": 1
+              }
+            ],
+            "synthetic_bids": [
+              {
+                "price": 5421,
+                "amount": 3689128,
+                "total": 3689128,
+                "source": "native_amm",
+                "source_label": "OpenNodia AMM",
+                "pool_id": "1cb20528d4d71c4be0ff09429130677059911bc9d89b434cb472ea2e82192e48",
+                "app_id": 764784483,
+                "fee_bps": 30,
+                "price_impact_bps": 405,
+                "executable": true,
+                "source_round": 64566509
+              }
+            ],
+            "synthetic_asks": [
+              {
+                "price": 5150,
+                "amount": 20000,
+                "total": 20000,
+                "source": "native_amm",
+                "source_label": "OpenNodia AMM",
+                "pool_id": "1cb20528d4d71c4be0ff09429130677059911bc9d89b434cb472ea2e82192e48",
+                "app_id": 764784483,
+                "fee_bps": 30,
+                "price_impact_bps": 96,
+                "executable": true,
+                "source_round": 64566508
+              }
+            ],
+            "warnings": [
+              "native pool 764783351 unavailable: application 764783351 is not an OpenNodia native pool: approval program mismatch",
+              "external AMM source Local differs from route ledger source Public",
+              "native pool 764783351 unavailable: application 764783351 is not an OpenNodia native pool: approval program mismatch",
+              "external AMM source Local differs from route ledger source Public"
+            ]
+          }
+        }
+      },
+      "asa_algo_bid_ask_reverse": {
+        "passed": true,
+        "run_at_utc": "2026-06-21T03:03:00Z",
+        "evidence": "Real Testnet orderbook bid/ask reverse view for 764766481/0",
+        "fragment": {
+          "kind": "orderbook_view",
+          "run_at_utc": "2026-06-21T03:03:00Z",
+          "network": "testnet",
+          "wallet_address": "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ",
+          "pair": "764766481:0",
+          "base_asset_id": 764766481,
+          "quote_asset_id": 0,
+          "matrix_case_hints": {
+            "dex_additional_matrix": [
+              "asa_algo_bid_ask_reverse"
+            ],
+            "unified_routing": []
+          },
+          "current_view": {
+            "view_asset_id": 764766481,
+            "pair": "ALGO/764766481",
+            "source": "public",
+            "last_update_round": 64566509,
+            "spread": 0,
+            "last_price": 1000,
+            "bids": [
+              {
+                "price": 100000,
+                "amount": 20000,
+                "total": 20000,
+                "order_count": 1
+              }
+            ],
+            "asks": [
+              {
+                "price": 100000,
+                "amount": 20000,
+                "total": 20000,
+                "order_count": 1
+              }
+            ],
+            "synthetic_bids": [
+              {
+                "price": 5421,
+                "amount": 3689128,
+                "total": 3689128,
+                "source": "native_amm",
+                "source_label": "OpenNodia AMM",
+                "pool_id": "1cb20528d4d71c4be0ff09429130677059911bc9d89b434cb472ea2e82192e48",
+                "app_id": 764784483,
+                "fee_bps": 30,
+                "price_impact_bps": 405,
+                "executable": true,
+                "source_round": 64566510
+              }
+            ],
+            "synthetic_asks": [
+              {
+                "price": 5150,
+                "amount": 20000,
+                "total": 20000,
+                "source": "native_amm",
+                "source_label": "OpenNodia AMM",
+                "pool_id": "1cb20528d4d71c4be0ff09429130677059911bc9d89b434cb472ea2e82192e48",
+                "app_id": 764784483,
+                "fee_bps": 30,
+                "price_impact_bps": 96,
+                "executable": true,
+                "source_round": 64566510
+              }
+            ],
+            "warnings": [
+              "native pool 764783351 unavailable: application 764783351 is not an OpenNodia native pool: approval program mismatch",
+              "external AMM source Local differs from route ledger source Public",
+              "native pool 764783351 unavailable: application 764783351 is not an OpenNodia native pool: approval program mismatch",
+              "external AMM source Local differs from route ledger source Public"
+            ]
+          },
+          "reverse_view": {
+            "view_asset_id": 0,
+            "pair": "ALGO/764766481",
+            "source": "public",
+            "last_update_round": 64566511,
+            "spread": 0,
+            "last_price": 1000000000,
+            "bids": [
+              {
+                "price": 10000000,
+                "amount": 2000,
+                "total": 2000,
+                "order_count": 1
+              }
+            ],
+            "asks": [
+              {
+                "price": 10000000,
+                "amount": 2000,
+                "total": 2000,
+                "order_count": 1
+              }
+            ],
+            "synthetic_bids": [
+              {
+                "price": 200000000,
+                "amount": 10,
+                "total": 10,
+                "source": "native_amm",
+                "source_label": "OpenNodia AMM",
+                "pool_id": "1cb20528d4d71c4be0ff09429130677059911bc9d89b434cb472ea2e82192e48",
+                "app_id": 764784483,
+                "fee_bps": 30,
+                "price_impact_bps": 0,
+                "executable": true,
+                "source_round": 64566512
+              }
+            ],
+            "synthetic_asks": [
+              {
+                "price": 190921500,
+                "amount": 2000,
+                "total": 2000,
+                "source": "native_amm",
+                "source_label": "OpenNodia AMM",
+                "pool_id": "1cb20528d4d71c4be0ff09429130677059911bc9d89b434cb472ea2e82192e48",
+                "app_id": 764784483,
+                "fee_bps": 30,
+                "price_impact_bps": 68,
+                "executable": true,
+                "source_round": 64566511
+              }
+            ],
+            "warnings": [
+              "native pool 764783351 unavailable: application 764783351 is not an OpenNodia native pool: approval program mismatch",
+              "external AMM source Local differs from route ledger source Public",
+              "native pool 764783351 unavailable: application 764783351 is not an OpenNodia native pool: approval program mismatch",
+              "external AMM source Local differs from route ledger source Public"
+            ]
+          }
+        }
+      },
+      "asa_asa_bid_ask_reverse": {
+        "passed": true,
+        "run_at_utc": "2026-06-21T03:03:08Z",
+        "evidence": "Real Testnet orderbook bid/ask reverse view for 764787121/764787131",
+        "fragment": {
+          "kind": "orderbook_view",
+          "run_at_utc": "2026-06-21T03:03:08Z",
+          "network": "testnet",
+          "wallet_address": "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ",
+          "pair": "764787121:764787131",
+          "base_asset_id": 764787121,
+          "quote_asset_id": 764787131,
+          "matrix_case_hints": {
+            "dex_additional_matrix": [
+              "asa_asa_bid_ask_reverse"
+            ],
+            "unified_routing": []
+          },
+          "current_view": {
+            "view_asset_id": 764787121,
+            "pair": "764787121/764787131",
+            "source": "public",
+            "last_update_round": 64566512,
+            "spread": 0,
+            "last_price": null,
+            "bids": [
+              {
+                "price": 1000000,
+                "amount": 20000,
+                "total": 20000,
+                "order_count": 1
+              }
+            ],
+            "asks": [
+              {
+                "price": 1000000,
+                "amount": 20000,
+                "total": 20000,
+                "order_count": 1
+              }
+            ],
+            "synthetic_bids": [
+              {
+                "price": 1020147,
+                "amount": 19605,
+                "total": 19605,
+                "source": "native_amm",
+                "source_label": "OpenNodia AMM",
+                "pool_id": "a150a18b2bc3e3ba9fbedacb1f8962eeae93ae5813de7516ad5004123c046f26",
+                "app_id": 764787356,
+                "fee_bps": 100,
+                "price_impact_bps": 197,
+                "executable": true,
+                "source_round": 64566513
+              },
+              {
+                "price": 1010509,
+                "amount": 19792,
+                "total": 39397,
+                "source": "native_amm",
+                "source_label": "OpenNodia AMM",
+                "pool_id": "0ce55f4ef1b5ce689f3840bfdd6ab00bcd7c172961289dc567e20382fc2e8886",
+                "app_id": 764787324,
+                "fee_bps": 5,
+                "price_impact_bps": 104,
+                "executable": true,
+                "source_round": 64566513
+              },
+              {
+                "price": 856531,
+                "amount": 23350,
+                "total": 62747,
+                "source": "native_amm",
+                "source_label": "OpenNodia AMM",
+                "pool_id": "4bd33591bb53b30db9e65cfb9e97756c7a2968610e610e02046c6a3c80c41a25",
+                "app_id": 764787162,
+                "fee_bps": 30,
+                "price_impact_bps": 49,
+                "executable": true,
+                "source_round": 64566513
+              }
+            ],
+            "synthetic_asks": [
+              {
+                "price": 848250,
+                "amount": 20000,
+                "total": 20000,
+                "source": "native_amm",
+                "source_label": "OpenNodia AMM",
+                "pool_id": "4bd33591bb53b30db9e65cfb9e97756c7a2968610e610e02046c6a3c80c41a25",
+                "app_id": 764787162,
+                "fee_bps": 30,
+                "price_impact_bps": 46,
+                "executable": true,
+                "source_round": 64566512
+              },
+              {
+                "price": 980250,
+                "amount": 20000,
+                "total": 40000,
+                "source": "native_amm",
+                "source_label": "OpenNodia AMM",
+                "pool_id": "a150a18b2bc3e3ba9fbedacb1f8962eeae93ae5813de7516ad5004123c046f26",
+                "app_id": 764787356,
+                "fee_bps": 100,
+                "price_impact_bps": 197,
+                "executable": true,
+                "source_round": 64566512
+              },
+              {
+                "price": 989600,
+                "amount": 20000,
+                "total": 60000,
+                "source": "native_amm",
+                "source_label": "OpenNodia AMM",
+                "pool_id": "0ce55f4ef1b5ce689f3840bfdd6ab00bcd7c172961289dc567e20382fc2e8886",
+                "app_id": 764787324,
+                "fee_bps": 5,
+                "price_impact_bps": 104,
+                "executable": true,
+                "source_round": 64566512
+              }
+            ],
+            "warnings": [
+              "external AMM source Local differs from route ledger source Public",
+              "external AMM source Local differs from route ledger source Public"
+            ]
+          },
+          "reverse_view": {
+            "view_asset_id": 764787131,
+            "pair": "764787121/764787131",
+            "source": "public",
+            "last_update_round": 64566514,
+            "spread": 0,
+            "last_price": null,
+            "bids": [
+              {
+                "price": 1000000,
+                "amount": 20000,
+                "total": 20000,
+                "order_count": 1
+              }
+            ],
+            "asks": [
+              {
+                "price": 1000000,
+                "amount": 20000,
+                "total": 20000,
+                "order_count": 1
+              }
+            ],
+            "synthetic_bids": [
+              {
+                "price": 1178897,
+                "amount": 16965,
+                "total": 16965,
+                "source": "native_amm",
+                "source_label": "OpenNodia AMM",
+                "pool_id": "4bd33591bb53b30db9e65cfb9e97756c7a2968610e610e02046c6a3c80c41a25",
+                "app_id": 764787162,
+                "fee_bps": 30,
+                "price_impact_bps": 46,
+                "executable": true,
+                "source_round": 64566515
+              },
+              {
+                "price": 1020147,
+                "amount": 19605,
+                "total": 36570,
+                "source": "native_amm",
+                "source_label": "OpenNodia AMM",
+                "pool_id": "a150a18b2bc3e3ba9fbedacb1f8962eeae93ae5813de7516ad5004123c046f26",
+                "app_id": 764787356,
+                "fee_bps": 100,
+                "price_impact_bps": 197,
+                "executable": true,
+                "source_round": 64566515
+              },
+              {
+                "price": 1010509,
+                "amount": 19792,
+                "total": 56362,
+                "source": "native_amm",
+                "source_label": "OpenNodia AMM",
+                "pool_id": "0ce55f4ef1b5ce689f3840bfdd6ab00bcd7c172961289dc567e20382fc2e8886",
+                "app_id": 764787324,
+                "fee_bps": 5,
+                "price_impact_bps": 104,
+                "executable": true,
+                "source_round": 64566515
+              }
+            ],
+            "synthetic_asks": [
+              {
+                "price": 980250,
+                "amount": 20000,
+                "total": 20000,
+                "source": "native_amm",
+                "source_label": "OpenNodia AMM",
+                "pool_id": "a150a18b2bc3e3ba9fbedacb1f8962eeae93ae5813de7516ad5004123c046f26",
+                "app_id": 764787356,
+                "fee_bps": 100,
+                "price_impact_bps": 197,
+                "executable": true,
+                "source_round": 64566514
+              },
+              {
+                "price": 989600,
+                "amount": 20000,
+                "total": 40000,
+                "source": "native_amm",
+                "source_label": "OpenNodia AMM",
+                "pool_id": "0ce55f4ef1b5ce689f3840bfdd6ab00bcd7c172961289dc567e20382fc2e8886",
+                "app_id": 764787324,
+                "fee_bps": 5,
+                "price_impact_bps": 104,
+                "executable": true,
+                "source_round": 64566514
+              },
+              {
+                "price": 1167500,
+                "amount": 20000,
+                "total": 60000,
+                "source": "native_amm",
+                "source_label": "OpenNodia AMM",
+                "pool_id": "4bd33591bb53b30db9e65cfb9e97756c7a2968610e610e02046c6a3c80c41a25",
+                "app_id": 764787162,
+                "fee_bps": 30,
+                "price_impact_bps": 49,
+                "executable": true,
+                "source_round": 64566514
+              }
+            ],
+            "warnings": [
+              "external AMM source Local differs from route ledger source Public",
+              "external AMM source Local differs from route ledger source Public"
+            ]
+          }
+        }
+      },
+      "ioc_no_match_balance": {
+        "passed": true,
+        "run_at_utc": "2026-06-21T03:03:42Z",
+        "evidence": "Real Testnet IOC no-match route with on-chain balance snapshots",
+        "fragment": {
+          "kind": "dex_route_prepare",
+          "run_at_utc": "2026-06-21T03:03:42Z",
+          "network": "testnet",
+          "wallet_address": "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ",
+          "pair": "0:764789093",
+          "operation": "route_no_match",
+          "tx_ids": [],
+          "confirmed_round": null,
+          "decision": "no_match",
+          "remaining": 1,
+          "balances_before": {
+            "address": "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ",
+            "round": 64566527,
+            "source": "public",
+            "balances": [
+              {
+                "asset_id": 0,
+                "amount": 7121219
+              },
+              {
+                "asset_id": 764789093,
+                "amount": 10
+              }
+            ]
+          },
+          "balances_after": {
+            "address": "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ",
+            "round": 64566527,
+            "source": "public",
+            "balances": [
+              {
+                "asset_id": 0,
+                "amount": 7121219
+              },
+              {
+                "asset_id": 764789093,
+                "amount": 10
+              }
+            ]
+          },
+          "matrix_case_hints": {
+            "dex_additional_matrix": [
+              "ioc_no_match_balance"
+            ],
+            "unified_routing": []
+          }
+        }
+      },
+      "ioc_single_fill_balance": {
+        "passed": true,
+        "run_at_utc": "2026-06-21T03:03:56Z",
+        "evidence": "Real Testnet IOC single-fill route with on-chain balance snapshots",
+        "fragment": {
+          "kind": "dex_route_submit",
+          "run_at_utc": "2026-06-21T03:03:56Z",
+          "network": "testnet",
+          "wallet_address": "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ",
+          "pair": "0:764766481",
+          "operation": "route",
+          "tx_ids": [
+            "G3G4VLV3C3BTKV4CPYA5LVM5SY4GVYAZK5RNGOSII2JBIHMNGNBQ"
+          ],
+          "confirmed_round": 64566533,
+          "base_asset_id": 0,
+          "quote_asset_id": 764766481,
+          "side": "buy",
+          "fills": [
+            {
+              "escrow_address": "CWETJWKM3ONNNL53SLIBRLQKGGA2VYC3GM5YDND2JK6EL546Z6KR25KUPE",
+              "status": "recorded",
+              "tx_id": "G3G4VLV3C3BTKV4CPYA5LVM5SY4GVYAZK5RNGOSII2JBIHMNGNBQ",
+              "confirmed_round": 64566533,
+              "amount": 15000,
+              "cost": 1500,
+              "error": null
+            }
+          ],
+          "remaining": 0,
+          "balances_before": {
+            "address": "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ",
+            "round": 64566527,
+            "source": "public",
+            "balances": [
+              {
+                "asset_id": 0,
+                "amount": 7121219
+              },
+              {
+                "asset_id": 764766481,
+                "amount": 3920973
+              }
+            ]
+          },
+          "balances_after": {
+            "address": "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ",
+            "round": 64566527,
+            "source": "public",
+            "balances": [
+              {
+                "asset_id": 0,
+                "amount": 7121219
+              },
+              {
+                "asset_id": 764766481,
+                "amount": 3920973
+              }
+            ]
+          },
+          "matrix_case_hints": {
+            "dex_additional_matrix": [
+              "ioc_single_fill_balance"
+            ],
+            "unified_routing": [
+              "orderbook_only_pair"
+            ]
+          }
+        }
+      },
+      "ioc_multi_fill_balance": {
+        "passed": true,
+        "run_at_utc": "2026-06-21T03:04:29Z",
+        "evidence": "Real Testnet IOC multi-fill route with on-chain balance snapshots",
+        "fragment": {
+          "kind": "dex_route_submit",
+          "run_at_utc": "2026-06-21T03:04:29Z",
+          "network": "testnet",
+          "wallet_address": "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ",
+          "pair": "0:764766481",
+          "operation": "route",
+          "tx_ids": [
+            "MRNJ6Y5322C2LR5S3TR3EJSHVHJID3CZHELB7IYYF34YFDOQWVCQ",
+            "LIZUEMGA5ERFJCW7NYMEEWS3UW5FUWDL5KR33CXIMIX4EBSPEQVQ"
+          ],
+          "confirmed_round": 64566545,
+          "base_asset_id": 0,
+          "quote_asset_id": 764766481,
+          "side": "buy",
+          "fills": [
+            {
+              "escrow_address": "2AVQTX6R22F6CR2FG2Q57BPMIIBNCONVFM3VSPJXFEQNAV33UANZP7YSZI",
+              "status": "recorded",
+              "tx_id": "MRNJ6Y5322C2LR5S3TR3EJSHVHJID3CZHELB7IYYF34YFDOQWVCQ",
+              "confirmed_round": 64566542,
+              "amount": 10000,
+              "cost": 1000,
+              "error": null
+            },
+            {
+              "escrow_address": "GS7XA7NQUSHLCY2OGMS2TENN5K62MQEPOJ5GQOGUVIZIYO42FKJINDBGRY",
+              "status": "recorded",
+              "tx_id": "LIZUEMGA5ERFJCW7NYMEEWS3UW5FUWDL5KR33CXIMIX4EBSPEQVQ",
+              "confirmed_round": 64566545,
+              "amount": 11000,
+              "cost": 1100,
+              "error": null
+            }
+          ],
+          "remaining": 0,
+          "balances_before": {
+            "address": "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ",
+            "round": 64566539,
+            "source": "public",
+            "balances": [
+              {
+                "asset_id": 0,
+                "amount": 7116719
+              },
+              {
+                "asset_id": 764766481,
+                "amount": 3935973
+              }
+            ]
+          },
+          "balances_after": {
+            "address": "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ",
+            "round": 64566539,
+            "source": "public",
+            "balances": [
+              {
+                "asset_id": 0,
+                "amount": 7116719
+              },
+              {
+                "asset_id": 764766481,
+                "amount": 3935973
+              }
+            ]
+          },
+          "matrix_case_hints": {
+            "dex_additional_matrix": [
+              "ioc_multi_fill_balance"
+            ],
+            "unified_routing": [
+              "orderbook_only_pair"
+            ]
+          }
+        }
+      },
+      "ioc_discarded_remainder_balance": {
+        "passed": true,
+        "run_at_utc": "2026-06-21T03:04:43Z",
+        "evidence": "Real Testnet IOC discarded-remainder route with on-chain balance snapshots",
+        "fragment": {
+          "kind": "dex_route_submit",
+          "run_at_utc": "2026-06-21T03:04:43Z",
+          "network": "testnet",
+          "wallet_address": "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ",
+          "pair": "0:764766481",
+          "operation": "route",
+          "tx_ids": [
+            "OYGB3YKO3Z6Y3RG6APDFSIITQF2FD5NQRHYX77TCLLVGMZ4HRPPA"
+          ],
+          "confirmed_round": 64566550,
+          "base_asset_id": 0,
+          "quote_asset_id": 764766481,
+          "side": "buy",
+          "fills": [
+            {
+              "escrow_address": "PYQD47XAMVQ7GFQYSTGATRQ7LEHE6EDVALE7SNGVKH3WMCMKQPGRBICBDU",
+              "status": "recorded",
+              "tx_id": "OYGB3YKO3Z6Y3RG6APDFSIITQF2FD5NQRHYX77TCLLVGMZ4HRPPA",
+              "confirmed_round": 64566550,
+              "amount": 10000,
+              "cost": 1000,
+              "error": null
+            }
+          ],
+          "remaining": 1500,
+          "created_orders": [],
+          "balances_before": {
+            "address": "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ",
+            "round": 64566539,
+            "source": "public",
+            "balances": [
+              {
+                "asset_id": 0,
+                "amount": 7116719
+              },
+              {
+                "asset_id": 764766481,
+                "amount": 3935973
+              }
+            ]
+          },
+          "balances_after": {
+            "address": "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ",
+            "round": 64566550,
+            "source": "public",
+            "balances": [
+              {
+                "asset_id": 0,
+                "amount": 7104619
+              },
+              {
+                "asset_id": 764766481,
+                "amount": 3966973
+              }
+            ]
+          },
+          "matrix_case_hints": {
+            "dex_additional_matrix": [
+              "ioc_discarded_remainder_balance"
+            ],
+            "unified_routing": []
+          }
+        }
+      },
+      "expiry_boundary": {
+        "passed": true,
+        "run_at_utc": "2026-06-21T03:04:55Z",
+        "evidence": "Real Testnet expired-order boundary rejection with balance snapshots",
+        "fragment": {
+          "kind": "dex_fill_rejected",
+          "run_at_utc": "2026-06-21T03:04:55Z",
+          "network": "testnet",
+          "wallet_address": "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ",
+          "pair": "0:764766481",
+          "operation": "rejected",
+          "expected_failure": true,
+          "rejection": "POST /api/dex/prepare/fill -> HTTP 400: order expired: current round 64566554 > expire round 64566553",
+          "escrow_address": "PMX6DP4QESPLWE4DICTK3XDZZDTODHQOFRRUV7QHVRPH6VOAVWGAUSJ2IM",
+          "expire_round": 64566553,
+          "balances_before": {
+            "address": "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ",
+            "round": 64566550,
+            "source": "public",
+            "balances": [
+              {
+                "asset_id": 0,
+                "amount": 7104619
+              },
+              {
+                "asset_id": 764766481,
+                "amount": 3966973
+              }
+            ]
+          },
+          "balances_after": {
+            "address": "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ",
+            "round": 64566550,
+            "source": "public",
+            "balances": [
+              {
+                "asset_id": 0,
+                "amount": 7104619
+              },
+              {
+                "asset_id": 764766481,
+                "amount": 3966973
+              }
+            ]
+          },
+          "matrix_case_hints": {
+            "dex_additional_matrix": [
+              "expiry_boundary"
+            ],
+            "unified_routing": []
+          }
+        }
+      },
+      "intent_reuse": {
+        "passed": true,
+        "run_at_utc": "2026-06-21T03:05:17Z",
+        "evidence": "Real Testnet reused fill intent rejected after confirmed first submit",
+        "fragment": {
+          "kind": "dex_fill_rejected",
+          "run_at_utc": "2026-06-21T03:05:17Z",
+          "network": "testnet",
+          "wallet_address": "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ",
+          "pair": "0:764766481",
+          "operation": "rejected",
+          "expected_failure": true,
+          "rejection": "POST /api/dex/submit/fill -> HTTP 400: DEX intent is missing, expired, or already used",
+          "first_tx_id": "VHSSFYKYFEXTV36BZR32GAP7PPZ6VCFSEKYDXNZZGMVUGOK4RV5A",
+          "first_confirmed_round": 64566563,
+          "balances_before": {
+            "address": "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ",
+            "round": 64566563,
+            "source": "public",
+            "balances": [
+              {
+                "asset_id": 0,
+                "amount": 7100919
+              },
+              {
+                "asset_id": 764766481,
+                "amount": 3973973
+              }
+            ]
+          },
+          "balances_after": {
+            "address": "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ",
+            "round": 64566563,
+            "source": "public",
+            "balances": [
+              {
+                "asset_id": 0,
+                "amount": 7100919
+              },
+              {
+                "asset_id": 764766481,
+                "amount": 3973973
+              }
+            ]
+          },
+          "matrix_case_hints": {
+            "dex_additional_matrix": [
+              "intent_reuse"
+            ],
+            "unified_routing": []
+          }
+        }
+      },
+      "duplicate_submit": {
+        "passed": true,
+        "run_at_utc": "2026-06-21T03:07:37Z",
+        "evidence": "Real Testnet concurrent duplicate fill submit rejected by algod/server duplicate protection",
+        "fragment": {
+          "kind": "dex_fill_rejected",
+          "run_at_utc": "2026-06-21T03:07:37Z",
+          "network": "testnet",
+          "wallet_address": "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ",
+          "pair": "0:764766481",
+          "operation": "duplicate_concurrent_fill_submit",
+          "expected_failure": true,
+          "tx_ids": [
+            "SLJLBLYTXWXBXG5GCAOEQV3WMU5KHLSAEQVPNRJTXGX3GZ2CFA4Q"
+          ],
+          "confirmed_round": 64566614,
+          "rejection": "POST /api/dex/submit/fill -> HTTP 500: submit fill group: algod client error: submit 400 Bad Request: {\"message\":\"TransactionPool.Remember: transaction already in ledger: SLJLBLYTXWXBXG5GCAOEQV3WMU5KHLSAEQVPNRJTXGX3GZ2CFA4Q\"}\n",
+          "escrow_address": "HCVT6CFKABBDN5PITXG4RILNOBXOO4BCRMX2L7UI3I4OMADJAPUVDN4M6Y",
+          "balances_before": {
+            "address": "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ",
+            "round": 64566612,
+            "source": "public",
+            "balances": [
+              {
+                "asset_id": 0,
+                "amount": 7100919
+              },
+              {
+                "asset_id": 764766481,
+                "amount": 3973973
+              }
+            ]
+          },
+          "balances_after": {
+            "address": "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ",
+            "round": 64566612,
+            "source": "public",
+            "balances": [
+              {
+                "asset_id": 0,
+                "amount": 7100919
+              },
+              {
+                "asset_id": 764766481,
+                "amount": 3973973
+              }
+            ]
+          },
+          "matrix_case_hints": {
+            "dex_additional_matrix": [
+              "duplicate_submit"
+            ],
+            "unified_routing": []
+          }
+        }
+      }
+    },
+    "confirmed_tx_ids": [
+      "5QLGH7M6ZOROYVHV6SCPUCEMRYLRVUOM6ZW4BFTWKN5UVESOQSTQ",
+      "AKRAZWSONMSKEE6UFU6RLFROTHLW7DPIF5U6T5HDYUELV7N6EFIA",
+      "BP2XV544KYISVPMZ3KPIG3QSRIDIO4RCHUZFKEUPFGTYMQQZ32VA",
+      "DHOL5VHQ7S7CMWA67RPW3ORNHEI7ZVA6AGA7CMBYYGJTJ2GKZ6XA",
+      "G3G4VLV3C3BTKV4CPYA5LVM5SY4GVYAZK5RNGOSII2JBIHMNGNBQ",
+      "LIZUEMGA5ERFJCW7NYMEEWS3UW5FUWDL5KR33CXIMIX4EBSPEQVQ",
+      "MRNJ6Y5322C2LR5S3TR3EJSHVHJID3CZHELB7IYYF34YFDOQWVCQ",
+      "O4M5V6DXHD5JCEK5YAKVSHGHKHHHDOJOCXRGY7SUIEA4D4GFB7VQ",
+      "OHQR4EHU4GKFTD64G5XEKOC7IB25QIKHY4MLOT7VM7VEMZEUIZDQ",
+      "OYGB3YKO3Z6Y3RG6APDFSIITQF2FD5NQRHYX77TCLLVGMZ4HRPPA",
+      "SLJLBLYTXWXBXG5GCAOEQV3WMU5KHLSAEQVPNRJTXGX3GZ2CFA4Q",
+      "U2AAP4K3HAJHHLAE6VSSF25KP4XHW6LDXMZIYNM3GE4RW23Z7Z6A",
+      "VHSSFYKYFEXTV36BZR32GAP7PPZ6VCFSEKYDXNZZGMVUGOK4RV5A",
+      "YIVWPHKRAZQZFOLXU64DUCC6GQRXGWM7JPGJ7L7TB7ZNCCCAQAKA"
+    ],
+    "wallet_addresses": [
+      "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ",
+      "RXIPEDB5Z5FSNLG2YNRWAKBEDRZNEHIAVQKSWE624MNBPXTPCVOLRIS7AE",
+      "YXOJ7I2YG52BR6TSI7CYBJEDPAYPSBZZVI2GZNI4BSL7HBU7SHAGFDMFCQ"
+    ]
+  },
+  "unified_routing": {
+    "run_at_utc": "2026-06-21T03:46:34Z",
+    "matrix": {
+      "duplicate_folks_backed_pool": {
+        "passed": true,
+        "run_at_utc": "2026-06-21T03:46:34Z",
+        "evidence": "Real Testnet unified routing validation batch; external Tinyman/Pact routes were live quote-only under current write-disabled config",
+        "fragment": {
+          "scenario": "duplicate_folks_backed_pool",
+          "router_quote": {
+            "quote_id": "05325ca48051703895ee16be49b38ca549b006f2afcaf4c8be89c73f0d591e31",
+            "network": "testnet",
+            "asset_in": 147171698,
+            "asset_out": 147171826,
+            "amount_in": 1000,
+            "slippage_bps": 50,
+            "source_round": 64567476,
+            "expires_after_round": 64567496,
+            "comparison_basis": "exact-input asset_out amount; ALGO output subtracts network fee for route selection while non-ALGO output reports network fee separately",
+            "selected": null,
+            "second_best": null,
+            "candidates": [
+              {
+                "route_hash": "658f5b4cfff77c5ebd76ecb3312145885706816dddc680ff3d07d2820733b233",
+                "source_type": "external_pool",
+                "source_id": "external_tinyman",
+                "source_label": "tinyman",
+                "execution": "external_amm_swap",
+                "canonical_id": "external_pool:testnet:external_tinyman:YU32G4AXWISKTKB7BGNESJ6RMX7HMINNFD5Z2GT6S4R3OVBOPEMETIU3EU",
+                "pool_id": "YU32G4AXWISKTKB7BGNESJ6RMX7HMINNFD5Z2GT6S4R3OVBOPEMETIU3EU",
+                "app_id": 148607000,
+                "asset_in": 147171698,
+                "asset_out": 147171826,
+                "amount_in": 1000,
+                "input_consumed": 1000,
+                "remaining_input": 0,
+                "amount_out": 1075,
+                "minimum_out": 1069,
+                "lp_fee_bps": 30,
+                "lp_fee_amount": 3,
+                "network_fee_microalgo": 4000,
+                "price_impact_bps": 37,
+                "source_round": 64567476,
+                "executable": false,
+                "virtual_orderbook": true,
+                "selection_rank": null,
+                "selection_reason": "excluded by source filter 'pact'",
+                "note": "external AMM quote-only candidate; not executable from OpenNodia"
+              },
+              {
+                "route_hash": "1b098b096c33bb54c9c9cbd0f1a81909b82fc57e72c263115a0741dd7ccbc6c4",
+                "source_type": "external_pool",
+                "source_id": "external_pact",
+                "source_label": "pact",
+                "execution": "external_amm_swap",
+                "canonical_id": "external_pool:testnet:external_pact:211895470",
+                "pool_id": "211895470",
+                "app_id": 211895470,
+                "asset_in": 147171698,
+                "asset_out": 147171826,
+                "amount_in": 1000,
+                "input_consumed": 1000,
+                "remaining_input": 0,
+                "amount_out": 138,
+                "minimum_out": 137,
+                "lp_fee_bps": 30,
+                "lp_fee_amount": 1,
+                "network_fee_microalgo": 3000,
+                "price_impact_bps": 71,
+                "source_round": 64567476,
+                "executable": false,
+                "virtual_orderbook": true,
+                "selection_rank": null,
+                "selection_reason": "excluded because the source is quote-only or unsupported for swap submit",
+                "note": "Folks-backed Pact pool quote-only candidate; liquidity is still executed through the underlying Pact pool and is not counted as an additional AMM source"
+              },
+              {
+                "route_hash": "228c8563cc1c64f04498abe0c3abfc385c3303a52215f483cd04de5c2e92222d",
+                "source_type": "external_pool",
+                "source_id": "external_pact",
+                "source_label": "pact",
+                "execution": "external_amm_swap",
+                "canonical_id": "external_pool:testnet:external_pact:227241321",
+                "pool_id": "227241321",
+                "app_id": 227241321,
+                "asset_in": 147171698,
+                "asset_out": 147171826,
+                "amount_in": 1000,
+                "input_consumed": 1000,
+                "remaining_input": 0,
+                "amount_out": 103,
+                "minimum_out": 102,
+                "lp_fee_bps": 5,
+                "lp_fee_amount": 1,
+                "network_fee_microalgo": 3000,
+                "price_impact_bps": 96,
+                "source_round": 64567476,
+                "executable": false,
+                "virtual_orderbook": true,
+                "selection_rank": null,
+                "selection_reason": "excluded because the source is quote-only or unsupported for swap submit",
+                "note": "Folks-backed Pact pool quote-only candidate; liquidity is still executed through the underlying Pact pool and is not counted as an additional AMM source"
+              },
+              {
+                "route_hash": "0f081d0e419bf0749c413c2fc046f8dfaf45de957331c6cdb4639c1b7eae622b",
+                "source_type": "external_pool",
+                "source_id": "external_pact",
+                "source_label": "pact",
+                "execution": "external_amm_swap",
+                "canonical_id": "external_pool:testnet:external_pact:227242578",
+                "pool_id": "227242578",
+                "app_id": 227242578,
+                "asset_in": 147171698,
+                "asset_out": 147171826,
+                "amount_in": 1000,
+                "input_consumed": 1000,
+                "remaining_input": 0,
+                "amount_out": 69,
+                "minimum_out": 68,
+                "lp_fee_bps": 100,
+                "lp_fee_amount": 1,
+                "network_fee_microalgo": 3000,
+                "price_impact_bps": 142,
+                "source_round": 64567476,
+                "executable": false,
+                "virtual_orderbook": true,
+                "selection_rank": null,
+                "selection_reason": "excluded because the source is quote-only or unsupported for swap submit",
+                "note": "Folks-backed Pact pool quote-only candidate; liquidity is still executed through the underlying Pact pool and is not counted as an additional AMM source"
+              }
+            ],
+            "warnings": [
+              "external AMM source Local differs from route ledger source Public",
+              "pact pool 215056444 quote failed: amount_in is too small for this external pool",
+              "no executable single-venue route matched source 'pact'"
+            ]
+          },
+          "pact_pool_discovery": {
+            "pools": [
+              {
+                "pool_id": "227242578",
+                "source": "pact",
+                "app_id": 227242578,
+                "app_address": "NCGH3VA5SEECI2SQQ7ENETAYMZS524HDLH7AOS73YKVUONIZCCJZLPTSTY",
+                "lp_asset_id": 227242584,
+                "asset_0": 147171698,
+                "asset_1": 147171826,
+                "fee_bps": 100,
+                "protocol_fee_bps": 10,
+                "protocol_version": "201",
+                "reserve_0": 20149067,
+                "reserve_1": 1426628,
+                "total_lp_supply": 5203310,
+                "source_round": 64567476,
+                "quote_supported": true,
+                "swap_supported": false,
+                "adapter_swap_supported": true,
+                "position_supported": true,
+                "tradable": true,
+                "folks_backed": true,
+                "folks": {
+                  "source": "Folks Finance lending-backed Pact pool",
+                  "adapter_app_id": 228284187,
+                  "pool_0_app_id": 147169673,
+                  "pool_1_app_id": 147170678,
+                  "underlying_0": 0,
+                  "underlying_1": 67395862,
+                  "f_asset_0": 147171698,
+                  "f_asset_1": 147171826,
+                  "deposit_interest_rate_0": 9599585504352480,
+                  "deposit_interest_rate_1": 282384434325111,
+                  "deposit_interest_index_0": 393655564218976,
+                  "deposit_interest_index_1": 119232922659956,
+                  "redeem_available_0": 1919534454,
+                  "redeem_available_1": 1766281540,
+                  "f_asset_outstanding_0": 11625549757,
+                  "f_asset_outstanding_1": 3476545428,
+                  "total_deposit_0": 45764623489,
+                  "total_deposit_1": 4145186721,
+                  "total_borrowed_0": 43845089035,
+                  "total_borrowed_1": 2378905181,
+                  "utilization_bps_0": 9580,
+                  "utilization_bps_1": 5738,
+                  "utilization_available": true,
+                  "utilization_note": "redeemable liquidity is verified from lending pool escrow holdings; utilization is computed from outstanding fAsset supply converted by the current deposit interest index",
+                  "risk_note": "liquidity is still executed through the underlying Pact pool; Folks adapter composition risk is shown separately and is not counted as an additional AMM source"
+                },
+                "status": "quote_only",
+                "status_note": "verified Pact constant-product pool with non-zero reserves"
+              },
+              {
+                "pool_id": "211895470",
+                "source": "pact",
+                "app_id": 211895470,
+                "app_address": "FXIZRXVRWTHM5NJ5TY3JSESEUZHJ5B6DRYNHMNN2QW3W75DKXY6CTMCNXI",
+                "lp_asset_id": 211895476,
+                "asset_0": 147171698,
+                "asset_1": 147171826,
+                "fee_bps": 30,
+                "protocol_fee_bps": 5,
+                "protocol_version": "201",
+                "reserve_0": 52425235,
+                "reserve_1": 7300456,
+                "total_lp_supply": 19471608,
+                "source_round": 64567476,
+                "quote_supported": true,
+                "swap_supported": false,
+                "adapter_swap_supported": true,
+                "position_supported": true,
+                "tradable": true,
+                "folks_backed": true,
+                "folks": {
+                  "source": "Folks Finance lending-backed Pact pool",
+                  "adapter_app_id": 228284187,
+                  "pool_0_app_id": 147169673,
+                  "pool_1_app_id": 147170678,
+                  "underlying_0": 0,
+                  "underlying_1": 67395862,
+                  "f_asset_0": 147171698,
+                  "f_asset_1": 147171826,
+                  "deposit_interest_rate_0": 9599585504352480,
+                  "deposit_interest_rate_1": 282384434325111,
+                  "deposit_interest_index_0": 393655564218976,
+                  "deposit_interest_index_1": 119232922659956,
+                  "redeem_available_0": 1919534454,
+                  "redeem_available_1": 1766281540,
+                  "f_asset_outstanding_0": 11625549757,
+                  "f_asset_outstanding_1": 3476545428,
+                  "total_deposit_0": 45764623489,
+                  "total_deposit_1": 4145186721,
+                  "total_borrowed_0": 43845089035,
+                  "total_borrowed_1": 2378905181,
+                  "utilization_bps_0": 9580,
+                  "utilization_bps_1": 5738,
+                  "utilization_available": true,
+                  "utilization_note": "redeemable liquidity is verified from lending pool escrow holdings; utilization is computed from outstanding fAsset supply converted by the current deposit interest index",
+                  "risk_note": "liquidity is still executed through the underlying Pact pool; Folks adapter composition risk is shown separately and is not counted as an additional AMM source"
+                },
+                "status": "quote_only",
+                "status_note": "verified Pact constant-product pool with non-zero reserves"
+              },
+              {
+                "pool_id": "227241321",
+                "source": "pact",
+                "app_id": 227241321,
+                "app_address": "4EPR2UKQ26BTP3BOZ6BWF6WBP66ZOXOVPRIJON4EJH35NEN2BPWSIB6VLM",
+                "lp_asset_id": 227241327,
+                "asset_0": 147171698,
+                "asset_1": 147171826,
+                "fee_bps": 5,
+                "protocol_fee_bps": 2,
+                "protocol_version": "201",
+                "reserve_0": 967901,
+                "reserve_1": 100869,
+                "total_lp_supply": 215533,
+                "source_round": 64567476,
+                "quote_supported": true,
+                "swap_supported": false,
+                "adapter_swap_supported": true,
+                "position_supported": true,
+                "tradable": true,
+                "folks_backed": true,
+                "folks": {
+                  "source": "Folks Finance lending-backed Pact pool",
+                  "adapter_app_id": 228284187,
+                  "pool_0_app_id": 147169673,
+                  "pool_1_app_id": 147170678,
+                  "underlying_0": 0,
+                  "underlying_1": 67395862,
+                  "f_asset_0": 147171698,
+                  "f_asset_1": 147171826,
+                  "deposit_interest_rate_0": 9599585504352480,
+                  "deposit_interest_rate_1": 282384434325111,
+                  "deposit_interest_index_0": 393655564218976,
+                  "deposit_interest_index_1": 119232922659956,
+                  "redeem_available_0": 1919534454,
+                  "redeem_available_1": 1766281540,
+                  "f_asset_outstanding_0": 11625549757,
+                  "f_asset_outstanding_1": 3476545428,
+                  "total_deposit_0": 45764623489,
+                  "total_deposit_1": 4145186721,
+                  "total_borrowed_0": 43845089035,
+                  "total_borrowed_1": 2378905181,
+                  "utilization_bps_0": 9580,
+                  "utilization_bps_1": 5738,
+                  "utilization_available": true,
+                  "utilization_note": "redeemable liquidity is verified from lending pool escrow holdings; utilization is computed from outstanding fAsset supply converted by the current deposit interest index",
+                  "risk_note": "liquidity is still executed through the underlying Pact pool; Folks adapter composition risk is shown separately and is not counted as an additional AMM source"
+                },
+                "status": "quote_only",
+                "status_note": "verified Pact constant-product pool with non-zero reserves"
+              },
+              {
+                "pool_id": "215056444",
+                "source": "pact",
+                "app_id": 215056444,
+                "app_address": "IJ3Y3DCTM3TA5B2AYUTKM36IFLLXBCT3J4VYYKCX63RQAHDT74XIRKGTPI",
+                "lp_asset_id": 215056450,
+                "asset_0": 147171698,
+                "asset_1": 147171826,
+                "fee_bps": 2,
+                "protocol_fee_bps": 1,
+                "protocol_version": "201",
+                "reserve_0": 32396211,
+                "reserve_1": 4312,
+                "total_lp_supply": 373089,
+                "source_round": 64567476,
+                "quote_supported": true,
+                "swap_supported": false,
+                "adapter_swap_supported": true,
+                "position_supported": true,
+                "tradable": true,
+                "folks_backed": true,
+                "folks": {
+                  "source": "Folks Finance lending-backed Pact pool",
+                  "adapter_app_id": 228284187,
+                  "pool_0_app_id": 147169673,
+                  "pool_1_app_id": 147170678,
+                  "underlying_0": 0,
+                  "underlying_1": 67395862,
+                  "f_asset_0": 147171698,
+                  "f_asset_1": 147171826,
+                  "deposit_interest_rate_0": 9599585504352480,
+                  "deposit_interest_rate_1": 282384434325111,
+                  "deposit_interest_index_0": 393655564218976,
+                  "deposit_interest_index_1": 119232922659956,
+                  "redeem_available_0": 1919534454,
+                  "redeem_available_1": 1766281540,
+                  "f_asset_outstanding_0": 11625549757,
+                  "f_asset_outstanding_1": 3476545428,
+                  "total_deposit_0": 45764623489,
+                  "total_deposit_1": 4145186721,
+                  "total_borrowed_0": 43845089035,
+                  "total_borrowed_1": 2378905181,
+                  "utilization_bps_0": 9580,
+                  "utilization_bps_1": 5738,
+                  "utilization_available": true,
+                  "utilization_note": "redeemable liquidity is verified from lending pool escrow holdings; utilization is computed from outstanding fAsset supply converted by the current deposit interest index",
+                  "risk_note": "liquidity is still executed through the underlying Pact pool; Folks adapter composition risk is shown separately and is not counted as an additional AMM source"
+                },
+                "status": "quote_only",
+                "status_note": "verified Pact constant-product pool with non-zero reserves"
+              }
+            ],
+            "source": "local",
+            "source_round": 64567476,
+            "discovery_note": null
+          },
+          "sources_seen": [
+            "external_pool",
+            "pact"
+          ],
+          "matrix_case_hints": {
+            "unified_routing": [
+              "duplicate_folks_backed_pool"
+            ],
+            "dex_additional_matrix": []
+          },
+          "network": "testnet",
+          "run_at_utc": "2026-06-21T03:46:34Z",
+          "api_url": "http://192.168.0.36:30080",
+          "node": {
+            "last_round": 64567476,
+            "source": "public"
+          }
+        }
+      },
+      "tinyman_pact_pool_only_pair": {
+        "passed": true,
+        "run_at_utc": "2026-06-21T03:44:42Z",
+        "evidence": "Real Testnet unified routing validation batch; external Tinyman/Pact routes were live quote-only under current write-disabled config",
+        "fragment": {
+          "scenario": "tinyman_pact_pool_only_pair_and_folks_duplicate_boundary",
+          "external_status": {
+            "network": "testnet",
+            "sources": [
+              {
+                "source": "tinyman",
+                "label": "Tinyman",
+                "quote_supported": true,
+                "swap_supported": false,
+                "liquidity_supported": false,
+                "position_supported": true,
+                "status": "quote_only",
+                "validator_app_id": 148607000,
+                "factory_app_id": null,
+                "folks_lending_pool_adapter_app_id": null,
+                "note": "Tinyman V2 pools are read from live pool account local state; writes are disabled by external_liquidity.*_enabled=false."
+              },
+              {
+                "source": "pact",
+                "label": "Pact",
+                "quote_supported": true,
+                "swap_supported": false,
+                "liquidity_supported": false,
+                "position_supported": true,
+                "status": "quote_only",
+                "validator_app_id": null,
+                "factory_app_id": 166540424,
+                "folks_lending_pool_adapter_app_id": 228284187,
+                "note": "Pact constant-product pools are discovered from the factory box allowlist; writes are disabled by external_liquidity.*_enabled=false."
+              }
+            ]
+          },
+          "tinyman_router_quote": {
+            "quote_id": "8fe102ca5e2560af59064ec0d9c35aa7892d44dc4b4e9a4a8f35c8fa32c2df6b",
+            "network": "testnet",
+            "asset_in": 0,
+            "asset_out": 10458941,
+            "amount_in": 1000,
+            "slippage_bps": 50,
+            "source_round": 64567435,
+            "expires_after_round": 64567455,
+            "comparison_basis": "exact-input asset_out amount; ALGO output subtracts network fee for route selection while non-ALGO output reports network fee separately",
+            "selected": null,
+            "second_best": null,
+            "candidates": [
+              {
+                "route_hash": "c4008dd983518bc1192eb62d0bc21fec4fb199a5d407904162bb76a7471d7c76",
+                "source_type": "external_pool",
+                "source_id": "external_tinyman",
+                "source_label": "tinyman",
+                "execution": "external_amm_swap",
+                "canonical_id": "external_pool:testnet:external_tinyman:UDFWT5DW3X5RZQYXKQEMZ6MRWAEYHWYP7YUAPZKPW6WJK3JH3OZPL7PO2Y",
+                "pool_id": "UDFWT5DW3X5RZQYXKQEMZ6MRWAEYHWYP7YUAPZKPW6WJK3JH3OZPL7PO2Y",
+                "app_id": 148607000,
+                "asset_in": 0,
+                "asset_out": 10458941,
+                "amount_in": 1000,
+                "input_consumed": 1000,
+                "remaining_input": 0,
+                "amount_out": 8176,
+                "minimum_out": 8135,
+                "lp_fee_bps": 30,
+                "lp_fee_amount": 3,
+                "network_fee_microalgo": 4000,
+                "price_impact_bps": 30,
+                "source_round": 64567435,
+                "executable": false,
+                "virtual_orderbook": true,
+                "selection_rank": null,
+                "selection_reason": "excluded because the source is quote-only or unsupported for swap submit",
+                "note": "external AMM quote-only candidate; not executable from OpenNodia"
+              }
+            ],
+            "warnings": [
+              "external AMM source Local differs from route ledger source Public",
+              "no executable single-venue route matched source 'tinyman'"
+            ]
+          },
+          "pact_router_quote": {
+            "quote_id": "197dbc7e6cbf9cc0edf5f1dd722aa7b3c6d08a2fa8b5b15644e93c3190822128",
+            "network": "testnet",
+            "asset_in": 0,
+            "asset_out": 14704676,
+            "amount_in": 1000,
+            "slippage_bps": 50,
+            "source_round": 64567435,
+            "expires_after_round": 64567455,
+            "comparison_basis": "exact-input asset_out amount; ALGO output subtracts network fee for route selection while non-ALGO output reports network fee separately",
+            "selected": null,
+            "second_best": null,
+            "candidates": [
+              {
+                "route_hash": "8ea2af4dbf05e19913655c56fb758a2822b195852ea281056a07b1aa4f61e9fd",
+                "source_type": "external_pool",
+                "source_id": "external_pact",
+                "source_label": "pact",
+                "execution": "external_amm_swap",
+                "canonical_id": "external_pool:testnet:external_pact:167166658",
+                "pool_id": "167166658",
+                "app_id": 167166658,
+                "asset_in": 0,
+                "asset_out": 14704676,
+                "amount_in": 1000,
+                "input_consumed": 1000,
+                "remaining_input": 0,
+                "amount_out": 18,
+                "minimum_out": 17,
+                "lp_fee_bps": 2,
+                "lp_fee_amount": 1,
+                "network_fee_microalgo": 3000,
+                "price_impact_bps": 526,
+                "source_round": 64567435,
+                "executable": false,
+                "virtual_orderbook": true,
+                "selection_rank": null,
+                "selection_reason": "excluded because the source is quote-only or unsupported for swap submit",
+                "note": "external AMM quote-only candidate; not executable from OpenNodia"
+              }
+            ],
+            "warnings": [
+              "external AMM source Local differs from route ledger source Public",
+              "no executable single-venue route matched source 'pact'"
+            ]
+          },
+          "tinyman_prepare_rejection": {
+            "status": 400,
+            "message": "no selected executable route; external Tinyman is quote-only under current config"
+          },
+          "external_write_gate": "external_liquidity.swap_enabled=false makes Tinyman/Pact routes quote-only in the current Testnet service",
+          "pact_pool_discovery_fallback": {
+            "pools": [
+              {
+                "pool_id": "167166658",
+                "source": "pact",
+                "app_id": 167166658,
+                "app_address": "6DI4VYEY7UGU2DQRVYDJJHGA3FFZCIUAFPPLZ46XNQYJ65XNIHCZOBRUAQ",
+                "lp_asset_id": 167166663,
+                "asset_0": 0,
+                "asset_1": 14704676,
+                "fee_bps": 2,
+                "protocol_fee_bps": 1,
+                "protocol_version": "201",
+                "reserve_0": 101001,
+                "reserve_1": 1983,
+                "total_lp_supply": 14142,
+                "source_round": 64567435,
+                "quote_supported": true,
+                "swap_supported": false,
+                "adapter_swap_supported": true,
+                "position_supported": true,
+                "tradable": true,
+                "folks_backed": false,
+                "status": "quote_only",
+                "status_note": "verified Pact constant-product pool with non-zero reserves"
+              }
+            ],
+            "source": "local",
+            "source_round": 64567435,
+            "discovery_note": null
+          },
+          "sources_seen": [
+            "external_pool",
+            "tinyman",
+            "pact"
+          ],
+          "matrix_case_hints": {
+            "unified_routing": [
+              "tinyman_pact_pool_only_pair"
+            ],
+            "dex_additional_matrix": []
+          },
+          "network": "testnet",
+          "run_at_utc": "2026-06-21T03:44:42Z",
+          "api_url": "http://192.168.0.36:30080",
+          "node": {
+            "last_round": 64567393,
+            "source": "public"
+          }
+        }
+      },
+      "native_pool_only_pair": {
+        "passed": true,
+        "run_at_utc": "2026-06-21T03:43:12Z",
+        "evidence": "Real Testnet unified routing validation batch; external Tinyman/Pact routes were live quote-only under current write-disabled config",
+        "fragment": {
+          "scenario": "native_pool_only_pair",
+          "startup_cleanup": [],
+          "wallet_addresses": [
+            "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ"
+          ],
+          "router_quote": {
+            "quote_id": "bdfa961d9fbe2496a7fb18cc39fe60573517b283339d4592d0fe9b955132b538",
+            "network": "testnet",
+            "asset_in": 0,
+            "asset_out": 764766481,
+            "amount_in": 2000,
+            "slippage_bps": 50,
+            "source_round": 64567394,
+            "expires_after_round": 64567414,
+            "comparison_basis": "exact-input asset_out amount; ALGO output subtracts network fee for route selection while non-ALGO output reports network fee separately",
+            "selected": {
+              "route_hash": "d97cc880ae458cf4f164c27f89cd5332bc78882200fa96d655a6772c873c91d1",
+              "source_type": "native_pool",
+              "source_id": "native_pool",
+              "source_label": "OpenNodia AMM",
+              "execution": "native_amm_swap",
+              "canonical_id": "native_pool:testnet:764784483",
+              "pool_id": "1cb20528d4d71c4be0ff09429130677059911bc9d89b434cb472ea2e82192e48",
+              "app_id": 764784483,
+              "asset_in": 0,
+              "asset_out": 764766481,
+              "amount_in": 2000,
+              "input_consumed": 2000,
+              "remaining_input": 0,
+              "amount_out": 381843,
+              "minimum_out": 379933,
+              "lp_fee_bps": 30,
+              "lp_fee_amount": 6,
+              "network_fee_microalgo": 3000,
+              "price_impact_bps": 68,
+              "source_round": 64567394,
+              "executable": true,
+              "virtual_orderbook": true,
+              "selection_rank": 1,
+              "selection_reason": "best executable route matching pinned source 'native_pool'",
+              "note": "native AMM quote; not a real orderbook level"
+            },
+            "second_best": null,
+            "candidates": [
+              {
+                "route_hash": "d97cc880ae458cf4f164c27f89cd5332bc78882200fa96d655a6772c873c91d1",
+                "source_type": "native_pool",
+                "source_id": "native_pool",
+                "source_label": "OpenNodia AMM",
+                "execution": "native_amm_swap",
+                "canonical_id": "native_pool:testnet:764784483",
+                "pool_id": "1cb20528d4d71c4be0ff09429130677059911bc9d89b434cb472ea2e82192e48",
+                "app_id": 764784483,
+                "asset_in": 0,
+                "asset_out": 764766481,
+                "amount_in": 2000,
+                "input_consumed": 2000,
+                "remaining_input": 0,
+                "amount_out": 381843,
+                "minimum_out": 379933,
+                "lp_fee_bps": 30,
+                "lp_fee_amount": 6,
+                "network_fee_microalgo": 3000,
+                "price_impact_bps": 68,
+                "source_round": 64567394,
+                "executable": true,
+                "virtual_orderbook": true,
+                "selection_rank": 1,
+                "selection_reason": "best executable route matching pinned source 'native_pool'",
+                "note": "native AMM quote; not a real orderbook level"
+              }
+            ],
+            "warnings": [
+              "native pool 764783351 unavailable: application 764783351 is not an OpenNodia native pool: approval program mismatch",
+              "external AMM source Local differs from route ledger source Public"
+            ]
+          },
+          "router_submit": {
+            "source_type": "native_pool",
+            "source_id": "native_pool",
+            "tx_id": "25SAXVSLW6BVT2HFYGK3HHBG6X4EGL75CHWT3VIY3OVUMLSXNU3A",
+            "tx_ids": [
+              "25SAXVSLW6BVT2HFYGK3HHBG6X4EGL75CHWT3VIY3OVUMLSXNU3A"
+            ],
+            "confirmed_round": 64567402,
+            "outcome": "filled",
+            "result": {
+              "confirmed_round": 64567402,
+              "pool": {
+                "active_liquidity": true,
+                "app_address": "U5RAWGKU5LX5S4NFO3STRRVLNPU6FBOP4X26SJ6ATDIFAQMILP6NQVNJO4",
+                "app_id": 764784483,
+                "asset_0": 0,
+                "asset_1": 764766481,
+                "bootstrap_required": false,
+                "contract_version": 2,
+                "curve_id": 1,
+                "fee_bps": 30,
+                "lifecycle": "bootstrapped",
+                "lp_asset_id": 764784496,
+                "pool_id": "1cb20528d4d71c4be0ff09429130677059911bc9d89b434cb472ea2e82192e48",
+                "reserve_0": 512000,
+                "reserve_1": 97663141,
+                "setup_required": false,
+                "source": "native",
+                "source_round": 64567402,
+                "status_note": "pool has active two-sided liquidity",
+                "total_lp_supply": 7071067,
+                "tradable": true
+              },
+              "quote": {
+                "amount_in": 2000,
+                "amount_out": 381843,
+                "asset_in": 0,
+                "asset_out": 764766481,
+                "fee_amount_estimate": 6,
+                "fee_bps": 30,
+                "minimum_out": 379933,
+                "pool_id": "1cb20528d4d71c4be0ff09429130677059911bc9d89b434cb472ea2e82192e48",
+                "price_impact_bps": 68,
+                "source_round": 64567398
+              },
+              "txid": "25SAXVSLW6BVT2HFYGK3HHBG6X4EGL75CHWT3VIY3OVUMLSXNU3A"
+            }
+          },
+          "sources_seen": [
+            "native_pool"
+          ],
+          "matrix_case_hints": {
+            "unified_routing": [
+              "native_pool_only_pair"
+            ],
+            "dex_additional_matrix": []
+          },
+          "network": "testnet",
+          "run_at_utc": "2026-06-21T03:43:12Z",
+          "api_url": "http://192.168.0.36:30080",
+          "node": {
+            "last_round": 64567393,
+            "source": "public"
+          }
+        }
+      },
+      "orderbook_only_pair": {
+        "passed": true,
+        "run_at_utc": "2026-06-21T03:40:35Z",
+        "evidence": "Real Testnet unified routing validation batch; external Tinyman/Pact routes were live quote-only under current write-disabled config",
+        "fragment": {
+          "scenario": "orderbook_only_pair_with_pair_reversal_decimals",
+          "wallet_addresses": [
+            "IONMV3L2BGCNKBPSCVGSFEEFWCYZWCYROZNCMCUKI6AAKQULI3XYUAHZDM",
+            "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ"
+          ],
+          "base_asset_id": 764789093,
+          "quote_asset_id": 0,
+          "base_decimals": 0,
+          "quote_decimals": 6,
+          "startup_cleanup": [
+            {
+              "escrow_addr": "SV6XI2DNTZXLU6XUGZVVGR4JUUTYML7NSQEIWBJ6ARLGAKIXSMXWWL5ESY",
+              "cancel_tx_id": "HCAPNMZC34FCMAMQ3YXSK3RQOGRKDG4X3BGQUYSWLYJBGWTOJI3A",
+              "confirmed_round": 64567335
+            }
+          ],
+          "standing_order_create_tx_ids": [
+            "A4YZGLZQX5JOD3POR7YHVARNX4P47QR2K4MKH25OR4HT4BXF2EIQ"
+          ],
+          "standing_order_create_round": 64567338,
+          "created_order": {
+            "escrow_addr": "ADHQ3A34UXQPMNZBCAAFYW66JG4NQRWNHOXQD6NMEHMDUDRPFS55VITOEI",
+            "side": "sell",
+            "sell_asset": 764789093,
+            "sell_amount": 1,
+            "buy_asset": 0,
+            "buy_amount": 10000,
+            "price": 10000000000,
+            "owner": "IONMV3L2BGCNKBPSCVGSFEEFWCYZWCYROZNCMCUKI6AAKQULI3XYUAHZDM",
+            "created_round": 64567338,
+            "expire_round": 64577335,
+            "status": "active",
+            "filled_amount": 0
+          },
+          "router_quote": {
+            "quote_id": "dab0cd32de3d8df17a013ab116e172845711b4541ad6a7bc589fa91c1162725c",
+            "network": "testnet",
+            "asset_in": 0,
+            "asset_out": 764789093,
+            "amount_in": 10000,
+            "slippage_bps": 50,
+            "source_round": 64567338,
+            "expires_after_round": 64567358,
+            "comparison_basis": "exact-input asset_out amount; ALGO output subtracts network fee for route selection while non-ALGO output reports network fee separately",
+            "selected": {
+              "route_hash": "08eea324265ebdd32979a84f83a057cf2c7077a0400f8aa86b3337f6012fb3ef",
+              "source_type": "orderbook",
+              "source_id": "orderbook",
+              "source_label": "OpenNodia Orderbook",
+              "execution": "native_orderbook_ioc_buy",
+              "canonical_id": "orderbook:testnet:0:764789093",
+              "pool_id": null,
+              "app_id": null,
+              "asset_in": 0,
+              "asset_out": 764789093,
+              "amount_in": 10000,
+              "input_consumed": 10000,
+              "remaining_input": 0,
+              "amount_out": 1,
+              "minimum_out": 0,
+              "lp_fee_bps": 0,
+              "lp_fee_amount": 0,
+              "network_fee_microalgo": 2000,
+              "price_impact_bps": 0,
+              "source_round": 64567338,
+              "executable": true,
+              "virtual_orderbook": false,
+              "selection_rank": 1,
+              "selection_reason": "best executable route matching pinned source 'orderbook'",
+              "note": "native orderbook candidate from matching-engine buy IOC against active escrows"
+            },
+            "second_best": null,
+            "candidates": [
+              {
+                "route_hash": "08eea324265ebdd32979a84f83a057cf2c7077a0400f8aa86b3337f6012fb3ef",
+                "source_type": "orderbook",
+                "source_id": "orderbook",
+                "source_label": "OpenNodia Orderbook",
+                "execution": "native_orderbook_ioc_buy",
+                "canonical_id": "orderbook:testnet:0:764789093",
+                "pool_id": null,
+                "app_id": null,
+                "asset_in": 0,
+                "asset_out": 764789093,
+                "amount_in": 10000,
+                "input_consumed": 10000,
+                "remaining_input": 0,
+                "amount_out": 1,
+                "minimum_out": 0,
+                "lp_fee_bps": 0,
+                "lp_fee_amount": 0,
+                "network_fee_microalgo": 2000,
+                "price_impact_bps": 0,
+                "source_round": 64567338,
+                "executable": true,
+                "virtual_orderbook": false,
+                "selection_rank": 1,
+                "selection_reason": "best executable route matching pinned source 'orderbook'",
+                "note": "native orderbook candidate from matching-engine buy IOC against active escrows"
+              }
+            ],
+            "warnings": [
+              "external AMM source Local differs from route ledger source Public"
+            ]
+          },
+          "router_submit": {
+            "source_type": "orderbook",
+            "source_id": "orderbook",
+            "tx_id": "DNM7RDTSQHT7TLZJT756MLK4PZJGXALM7LO3YORIIV3K5D6AWNWA",
+            "tx_ids": [
+              "DNM7RDTSQHT7TLZJT756MLK4PZJGXALM7LO3YORIIV3K5D6AWNWA"
+            ],
+            "confirmed_round": 64567344,
+            "outcome": "filled",
+            "result": {
+              "outcome": "filled",
+              "total_cost": 10000,
+              "total_received": 1,
+              "remaining": 0,
+              "fills": [
+                {
+                  "amount": 1,
+                  "confirmed_round": 64567344,
+                  "cost": 10000,
+                  "error": null,
+                  "escrow_address": "ADHQ3A34UXQPMNZBCAAFYW66JG4NQRWNHOXQD6NMEHMDUDRPFS55VITOEI",
+                  "status": "recorded",
+                  "tx_id": "DNM7RDTSQHT7TLZJT756MLK4PZJGXALM7LO3YORIIV3K5D6AWNWA"
+                }
+              ]
+            }
+          },
+          "sources_seen": [
+            "orderbook"
+          ],
+          "matrix_case_hints": {
+            "unified_routing": [
+              "orderbook_only_pair",
+              "pair_reversal_decimals"
+            ],
+            "dex_additional_matrix": []
+          },
+          "network": "testnet",
+          "run_at_utc": "2026-06-21T03:40:35Z",
+          "api_url": "http://192.168.0.36:30080",
+          "node": {
+            "last_round": 64567331,
+            "source": "public"
+          }
+        }
+      },
+      "pair_reversal_decimals": {
+        "passed": true,
+        "run_at_utc": "2026-06-21T03:40:35Z",
+        "evidence": "Real Testnet unified routing validation batch; external Tinyman/Pact routes were live quote-only under current write-disabled config",
+        "fragment": {
+          "scenario": "orderbook_only_pair_with_pair_reversal_decimals",
+          "wallet_addresses": [
+            "IONMV3L2BGCNKBPSCVGSFEEFWCYZWCYROZNCMCUKI6AAKQULI3XYUAHZDM",
+            "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ"
+          ],
+          "base_asset_id": 764789093,
+          "quote_asset_id": 0,
+          "base_decimals": 0,
+          "quote_decimals": 6,
+          "startup_cleanup": [
+            {
+              "escrow_addr": "SV6XI2DNTZXLU6XUGZVVGR4JUUTYML7NSQEIWBJ6ARLGAKIXSMXWWL5ESY",
+              "cancel_tx_id": "HCAPNMZC34FCMAMQ3YXSK3RQOGRKDG4X3BGQUYSWLYJBGWTOJI3A",
+              "confirmed_round": 64567335
+            }
+          ],
+          "standing_order_create_tx_ids": [
+            "A4YZGLZQX5JOD3POR7YHVARNX4P47QR2K4MKH25OR4HT4BXF2EIQ"
+          ],
+          "standing_order_create_round": 64567338,
+          "created_order": {
+            "escrow_addr": "ADHQ3A34UXQPMNZBCAAFYW66JG4NQRWNHOXQD6NMEHMDUDRPFS55VITOEI",
+            "side": "sell",
+            "sell_asset": 764789093,
+            "sell_amount": 1,
+            "buy_asset": 0,
+            "buy_amount": 10000,
+            "price": 10000000000,
+            "owner": "IONMV3L2BGCNKBPSCVGSFEEFWCYZWCYROZNCMCUKI6AAKQULI3XYUAHZDM",
+            "created_round": 64567338,
+            "expire_round": 64577335,
+            "status": "active",
+            "filled_amount": 0
+          },
+          "router_quote": {
+            "quote_id": "dab0cd32de3d8df17a013ab116e172845711b4541ad6a7bc589fa91c1162725c",
+            "network": "testnet",
+            "asset_in": 0,
+            "asset_out": 764789093,
+            "amount_in": 10000,
+            "slippage_bps": 50,
+            "source_round": 64567338,
+            "expires_after_round": 64567358,
+            "comparison_basis": "exact-input asset_out amount; ALGO output subtracts network fee for route selection while non-ALGO output reports network fee separately",
+            "selected": {
+              "route_hash": "08eea324265ebdd32979a84f83a057cf2c7077a0400f8aa86b3337f6012fb3ef",
+              "source_type": "orderbook",
+              "source_id": "orderbook",
+              "source_label": "OpenNodia Orderbook",
+              "execution": "native_orderbook_ioc_buy",
+              "canonical_id": "orderbook:testnet:0:764789093",
+              "pool_id": null,
+              "app_id": null,
+              "asset_in": 0,
+              "asset_out": 764789093,
+              "amount_in": 10000,
+              "input_consumed": 10000,
+              "remaining_input": 0,
+              "amount_out": 1,
+              "minimum_out": 0,
+              "lp_fee_bps": 0,
+              "lp_fee_amount": 0,
+              "network_fee_microalgo": 2000,
+              "price_impact_bps": 0,
+              "source_round": 64567338,
+              "executable": true,
+              "virtual_orderbook": false,
+              "selection_rank": 1,
+              "selection_reason": "best executable route matching pinned source 'orderbook'",
+              "note": "native orderbook candidate from matching-engine buy IOC against active escrows"
+            },
+            "second_best": null,
+            "candidates": [
+              {
+                "route_hash": "08eea324265ebdd32979a84f83a057cf2c7077a0400f8aa86b3337f6012fb3ef",
+                "source_type": "orderbook",
+                "source_id": "orderbook",
+                "source_label": "OpenNodia Orderbook",
+                "execution": "native_orderbook_ioc_buy",
+                "canonical_id": "orderbook:testnet:0:764789093",
+                "pool_id": null,
+                "app_id": null,
+                "asset_in": 0,
+                "asset_out": 764789093,
+                "amount_in": 10000,
+                "input_consumed": 10000,
+                "remaining_input": 0,
+                "amount_out": 1,
+                "minimum_out": 0,
+                "lp_fee_bps": 0,
+                "lp_fee_amount": 0,
+                "network_fee_microalgo": 2000,
+                "price_impact_bps": 0,
+                "source_round": 64567338,
+                "executable": true,
+                "virtual_orderbook": false,
+                "selection_rank": 1,
+                "selection_reason": "best executable route matching pinned source 'orderbook'",
+                "note": "native orderbook candidate from matching-engine buy IOC against active escrows"
+              }
+            ],
+            "warnings": [
+              "external AMM source Local differs from route ledger source Public"
+            ]
+          },
+          "router_submit": {
+            "source_type": "orderbook",
+            "source_id": "orderbook",
+            "tx_id": "DNM7RDTSQHT7TLZJT756MLK4PZJGXALM7LO3YORIIV3K5D6AWNWA",
+            "tx_ids": [
+              "DNM7RDTSQHT7TLZJT756MLK4PZJGXALM7LO3YORIIV3K5D6AWNWA"
+            ],
+            "confirmed_round": 64567344,
+            "outcome": "filled",
+            "result": {
+              "outcome": "filled",
+              "total_cost": 10000,
+              "total_received": 1,
+              "remaining": 0,
+              "fills": [
+                {
+                  "amount": 1,
+                  "confirmed_round": 64567344,
+                  "cost": 10000,
+                  "error": null,
+                  "escrow_address": "ADHQ3A34UXQPMNZBCAAFYW66JG4NQRWNHOXQD6NMEHMDUDRPFS55VITOEI",
+                  "status": "recorded",
+                  "tx_id": "DNM7RDTSQHT7TLZJT756MLK4PZJGXALM7LO3YORIIV3K5D6AWNWA"
+                }
+              ]
+            }
+          },
+          "sources_seen": [
+            "orderbook"
+          ],
+          "matrix_case_hints": {
+            "unified_routing": [
+              "orderbook_only_pair",
+              "pair_reversal_decimals"
+            ],
+            "dex_additional_matrix": []
+          },
+          "network": "testnet",
+          "run_at_utc": "2026-06-21T03:40:35Z",
+          "api_url": "http://192.168.0.36:30080",
+          "node": {
+            "last_round": 64567331,
+            "source": "public"
+          }
+        }
+      },
+      "limit_partial_then_standing_remainder": {
+        "passed": true,
+        "run_at_utc": "2026-06-21T03:44:12Z",
+        "evidence": "Real Testnet unified routing validation batch; external Tinyman/Pact routes were live quote-only under current write-disabled config",
+        "fragment": {
+          "scenario": "limit_partial_then_standing_remainder",
+          "wallet_addresses": [
+            "IONMV3L2BGCNKBPSCVGSFEEFWCYZWCYROZNCMCUKI6AAKQULI3XYUAHZDM",
+            "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ"
+          ],
+          "standing_order_create_tx_ids": [
+            "TKNFJNCPKRAMN64YTDHXOFPCUJXJMQ7UQMCONSAGFP4LI7FHZG4Q"
+          ],
+          "standing_order_create_round": 64567416,
+          "matched_order": {
+            "escrow_addr": "5M6FXGRM7FRP7DZG7YFW234TPLR4G242RGJZFYYSANXN2MX4KBJJOABB4Y",
+            "side": "sell",
+            "sell_asset": 764789093,
+            "sell_amount": 1,
+            "buy_asset": 0,
+            "buy_amount": 10000,
+            "price": 10000000000,
+            "owner": "IONMV3L2BGCNKBPSCVGSFEEFWCYZWCYROZNCMCUKI6AAKQULI3XYUAHZDM",
+            "created_round": 64567416,
+            "expire_round": 64577414,
+            "status": "active",
+            "filled_amount": 0
+          },
+          "dex_route_prepare": {
+            "decision": "filled_and_placed",
+            "fills": [
+              {
+                "escrow_address": "5M6FXGRM7FRP7DZG7YFW234TPLR4G242RGJZFYYSANXN2MX4KBJJOABB4Y",
+                "amount": 1,
+                "price_micro": 10000000000
+              }
+            ],
+            "total_cost": 10000,
+            "total_received": 1,
+            "remaining": 0,
+            "new_orders_needed": 1
+          },
+          "dex_route_submit": {
+            "tx_id": "OWSLZZ7CBIIBTWISWFJJQNTVMBYWQ4FBYE6755LGWCXXZY2JL6KA",
+            "tx_ids": [
+              "BUX63SQW2SOTAISHKP7BTI7BFPSRTE7R2ZBRH4MNONW2DMD56VDA",
+              "OWSLZZ7CBIIBTWISWFJJQNTVMBYWQ4FBYE6755LGWCXXZY2JL6KA"
+            ],
+            "outcome": "filled_and_placed",
+            "total_cost": 10000,
+            "total_received": 1,
+            "remaining": 0,
+            "fills": [
+              {
+                "escrow_address": "5M6FXGRM7FRP7DZG7YFW234TPLR4G242RGJZFYYSANXN2MX4KBJJOABB4Y",
+                "status": "recorded",
+                "tx_id": "BUX63SQW2SOTAISHKP7BTI7BFPSRTE7R2ZBRH4MNONW2DMD56VDA",
+                "confirmed_round": 64567419,
+                "amount": 1,
+                "cost": 10000,
+                "error": null
+              }
+            ],
+            "created_orders": [
+              {
+                "escrow_addr": "UN3U4LNTJPULXN4TP253PVEFG3BH23VNCAQJSPLFTK3YRN2QUIRDNTWDO4",
+                "side": "buy",
+                "sell_asset": 0,
+                "sell_amount": 10000,
+                "buy_asset": 764789093,
+                "buy_amount": 1,
+                "price": 10000000000,
+                "owner": "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ",
+                "created_round": 64567421,
+                "expire_round": 64577416,
+                "status": "active",
+                "filled_amount": 0
+              }
+            ]
+          },
+          "cleanup_cancels": [
+            {
+              "escrow_addr": "UN3U4LNTJPULXN4TP253PVEFG3BH23VNCAQJSPLFTK3YRN2QUIRDNTWDO4",
+              "cancel_tx_id": "UJO2WI6JY2PWDGFJBAKK4SN2AZGGG3FZZPOWMKRB7W3DHSI6CQCQ",
+              "confirmed_round": 64567424,
+              "recovered_amount": 110000
+            }
+          ],
+          "sources_seen": [
+            "orderbook"
+          ],
+          "matrix_case_hints": {
+            "unified_routing": [
+              "limit_partial_then_standing_remainder"
+            ],
+            "dex_additional_matrix": []
+          },
+          "network": "testnet",
+          "run_at_utc": "2026-06-21T03:44:12Z",
+          "api_url": "http://192.168.0.36:30080",
+          "node": {
+            "last_round": 64567393,
+            "source": "public"
+          }
+        }
+      },
+      "network_fee_changes_best_route": {
+        "passed": true,
+        "run_at_utc": "2026-06-21T03:43:43Z",
+        "evidence": "Real Testnet unified routing validation batch; external Tinyman/Pact routes were live quote-only under current write-disabled config",
+        "fragment": {
+          "scenario": "orderbook_amm_price_cross_and_network_fee_best_route_change",
+          "wallet_addresses": [
+            "IONMV3L2BGCNKBPSCVGSFEEFWCYZWCYROZNCMCUKI6AAKQULI3XYUAHZDM",
+            "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ"
+          ],
+          "standing_order_create_tx_ids": [
+            "OO6J5XGNSHDJDYOR6F2UY7RULFTBE4HPKHRQFDT7EWY75UANT2HA"
+          ],
+          "standing_order_create_round": 64567407,
+          "created_order": {
+            "escrow_addr": "KQJVQ3X5O3MRJNFFCFUAQLJIWYB7SFAPEDKRMD3SNVDBPM67XXIACHOEDI",
+            "side": "sell",
+            "sell_asset": 0,
+            "sell_amount": 4673,
+            "buy_asset": 764766481,
+            "buy_amount": 1000000,
+            "price": 213995292,
+            "owner": "IONMV3L2BGCNKBPSCVGSFEEFWCYZWCYROZNCMCUKI6AAKQULI3XYUAHZDM",
+            "created_round": 64567407,
+            "expire_round": 64577405,
+            "status": "active",
+            "filled_amount": 0
+          },
+          "native_surface_amount_out": 5173,
+          "orderbook_surface_amount_out": 4673,
+          "router_quote": {
+            "quote_id": "db09f6938f949995de70418ef2e096c07c859d5708fc48afcd42ddaa91fe13c4",
+            "network": "testnet",
+            "asset_in": 764766481,
+            "asset_out": 0,
+            "amount_in": 1000000,
+            "slippage_bps": 50,
+            "source_round": 64567408,
+            "expires_after_round": 64567428,
+            "comparison_basis": "exact-input asset_out amount; ALGO output subtracts network fee for route selection while non-ALGO output reports network fee separately",
+            "selected": {
+              "route_hash": "eb61dd4e555c6f92873c37916891682b795a27dac8522e4048c198ee51404028",
+              "source_type": "orderbook",
+              "source_id": "orderbook",
+              "source_label": "OpenNodia Orderbook",
+              "execution": "native_orderbook_ioc_buy",
+              "canonical_id": "orderbook:testnet:764766481:0",
+              "pool_id": null,
+              "app_id": null,
+              "asset_in": 764766481,
+              "asset_out": 0,
+              "amount_in": 1000000,
+              "input_consumed": 1000000,
+              "remaining_input": 0,
+              "amount_out": 4673,
+              "minimum_out": 4649,
+              "lp_fee_bps": 0,
+              "lp_fee_amount": 0,
+              "network_fee_microalgo": 2000,
+              "price_impact_bps": 0,
+              "source_round": 64567407,
+              "executable": true,
+              "virtual_orderbook": false,
+              "selection_rank": 1,
+              "selection_reason": "best executable final output after LP/protocol fee quote; ALGO output accounts for network fee",
+              "note": "native orderbook candidate from matching-engine buy IOC against active escrows"
+            },
+            "second_best": {
+              "route_hash": "3fb6955a698856571257ddd146f9b76a7370fa8d173bc0c85bbf919fb331e8a5",
+              "source_type": "native_pool",
+              "source_id": "native_pool",
+              "source_label": "OpenNodia AMM",
+              "execution": "native_amm_swap",
+              "canonical_id": "native_pool:testnet:764784483",
+              "pool_id": "1cb20528d4d71c4be0ff09429130677059911bc9d89b434cb472ea2e82192e48",
+              "app_id": 764784483,
+              "asset_in": 764766481,
+              "asset_out": 0,
+              "amount_in": 1000000,
+              "input_consumed": 1000000,
+              "remaining_input": 0,
+              "amount_out": 5173,
+              "minimum_out": 5147,
+              "lp_fee_bps": 30,
+              "lp_fee_amount": 3000,
+              "network_fee_microalgo": 3000,
+              "price_impact_bps": 131,
+              "source_round": 64567408,
+              "executable": true,
+              "virtual_orderbook": true,
+              "selection_rank": 2,
+              "selection_reason": "lower final output than the selected route",
+              "note": "native AMM quote; not a real orderbook level"
+            },
+            "candidates": [
+              {
+                "route_hash": "3fb6955a698856571257ddd146f9b76a7370fa8d173bc0c85bbf919fb331e8a5",
+                "source_type": "native_pool",
+                "source_id": "native_pool",
+                "source_label": "OpenNodia AMM",
+                "execution": "native_amm_swap",
+                "canonical_id": "native_pool:testnet:764784483",
+                "pool_id": "1cb20528d4d71c4be0ff09429130677059911bc9d89b434cb472ea2e82192e48",
+                "app_id": 764784483,
+                "asset_in": 764766481,
+                "asset_out": 0,
+                "amount_in": 1000000,
+                "input_consumed": 1000000,
+                "remaining_input": 0,
+                "amount_out": 5173,
+                "minimum_out": 5147,
+                "lp_fee_bps": 30,
+                "lp_fee_amount": 3000,
+                "network_fee_microalgo": 3000,
+                "price_impact_bps": 131,
+                "source_round": 64567408,
+                "executable": true,
+                "virtual_orderbook": true,
+                "selection_rank": 2,
+                "selection_reason": "lower final output than the selected route",
+                "note": "native AMM quote; not a real orderbook level"
+              },
+              {
+                "route_hash": "eb61dd4e555c6f92873c37916891682b795a27dac8522e4048c198ee51404028",
+                "source_type": "orderbook",
+                "source_id": "orderbook",
+                "source_label": "OpenNodia Orderbook",
+                "execution": "native_orderbook_ioc_buy",
+                "canonical_id": "orderbook:testnet:764766481:0",
+                "pool_id": null,
+                "app_id": null,
+                "asset_in": 764766481,
+                "asset_out": 0,
+                "amount_in": 1000000,
+                "input_consumed": 1000000,
+                "remaining_input": 0,
+                "amount_out": 4673,
+                "minimum_out": 4649,
+                "lp_fee_bps": 0,
+                "lp_fee_amount": 0,
+                "network_fee_microalgo": 2000,
+                "price_impact_bps": 0,
+                "source_round": 64567407,
+                "executable": true,
+                "virtual_orderbook": false,
+                "selection_rank": 1,
+                "selection_reason": "best executable final output after LP/protocol fee quote; ALGO output accounts for network fee",
+                "note": "native orderbook candidate from matching-engine buy IOC against active escrows"
+              }
+            ],
+            "warnings": [
+              "native pool 764783351 unavailable: application 764783351 is not an OpenNodia native pool: approval program mismatch",
+              "external AMM source Local differs from route ledger source Public"
+            ]
+          },
+          "router_submit": {
+            "source_type": "orderbook",
+            "source_id": "orderbook",
+            "tx_id": "XWSXZBSJZ4DCTIJHAPRTPIQPJ5K5WTW3AOMY4PCO2CAWL3VVWMFQ",
+            "tx_ids": [
+              "XWSXZBSJZ4DCTIJHAPRTPIQPJ5K5WTW3AOMY4PCO2CAWL3VVWMFQ"
+            ],
+            "confirmed_round": 64567414,
+            "outcome": "filled",
+            "result": {
+              "outcome": "filled",
+              "total_cost": 1000000,
+              "total_received": 4673,
+              "remaining": 0,
+              "fills": [
+                {
+                  "amount": 4673,
+                  "confirmed_round": 64567414,
+                  "cost": 1000000,
+                  "error": null,
+                  "escrow_address": "KQJVQ3X5O3MRJNFFCFUAQLJIWYB7SFAPEDKRMD3SNVDBPM67XXIACHOEDI",
+                  "status": "recorded",
+                  "tx_id": "XWSXZBSJZ4DCTIJHAPRTPIQPJ5K5WTW3AOMY4PCO2CAWL3VVWMFQ"
+                }
+              ]
+            }
+          },
+          "sources_seen": [
+            "orderbook",
+            "native_pool"
+          ],
+          "matrix_case_hints": {
+            "unified_routing": [
+              "orderbook_amm_price_cross_pair",
+              "network_fee_changes_best_route"
+            ],
+            "dex_additional_matrix": []
+          },
+          "network": "testnet",
+          "run_at_utc": "2026-06-21T03:43:43Z",
+          "api_url": "http://192.168.0.36:30080",
+          "node": {
+            "last_round": 64567393,
+            "source": "public"
+          }
+        }
+      },
+      "orderbook_amm_price_cross_pair": {
+        "passed": true,
+        "run_at_utc": "2026-06-21T03:43:43Z",
+        "evidence": "Real Testnet unified routing validation batch; external Tinyman/Pact routes were live quote-only under current write-disabled config",
+        "fragment": {
+          "scenario": "orderbook_amm_price_cross_and_network_fee_best_route_change",
+          "wallet_addresses": [
+            "IONMV3L2BGCNKBPSCVGSFEEFWCYZWCYROZNCMCUKI6AAKQULI3XYUAHZDM",
+            "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ"
+          ],
+          "standing_order_create_tx_ids": [
+            "OO6J5XGNSHDJDYOR6F2UY7RULFTBE4HPKHRQFDT7EWY75UANT2HA"
+          ],
+          "standing_order_create_round": 64567407,
+          "created_order": {
+            "escrow_addr": "KQJVQ3X5O3MRJNFFCFUAQLJIWYB7SFAPEDKRMD3SNVDBPM67XXIACHOEDI",
+            "side": "sell",
+            "sell_asset": 0,
+            "sell_amount": 4673,
+            "buy_asset": 764766481,
+            "buy_amount": 1000000,
+            "price": 213995292,
+            "owner": "IONMV3L2BGCNKBPSCVGSFEEFWCYZWCYROZNCMCUKI6AAKQULI3XYUAHZDM",
+            "created_round": 64567407,
+            "expire_round": 64577405,
+            "status": "active",
+            "filled_amount": 0
+          },
+          "native_surface_amount_out": 5173,
+          "orderbook_surface_amount_out": 4673,
+          "router_quote": {
+            "quote_id": "db09f6938f949995de70418ef2e096c07c859d5708fc48afcd42ddaa91fe13c4",
+            "network": "testnet",
+            "asset_in": 764766481,
+            "asset_out": 0,
+            "amount_in": 1000000,
+            "slippage_bps": 50,
+            "source_round": 64567408,
+            "expires_after_round": 64567428,
+            "comparison_basis": "exact-input asset_out amount; ALGO output subtracts network fee for route selection while non-ALGO output reports network fee separately",
+            "selected": {
+              "route_hash": "eb61dd4e555c6f92873c37916891682b795a27dac8522e4048c198ee51404028",
+              "source_type": "orderbook",
+              "source_id": "orderbook",
+              "source_label": "OpenNodia Orderbook",
+              "execution": "native_orderbook_ioc_buy",
+              "canonical_id": "orderbook:testnet:764766481:0",
+              "pool_id": null,
+              "app_id": null,
+              "asset_in": 764766481,
+              "asset_out": 0,
+              "amount_in": 1000000,
+              "input_consumed": 1000000,
+              "remaining_input": 0,
+              "amount_out": 4673,
+              "minimum_out": 4649,
+              "lp_fee_bps": 0,
+              "lp_fee_amount": 0,
+              "network_fee_microalgo": 2000,
+              "price_impact_bps": 0,
+              "source_round": 64567407,
+              "executable": true,
+              "virtual_orderbook": false,
+              "selection_rank": 1,
+              "selection_reason": "best executable final output after LP/protocol fee quote; ALGO output accounts for network fee",
+              "note": "native orderbook candidate from matching-engine buy IOC against active escrows"
+            },
+            "second_best": {
+              "route_hash": "3fb6955a698856571257ddd146f9b76a7370fa8d173bc0c85bbf919fb331e8a5",
+              "source_type": "native_pool",
+              "source_id": "native_pool",
+              "source_label": "OpenNodia AMM",
+              "execution": "native_amm_swap",
+              "canonical_id": "native_pool:testnet:764784483",
+              "pool_id": "1cb20528d4d71c4be0ff09429130677059911bc9d89b434cb472ea2e82192e48",
+              "app_id": 764784483,
+              "asset_in": 764766481,
+              "asset_out": 0,
+              "amount_in": 1000000,
+              "input_consumed": 1000000,
+              "remaining_input": 0,
+              "amount_out": 5173,
+              "minimum_out": 5147,
+              "lp_fee_bps": 30,
+              "lp_fee_amount": 3000,
+              "network_fee_microalgo": 3000,
+              "price_impact_bps": 131,
+              "source_round": 64567408,
+              "executable": true,
+              "virtual_orderbook": true,
+              "selection_rank": 2,
+              "selection_reason": "lower final output than the selected route",
+              "note": "native AMM quote; not a real orderbook level"
+            },
+            "candidates": [
+              {
+                "route_hash": "3fb6955a698856571257ddd146f9b76a7370fa8d173bc0c85bbf919fb331e8a5",
+                "source_type": "native_pool",
+                "source_id": "native_pool",
+                "source_label": "OpenNodia AMM",
+                "execution": "native_amm_swap",
+                "canonical_id": "native_pool:testnet:764784483",
+                "pool_id": "1cb20528d4d71c4be0ff09429130677059911bc9d89b434cb472ea2e82192e48",
+                "app_id": 764784483,
+                "asset_in": 764766481,
+                "asset_out": 0,
+                "amount_in": 1000000,
+                "input_consumed": 1000000,
+                "remaining_input": 0,
+                "amount_out": 5173,
+                "minimum_out": 5147,
+                "lp_fee_bps": 30,
+                "lp_fee_amount": 3000,
+                "network_fee_microalgo": 3000,
+                "price_impact_bps": 131,
+                "source_round": 64567408,
+                "executable": true,
+                "virtual_orderbook": true,
+                "selection_rank": 2,
+                "selection_reason": "lower final output than the selected route",
+                "note": "native AMM quote; not a real orderbook level"
+              },
+              {
+                "route_hash": "eb61dd4e555c6f92873c37916891682b795a27dac8522e4048c198ee51404028",
+                "source_type": "orderbook",
+                "source_id": "orderbook",
+                "source_label": "OpenNodia Orderbook",
+                "execution": "native_orderbook_ioc_buy",
+                "canonical_id": "orderbook:testnet:764766481:0",
+                "pool_id": null,
+                "app_id": null,
+                "asset_in": 764766481,
+                "asset_out": 0,
+                "amount_in": 1000000,
+                "input_consumed": 1000000,
+                "remaining_input": 0,
+                "amount_out": 4673,
+                "minimum_out": 4649,
+                "lp_fee_bps": 0,
+                "lp_fee_amount": 0,
+                "network_fee_microalgo": 2000,
+                "price_impact_bps": 0,
+                "source_round": 64567407,
+                "executable": true,
+                "virtual_orderbook": false,
+                "selection_rank": 1,
+                "selection_reason": "best executable final output after LP/protocol fee quote; ALGO output accounts for network fee",
+                "note": "native orderbook candidate from matching-engine buy IOC against active escrows"
+              }
+            ],
+            "warnings": [
+              "native pool 764783351 unavailable: application 764783351 is not an OpenNodia native pool: approval program mismatch",
+              "external AMM source Local differs from route ledger source Public"
+            ]
+          },
+          "router_submit": {
+            "source_type": "orderbook",
+            "source_id": "orderbook",
+            "tx_id": "XWSXZBSJZ4DCTIJHAPRTPIQPJ5K5WTW3AOMY4PCO2CAWL3VVWMFQ",
+            "tx_ids": [
+              "XWSXZBSJZ4DCTIJHAPRTPIQPJ5K5WTW3AOMY4PCO2CAWL3VVWMFQ"
+            ],
+            "confirmed_round": 64567414,
+            "outcome": "filled",
+            "result": {
+              "outcome": "filled",
+              "total_cost": 1000000,
+              "total_received": 4673,
+              "remaining": 0,
+              "fills": [
+                {
+                  "amount": 4673,
+                  "confirmed_round": 64567414,
+                  "cost": 1000000,
+                  "error": null,
+                  "escrow_address": "KQJVQ3X5O3MRJNFFCFUAQLJIWYB7SFAPEDKRMD3SNVDBPM67XXIACHOEDI",
+                  "status": "recorded",
+                  "tx_id": "XWSXZBSJZ4DCTIJHAPRTPIQPJ5K5WTW3AOMY4PCO2CAWL3VVWMFQ"
+                }
+              ]
+            }
+          },
+          "sources_seen": [
+            "orderbook",
+            "native_pool"
+          ],
+          "matrix_case_hints": {
+            "unified_routing": [
+              "orderbook_amm_price_cross_pair",
+              "network_fee_changes_best_route"
+            ],
+            "dex_additional_matrix": []
+          },
+          "network": "testnet",
+          "run_at_utc": "2026-06-21T03:43:43Z",
+          "api_url": "http://192.168.0.36:30080",
+          "node": {
+            "last_round": 64567393,
+            "source": "public"
+          }
+        }
+      },
+      "quote_then_state_change_rejected": {
+        "passed": true,
+        "run_at_utc": "2026-06-21T03:44:39Z",
+        "evidence": "Real Testnet unified routing validation batch; external Tinyman/Pact routes were live quote-only under current write-disabled config",
+        "fragment": {
+          "scenario": "quote_then_state_change_rejected",
+          "wallet_addresses": [
+            "IONMV3L2BGCNKBPSCVGSFEEFWCYZWCYROZNCMCUKI6AAKQULI3XYUAHZDM",
+            "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ"
+          ],
+          "standing_order_create_tx_ids": [
+            "DB6ZH44USMN3VWRPU3LWFADAZQBHC7WALHO2GUIGV652XES5KXRA"
+          ],
+          "standing_order_create_round": 64567427,
+          "cancel_tx_id": "NV2A2B6SODJLKVZR3ZV3UBN6PRLP6ZW42VKAJUCC7O4JWGTIO2SQ",
+          "cancel_confirmed_round": 64567434,
+          "router_quote": {
+            "quote_id": "dab0cd32de3d8df17a013ab116e172845711b4541ad6a7bc589fa91c1162725c",
+            "network": "testnet",
+            "asset_in": 0,
+            "asset_out": 764789093,
+            "amount_in": 10000,
+            "slippage_bps": 50,
+            "source_round": 64567428,
+            "expires_after_round": 64567448,
+            "comparison_basis": "exact-input asset_out amount; ALGO output subtracts network fee for route selection while non-ALGO output reports network fee separately",
+            "selected": {
+              "route_hash": "08eea324265ebdd32979a84f83a057cf2c7077a0400f8aa86b3337f6012fb3ef",
+              "source_type": "orderbook",
+              "source_id": "orderbook",
+              "source_label": "OpenNodia Orderbook",
+              "execution": "native_orderbook_ioc_buy",
+              "canonical_id": "orderbook:testnet:0:764789093",
+              "pool_id": null,
+              "app_id": null,
+              "asset_in": 0,
+              "asset_out": 764789093,
+              "amount_in": 10000,
+              "input_consumed": 10000,
+              "remaining_input": 0,
+              "amount_out": 1,
+              "minimum_out": 0,
+              "lp_fee_bps": 0,
+              "lp_fee_amount": 0,
+              "network_fee_microalgo": 2000,
+              "price_impact_bps": 0,
+              "source_round": 64567428,
+              "executable": true,
+              "virtual_orderbook": false,
+              "selection_rank": 1,
+              "selection_reason": "best executable route matching pinned source 'orderbook'",
+              "note": "native orderbook candidate from matching-engine buy IOC against active escrows"
+            },
+            "second_best": null,
+            "candidates": [
+              {
+                "route_hash": "08eea324265ebdd32979a84f83a057cf2c7077a0400f8aa86b3337f6012fb3ef",
+                "source_type": "orderbook",
+                "source_id": "orderbook",
+                "source_label": "OpenNodia Orderbook",
+                "execution": "native_orderbook_ioc_buy",
+                "canonical_id": "orderbook:testnet:0:764789093",
+                "pool_id": null,
+                "app_id": null,
+                "asset_in": 0,
+                "asset_out": 764789093,
+                "amount_in": 10000,
+                "input_consumed": 10000,
+                "remaining_input": 0,
+                "amount_out": 1,
+                "minimum_out": 0,
+                "lp_fee_bps": 0,
+                "lp_fee_amount": 0,
+                "network_fee_microalgo": 2000,
+                "price_impact_bps": 0,
+                "source_round": 64567428,
+                "executable": true,
+                "virtual_orderbook": false,
+                "selection_rank": 1,
+                "selection_reason": "best executable route matching pinned source 'orderbook'",
+                "note": "native orderbook candidate from matching-engine buy IOC against active escrows"
+              }
+            ],
+            "warnings": [
+              "external AMM source Local differs from route ledger source Public"
+            ]
+          },
+          "router_prepare": {
+            "source_type": "orderbook",
+            "source_id": "orderbook",
+            "quote_id": "dab0cd32de3d8df17a013ab116e172845711b4541ad6a7bc589fa91c1162725c",
+            "route_hash": "08eea324265ebdd32979a84f83a057cf2c7077a0400f8aa86b3337f6012fb3ef",
+            "selected": {
+              "route_hash": "08eea324265ebdd32979a84f83a057cf2c7077a0400f8aa86b3337f6012fb3ef",
+              "source_type": "orderbook",
+              "source_id": "orderbook",
+              "source_label": "OpenNodia Orderbook",
+              "execution": "native_orderbook_ioc_buy",
+              "canonical_id": "orderbook:testnet:0:764789093",
+              "pool_id": null,
+              "app_id": null,
+              "asset_in": 0,
+              "asset_out": 764789093,
+              "amount_in": 10000,
+              "input_consumed": 10000,
+              "remaining_input": 0,
+              "amount_out": 1,
+              "minimum_out": 0,
+              "lp_fee_bps": 0,
+              "lp_fee_amount": 0,
+              "network_fee_microalgo": 2000,
+              "price_impact_bps": 0,
+              "source_round": 64567429,
+              "executable": true,
+              "virtual_orderbook": false,
+              "selection_rank": 1,
+              "selection_reason": "best executable route matching pinned source 'orderbook'",
+              "note": "native orderbook candidate from matching-engine buy IOC against active escrows"
+            }
+          },
+          "router_submit_rejection": {
+            "status": 500,
+            "message": "escrow state changed since prepare: unexpected ALGO balance: have 0, expected 200000"
+          },
+          "sources_seen": [
+            "orderbook"
+          ],
+          "matrix_case_hints": {
+            "unified_routing": [
+              "quote_then_state_change_rejected"
+            ],
+            "dex_additional_matrix": []
+          },
+          "network": "testnet",
+          "run_at_utc": "2026-06-21T03:44:39Z",
+          "api_url": "http://192.168.0.36:30080",
+          "node": {
+            "last_round": 64567393,
+            "source": "public"
+          }
+        }
+      }
+    },
+    "orderbook_native_external_combo": {
+      "passed": true,
+      "run_at_utc": "2026-06-21T03:46:34Z",
+      "evidence": "Real Testnet unified routing batch covering signed orderbook/native routes and live Tinyman/Pact external quote sources",
+      "sources_seen": [
+        "external_pool",
+        "native_pool",
+        "orderbook",
+        "pact",
+        "tinyman"
+      ],
+      "confirmed_tx_ids": [
+        "25SAXVSLW6BVT2HFYGK3HHBG6X4EGL75CHWT3VIY3OVUMLSXNU3A",
+        "A4YZGLZQX5JOD3POR7YHVARNX4P47QR2K4MKH25OR4HT4BXF2EIQ",
+        "BUX63SQW2SOTAISHKP7BTI7BFPSRTE7R2ZBRH4MNONW2DMD56VDA",
+        "DB6ZH44USMN3VWRPU3LWFADAZQBHC7WALHO2GUIGV652XES5KXRA",
+        "DNM7RDTSQHT7TLZJT756MLK4PZJGXALM7LO3YORIIV3K5D6AWNWA",
+        "HCAPNMZC34FCMAMQ3YXSK3RQOGRKDG4X3BGQUYSWLYJBGWTOJI3A",
+        "NV2A2B6SODJLKVZR3ZV3UBN6PRLP6ZW42VKAJUCC7O4JWGTIO2SQ",
+        "OO6J5XGNSHDJDYOR6F2UY7RULFTBE4HPKHRQFDT7EWY75UANT2HA",
+        "OWSLZZ7CBIIBTWISWFJJQNTVMBYWQ4FBYE6755LGWCXXZY2JL6KA",
+        "TKNFJNCPKRAMN64YTDHXOFPCUJXJMQ7UQMCONSAGFP4LI7FHZG4Q",
+        "UJO2WI6JY2PWDGFJBAKK4SN2AZGGG3FZZPOWMKRB7W3DHSI6CQCQ",
+        "XWSXZBSJZ4DCTIJHAPRTPIQPJ5K5WTW3AOMY4PCO2CAWL3VVWMFQ"
+      ],
+      "source_round": 64567476,
+      "fragment": {
+        "network": "testnet",
+        "run_at_utc": "2026-06-21T03:46:34Z",
+        "sources_seen": [
+          "external_pool",
+          "native_pool",
+          "orderbook",
+          "pact",
+          "tinyman"
+        ],
+        "confirmed_tx_ids": [
+          "25SAXVSLW6BVT2HFYGK3HHBG6X4EGL75CHWT3VIY3OVUMLSXNU3A",
+          "A4YZGLZQX5JOD3POR7YHVARNX4P47QR2K4MKH25OR4HT4BXF2EIQ",
+          "BUX63SQW2SOTAISHKP7BTI7BFPSRTE7R2ZBRH4MNONW2DMD56VDA",
+          "DB6ZH44USMN3VWRPU3LWFADAZQBHC7WALHO2GUIGV652XES5KXRA",
+          "DNM7RDTSQHT7TLZJT756MLK4PZJGXALM7LO3YORIIV3K5D6AWNWA",
+          "HCAPNMZC34FCMAMQ3YXSK3RQOGRKDG4X3BGQUYSWLYJBGWTOJI3A",
+          "NV2A2B6SODJLKVZR3ZV3UBN6PRLP6ZW42VKAJUCC7O4JWGTIO2SQ",
+          "OO6J5XGNSHDJDYOR6F2UY7RULFTBE4HPKHRQFDT7EWY75UANT2HA",
+          "OWSLZZ7CBIIBTWISWFJJQNTVMBYWQ4FBYE6755LGWCXXZY2JL6KA",
+          "TKNFJNCPKRAMN64YTDHXOFPCUJXJMQ7UQMCONSAGFP4LI7FHZG4Q",
+          "UJO2WI6JY2PWDGFJBAKK4SN2AZGGG3FZZPOWMKRB7W3DHSI6CQCQ",
+          "XWSXZBSJZ4DCTIJHAPRTPIQPJ5K5WTW3AOMY4PCO2CAWL3VVWMFQ"
+        ],
+        "source_round": 64567476,
+        "fragments": [
+          {
+            "scenario": "duplicate_folks_backed_pool",
+            "router_quote": {
+              "quote_id": "05325ca48051703895ee16be49b38ca549b006f2afcaf4c8be89c73f0d591e31",
+              "network": "testnet",
+              "asset_in": 147171698,
+              "asset_out": 147171826,
+              "amount_in": 1000,
+              "slippage_bps": 50,
+              "source_round": 64567476,
+              "expires_after_round": 64567496,
+              "comparison_basis": "exact-input asset_out amount; ALGO output subtracts network fee for route selection while non-ALGO output reports network fee separately",
+              "selected": null,
+              "second_best": null,
+              "candidates": [
+                {
+                  "route_hash": "658f5b4cfff77c5ebd76ecb3312145885706816dddc680ff3d07d2820733b233",
+                  "source_type": "external_pool",
+                  "source_id": "external_tinyman",
+                  "source_label": "tinyman",
+                  "execution": "external_amm_swap",
+                  "canonical_id": "external_pool:testnet:external_tinyman:YU32G4AXWISKTKB7BGNESJ6RMX7HMINNFD5Z2GT6S4R3OVBOPEMETIU3EU",
+                  "pool_id": "YU32G4AXWISKTKB7BGNESJ6RMX7HMINNFD5Z2GT6S4R3OVBOPEMETIU3EU",
+                  "app_id": 148607000,
+                  "asset_in": 147171698,
+                  "asset_out": 147171826,
+                  "amount_in": 1000,
+                  "input_consumed": 1000,
+                  "remaining_input": 0,
+                  "amount_out": 1075,
+                  "minimum_out": 1069,
+                  "lp_fee_bps": 30,
+                  "lp_fee_amount": 3,
+                  "network_fee_microalgo": 4000,
+                  "price_impact_bps": 37,
+                  "source_round": 64567476,
+                  "executable": false,
+                  "virtual_orderbook": true,
+                  "selection_rank": null,
+                  "selection_reason": "excluded by source filter 'pact'",
+                  "note": "external AMM quote-only candidate; not executable from OpenNodia"
+                },
+                {
+                  "route_hash": "1b098b096c33bb54c9c9cbd0f1a81909b82fc57e72c263115a0741dd7ccbc6c4",
+                  "source_type": "external_pool",
+                  "source_id": "external_pact",
+                  "source_label": "pact",
+                  "execution": "external_amm_swap",
+                  "canonical_id": "external_pool:testnet:external_pact:211895470",
+                  "pool_id": "211895470",
+                  "app_id": 211895470,
+                  "asset_in": 147171698,
+                  "asset_out": 147171826,
+                  "amount_in": 1000,
+                  "input_consumed": 1000,
+                  "remaining_input": 0,
+                  "amount_out": 138,
+                  "minimum_out": 137,
+                  "lp_fee_bps": 30,
+                  "lp_fee_amount": 1,
+                  "network_fee_microalgo": 3000,
+                  "price_impact_bps": 71,
+                  "source_round": 64567476,
+                  "executable": false,
+                  "virtual_orderbook": true,
+                  "selection_rank": null,
+                  "selection_reason": "excluded because the source is quote-only or unsupported for swap submit",
+                  "note": "Folks-backed Pact pool quote-only candidate; liquidity is still executed through the underlying Pact pool and is not counted as an additional AMM source"
+                },
+                {
+                  "route_hash": "228c8563cc1c64f04498abe0c3abfc385c3303a52215f483cd04de5c2e92222d",
+                  "source_type": "external_pool",
+                  "source_id": "external_pact",
+                  "source_label": "pact",
+                  "execution": "external_amm_swap",
+                  "canonical_id": "external_pool:testnet:external_pact:227241321",
+                  "pool_id": "227241321",
+                  "app_id": 227241321,
+                  "asset_in": 147171698,
+                  "asset_out": 147171826,
+                  "amount_in": 1000,
+                  "input_consumed": 1000,
+                  "remaining_input": 0,
+                  "amount_out": 103,
+                  "minimum_out": 102,
+                  "lp_fee_bps": 5,
+                  "lp_fee_amount": 1,
+                  "network_fee_microalgo": 3000,
+                  "price_impact_bps": 96,
+                  "source_round": 64567476,
+                  "executable": false,
+                  "virtual_orderbook": true,
+                  "selection_rank": null,
+                  "selection_reason": "excluded because the source is quote-only or unsupported for swap submit",
+                  "note": "Folks-backed Pact pool quote-only candidate; liquidity is still executed through the underlying Pact pool and is not counted as an additional AMM source"
+                },
+                {
+                  "route_hash": "0f081d0e419bf0749c413c2fc046f8dfaf45de957331c6cdb4639c1b7eae622b",
+                  "source_type": "external_pool",
+                  "source_id": "external_pact",
+                  "source_label": "pact",
+                  "execution": "external_amm_swap",
+                  "canonical_id": "external_pool:testnet:external_pact:227242578",
+                  "pool_id": "227242578",
+                  "app_id": 227242578,
+                  "asset_in": 147171698,
+                  "asset_out": 147171826,
+                  "amount_in": 1000,
+                  "input_consumed": 1000,
+                  "remaining_input": 0,
+                  "amount_out": 69,
+                  "minimum_out": 68,
+                  "lp_fee_bps": 100,
+                  "lp_fee_amount": 1,
+                  "network_fee_microalgo": 3000,
+                  "price_impact_bps": 142,
+                  "source_round": 64567476,
+                  "executable": false,
+                  "virtual_orderbook": true,
+                  "selection_rank": null,
+                  "selection_reason": "excluded because the source is quote-only or unsupported for swap submit",
+                  "note": "Folks-backed Pact pool quote-only candidate; liquidity is still executed through the underlying Pact pool and is not counted as an additional AMM source"
+                }
+              ],
+              "warnings": [
+                "external AMM source Local differs from route ledger source Public",
+                "pact pool 215056444 quote failed: amount_in is too small for this external pool",
+                "no executable single-venue route matched source 'pact'"
+              ]
+            },
+            "pact_pool_discovery": {
+              "pools": [
+                {
+                  "pool_id": "227242578",
+                  "source": "pact",
+                  "app_id": 227242578,
+                  "app_address": "NCGH3VA5SEECI2SQQ7ENETAYMZS524HDLH7AOS73YKVUONIZCCJZLPTSTY",
+                  "lp_asset_id": 227242584,
+                  "asset_0": 147171698,
+                  "asset_1": 147171826,
+                  "fee_bps": 100,
+                  "protocol_fee_bps": 10,
+                  "protocol_version": "201",
+                  "reserve_0": 20149067,
+                  "reserve_1": 1426628,
+                  "total_lp_supply": 5203310,
+                  "source_round": 64567476,
+                  "quote_supported": true,
+                  "swap_supported": false,
+                  "adapter_swap_supported": true,
+                  "position_supported": true,
+                  "tradable": true,
+                  "folks_backed": true,
+                  "folks": {
+                    "source": "Folks Finance lending-backed Pact pool",
+                    "adapter_app_id": 228284187,
+                    "pool_0_app_id": 147169673,
+                    "pool_1_app_id": 147170678,
+                    "underlying_0": 0,
+                    "underlying_1": 67395862,
+                    "f_asset_0": 147171698,
+                    "f_asset_1": 147171826,
+                    "deposit_interest_rate_0": 9599585504352480,
+                    "deposit_interest_rate_1": 282384434325111,
+                    "deposit_interest_index_0": 393655564218976,
+                    "deposit_interest_index_1": 119232922659956,
+                    "redeem_available_0": 1919534454,
+                    "redeem_available_1": 1766281540,
+                    "f_asset_outstanding_0": 11625549757,
+                    "f_asset_outstanding_1": 3476545428,
+                    "total_deposit_0": 45764623489,
+                    "total_deposit_1": 4145186721,
+                    "total_borrowed_0": 43845089035,
+                    "total_borrowed_1": 2378905181,
+                    "utilization_bps_0": 9580,
+                    "utilization_bps_1": 5738,
+                    "utilization_available": true,
+                    "utilization_note": "redeemable liquidity is verified from lending pool escrow holdings; utilization is computed from outstanding fAsset supply converted by the current deposit interest index",
+                    "risk_note": "liquidity is still executed through the underlying Pact pool; Folks adapter composition risk is shown separately and is not counted as an additional AMM source"
+                  },
+                  "status": "quote_only",
+                  "status_note": "verified Pact constant-product pool with non-zero reserves"
+                },
+                {
+                  "pool_id": "211895470",
+                  "source": "pact",
+                  "app_id": 211895470,
+                  "app_address": "FXIZRXVRWTHM5NJ5TY3JSESEUZHJ5B6DRYNHMNN2QW3W75DKXY6CTMCNXI",
+                  "lp_asset_id": 211895476,
+                  "asset_0": 147171698,
+                  "asset_1": 147171826,
+                  "fee_bps": 30,
+                  "protocol_fee_bps": 5,
+                  "protocol_version": "201",
+                  "reserve_0": 52425235,
+                  "reserve_1": 7300456,
+                  "total_lp_supply": 19471608,
+                  "source_round": 64567476,
+                  "quote_supported": true,
+                  "swap_supported": false,
+                  "adapter_swap_supported": true,
+                  "position_supported": true,
+                  "tradable": true,
+                  "folks_backed": true,
+                  "folks": {
+                    "source": "Folks Finance lending-backed Pact pool",
+                    "adapter_app_id": 228284187,
+                    "pool_0_app_id": 147169673,
+                    "pool_1_app_id": 147170678,
+                    "underlying_0": 0,
+                    "underlying_1": 67395862,
+                    "f_asset_0": 147171698,
+                    "f_asset_1": 147171826,
+                    "deposit_interest_rate_0": 9599585504352480,
+                    "deposit_interest_rate_1": 282384434325111,
+                    "deposit_interest_index_0": 393655564218976,
+                    "deposit_interest_index_1": 119232922659956,
+                    "redeem_available_0": 1919534454,
+                    "redeem_available_1": 1766281540,
+                    "f_asset_outstanding_0": 11625549757,
+                    "f_asset_outstanding_1": 3476545428,
+                    "total_deposit_0": 45764623489,
+                    "total_deposit_1": 4145186721,
+                    "total_borrowed_0": 43845089035,
+                    "total_borrowed_1": 2378905181,
+                    "utilization_bps_0": 9580,
+                    "utilization_bps_1": 5738,
+                    "utilization_available": true,
+                    "utilization_note": "redeemable liquidity is verified from lending pool escrow holdings; utilization is computed from outstanding fAsset supply converted by the current deposit interest index",
+                    "risk_note": "liquidity is still executed through the underlying Pact pool; Folks adapter composition risk is shown separately and is not counted as an additional AMM source"
+                  },
+                  "status": "quote_only",
+                  "status_note": "verified Pact constant-product pool with non-zero reserves"
+                },
+                {
+                  "pool_id": "227241321",
+                  "source": "pact",
+                  "app_id": 227241321,
+                  "app_address": "4EPR2UKQ26BTP3BOZ6BWF6WBP66ZOXOVPRIJON4EJH35NEN2BPWSIB6VLM",
+                  "lp_asset_id": 227241327,
+                  "asset_0": 147171698,
+                  "asset_1": 147171826,
+                  "fee_bps": 5,
+                  "protocol_fee_bps": 2,
+                  "protocol_version": "201",
+                  "reserve_0": 967901,
+                  "reserve_1": 100869,
+                  "total_lp_supply": 215533,
+                  "source_round": 64567476,
+                  "quote_supported": true,
+                  "swap_supported": false,
+                  "adapter_swap_supported": true,
+                  "position_supported": true,
+                  "tradable": true,
+                  "folks_backed": true,
+                  "folks": {
+                    "source": "Folks Finance lending-backed Pact pool",
+                    "adapter_app_id": 228284187,
+                    "pool_0_app_id": 147169673,
+                    "pool_1_app_id": 147170678,
+                    "underlying_0": 0,
+                    "underlying_1": 67395862,
+                    "f_asset_0": 147171698,
+                    "f_asset_1": 147171826,
+                    "deposit_interest_rate_0": 9599585504352480,
+                    "deposit_interest_rate_1": 282384434325111,
+                    "deposit_interest_index_0": 393655564218976,
+                    "deposit_interest_index_1": 119232922659956,
+                    "redeem_available_0": 1919534454,
+                    "redeem_available_1": 1766281540,
+                    "f_asset_outstanding_0": 11625549757,
+                    "f_asset_outstanding_1": 3476545428,
+                    "total_deposit_0": 45764623489,
+                    "total_deposit_1": 4145186721,
+                    "total_borrowed_0": 43845089035,
+                    "total_borrowed_1": 2378905181,
+                    "utilization_bps_0": 9580,
+                    "utilization_bps_1": 5738,
+                    "utilization_available": true,
+                    "utilization_note": "redeemable liquidity is verified from lending pool escrow holdings; utilization is computed from outstanding fAsset supply converted by the current deposit interest index",
+                    "risk_note": "liquidity is still executed through the underlying Pact pool; Folks adapter composition risk is shown separately and is not counted as an additional AMM source"
+                  },
+                  "status": "quote_only",
+                  "status_note": "verified Pact constant-product pool with non-zero reserves"
+                },
+                {
+                  "pool_id": "215056444",
+                  "source": "pact",
+                  "app_id": 215056444,
+                  "app_address": "IJ3Y3DCTM3TA5B2AYUTKM36IFLLXBCT3J4VYYKCX63RQAHDT74XIRKGTPI",
+                  "lp_asset_id": 215056450,
+                  "asset_0": 147171698,
+                  "asset_1": 147171826,
+                  "fee_bps": 2,
+                  "protocol_fee_bps": 1,
+                  "protocol_version": "201",
+                  "reserve_0": 32396211,
+                  "reserve_1": 4312,
+                  "total_lp_supply": 373089,
+                  "source_round": 64567476,
+                  "quote_supported": true,
+                  "swap_supported": false,
+                  "adapter_swap_supported": true,
+                  "position_supported": true,
+                  "tradable": true,
+                  "folks_backed": true,
+                  "folks": {
+                    "source": "Folks Finance lending-backed Pact pool",
+                    "adapter_app_id": 228284187,
+                    "pool_0_app_id": 147169673,
+                    "pool_1_app_id": 147170678,
+                    "underlying_0": 0,
+                    "underlying_1": 67395862,
+                    "f_asset_0": 147171698,
+                    "f_asset_1": 147171826,
+                    "deposit_interest_rate_0": 9599585504352480,
+                    "deposit_interest_rate_1": 282384434325111,
+                    "deposit_interest_index_0": 393655564218976,
+                    "deposit_interest_index_1": 119232922659956,
+                    "redeem_available_0": 1919534454,
+                    "redeem_available_1": 1766281540,
+                    "f_asset_outstanding_0": 11625549757,
+                    "f_asset_outstanding_1": 3476545428,
+                    "total_deposit_0": 45764623489,
+                    "total_deposit_1": 4145186721,
+                    "total_borrowed_0": 43845089035,
+                    "total_borrowed_1": 2378905181,
+                    "utilization_bps_0": 9580,
+                    "utilization_bps_1": 5738,
+                    "utilization_available": true,
+                    "utilization_note": "redeemable liquidity is verified from lending pool escrow holdings; utilization is computed from outstanding fAsset supply converted by the current deposit interest index",
+                    "risk_note": "liquidity is still executed through the underlying Pact pool; Folks adapter composition risk is shown separately and is not counted as an additional AMM source"
+                  },
+                  "status": "quote_only",
+                  "status_note": "verified Pact constant-product pool with non-zero reserves"
+                }
+              ],
+              "source": "local",
+              "source_round": 64567476,
+              "discovery_note": null
+            },
+            "sources_seen": [
+              "external_pool",
+              "pact"
+            ],
+            "matrix_case_hints": {
+              "unified_routing": [
+                "duplicate_folks_backed_pool"
+              ],
+              "dex_additional_matrix": []
+            },
+            "network": "testnet",
+            "run_at_utc": "2026-06-21T03:46:34Z",
+            "api_url": "http://192.168.0.36:30080",
+            "node": {
+              "last_round": 64567476,
+              "source": "public"
+            }
+          },
+          {
+            "scenario": "tinyman_pact_pool_only_pair_and_folks_duplicate_boundary",
+            "external_status": {
+              "network": "testnet",
+              "sources": [
+                {
+                  "source": "tinyman",
+                  "label": "Tinyman",
+                  "quote_supported": true,
+                  "swap_supported": false,
+                  "liquidity_supported": false,
+                  "position_supported": true,
+                  "status": "quote_only",
+                  "validator_app_id": 148607000,
+                  "factory_app_id": null,
+                  "folks_lending_pool_adapter_app_id": null,
+                  "note": "Tinyman V2 pools are read from live pool account local state; writes are disabled by external_liquidity.*_enabled=false."
+                },
+                {
+                  "source": "pact",
+                  "label": "Pact",
+                  "quote_supported": true,
+                  "swap_supported": false,
+                  "liquidity_supported": false,
+                  "position_supported": true,
+                  "status": "quote_only",
+                  "validator_app_id": null,
+                  "factory_app_id": 166540424,
+                  "folks_lending_pool_adapter_app_id": 228284187,
+                  "note": "Pact constant-product pools are discovered from the factory box allowlist; writes are disabled by external_liquidity.*_enabled=false."
+                }
+              ]
+            },
+            "tinyman_router_quote": {
+              "quote_id": "8fe102ca5e2560af59064ec0d9c35aa7892d44dc4b4e9a4a8f35c8fa32c2df6b",
+              "network": "testnet",
+              "asset_in": 0,
+              "asset_out": 10458941,
+              "amount_in": 1000,
+              "slippage_bps": 50,
+              "source_round": 64567435,
+              "expires_after_round": 64567455,
+              "comparison_basis": "exact-input asset_out amount; ALGO output subtracts network fee for route selection while non-ALGO output reports network fee separately",
+              "selected": null,
+              "second_best": null,
+              "candidates": [
+                {
+                  "route_hash": "c4008dd983518bc1192eb62d0bc21fec4fb199a5d407904162bb76a7471d7c76",
+                  "source_type": "external_pool",
+                  "source_id": "external_tinyman",
+                  "source_label": "tinyman",
+                  "execution": "external_amm_swap",
+                  "canonical_id": "external_pool:testnet:external_tinyman:UDFWT5DW3X5RZQYXKQEMZ6MRWAEYHWYP7YUAPZKPW6WJK3JH3OZPL7PO2Y",
+                  "pool_id": "UDFWT5DW3X5RZQYXKQEMZ6MRWAEYHWYP7YUAPZKPW6WJK3JH3OZPL7PO2Y",
+                  "app_id": 148607000,
+                  "asset_in": 0,
+                  "asset_out": 10458941,
+                  "amount_in": 1000,
+                  "input_consumed": 1000,
+                  "remaining_input": 0,
+                  "amount_out": 8176,
+                  "minimum_out": 8135,
+                  "lp_fee_bps": 30,
+                  "lp_fee_amount": 3,
+                  "network_fee_microalgo": 4000,
+                  "price_impact_bps": 30,
+                  "source_round": 64567435,
+                  "executable": false,
+                  "virtual_orderbook": true,
+                  "selection_rank": null,
+                  "selection_reason": "excluded because the source is quote-only or unsupported for swap submit",
+                  "note": "external AMM quote-only candidate; not executable from OpenNodia"
+                }
+              ],
+              "warnings": [
+                "external AMM source Local differs from route ledger source Public",
+                "no executable single-venue route matched source 'tinyman'"
+              ]
+            },
+            "pact_router_quote": {
+              "quote_id": "197dbc7e6cbf9cc0edf5f1dd722aa7b3c6d08a2fa8b5b15644e93c3190822128",
+              "network": "testnet",
+              "asset_in": 0,
+              "asset_out": 14704676,
+              "amount_in": 1000,
+              "slippage_bps": 50,
+              "source_round": 64567435,
+              "expires_after_round": 64567455,
+              "comparison_basis": "exact-input asset_out amount; ALGO output subtracts network fee for route selection while non-ALGO output reports network fee separately",
+              "selected": null,
+              "second_best": null,
+              "candidates": [
+                {
+                  "route_hash": "8ea2af4dbf05e19913655c56fb758a2822b195852ea281056a07b1aa4f61e9fd",
+                  "source_type": "external_pool",
+                  "source_id": "external_pact",
+                  "source_label": "pact",
+                  "execution": "external_amm_swap",
+                  "canonical_id": "external_pool:testnet:external_pact:167166658",
+                  "pool_id": "167166658",
+                  "app_id": 167166658,
+                  "asset_in": 0,
+                  "asset_out": 14704676,
+                  "amount_in": 1000,
+                  "input_consumed": 1000,
+                  "remaining_input": 0,
+                  "amount_out": 18,
+                  "minimum_out": 17,
+                  "lp_fee_bps": 2,
+                  "lp_fee_amount": 1,
+                  "network_fee_microalgo": 3000,
+                  "price_impact_bps": 526,
+                  "source_round": 64567435,
+                  "executable": false,
+                  "virtual_orderbook": true,
+                  "selection_rank": null,
+                  "selection_reason": "excluded because the source is quote-only or unsupported for swap submit",
+                  "note": "external AMM quote-only candidate; not executable from OpenNodia"
+                }
+              ],
+              "warnings": [
+                "external AMM source Local differs from route ledger source Public",
+                "no executable single-venue route matched source 'pact'"
+              ]
+            },
+            "tinyman_prepare_rejection": {
+              "status": 400,
+              "message": "no selected executable route; external Tinyman is quote-only under current config"
+            },
+            "external_write_gate": "external_liquidity.swap_enabled=false makes Tinyman/Pact routes quote-only in the current Testnet service",
+            "pact_pool_discovery_fallback": {
+              "pools": [
+                {
+                  "pool_id": "167166658",
+                  "source": "pact",
+                  "app_id": 167166658,
+                  "app_address": "6DI4VYEY7UGU2DQRVYDJJHGA3FFZCIUAFPPLZ46XNQYJ65XNIHCZOBRUAQ",
+                  "lp_asset_id": 167166663,
+                  "asset_0": 0,
+                  "asset_1": 14704676,
+                  "fee_bps": 2,
+                  "protocol_fee_bps": 1,
+                  "protocol_version": "201",
+                  "reserve_0": 101001,
+                  "reserve_1": 1983,
+                  "total_lp_supply": 14142,
+                  "source_round": 64567435,
+                  "quote_supported": true,
+                  "swap_supported": false,
+                  "adapter_swap_supported": true,
+                  "position_supported": true,
+                  "tradable": true,
+                  "folks_backed": false,
+                  "status": "quote_only",
+                  "status_note": "verified Pact constant-product pool with non-zero reserves"
+                }
+              ],
+              "source": "local",
+              "source_round": 64567435,
+              "discovery_note": null
+            },
+            "sources_seen": [
+              "external_pool",
+              "tinyman",
+              "pact"
+            ],
+            "matrix_case_hints": {
+              "unified_routing": [
+                "tinyman_pact_pool_only_pair"
+              ],
+              "dex_additional_matrix": []
+            },
+            "network": "testnet",
+            "run_at_utc": "2026-06-21T03:44:42Z",
+            "api_url": "http://192.168.0.36:30080",
+            "node": {
+              "last_round": 64567393,
+              "source": "public"
+            }
+          },
+          {
+            "scenario": "native_pool_only_pair",
+            "startup_cleanup": [],
+            "wallet_addresses": [
+              "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ"
+            ],
+            "router_quote": {
+              "quote_id": "bdfa961d9fbe2496a7fb18cc39fe60573517b283339d4592d0fe9b955132b538",
+              "network": "testnet",
+              "asset_in": 0,
+              "asset_out": 764766481,
+              "amount_in": 2000,
+              "slippage_bps": 50,
+              "source_round": 64567394,
+              "expires_after_round": 64567414,
+              "comparison_basis": "exact-input asset_out amount; ALGO output subtracts network fee for route selection while non-ALGO output reports network fee separately",
+              "selected": {
+                "route_hash": "d97cc880ae458cf4f164c27f89cd5332bc78882200fa96d655a6772c873c91d1",
+                "source_type": "native_pool",
+                "source_id": "native_pool",
+                "source_label": "OpenNodia AMM",
+                "execution": "native_amm_swap",
+                "canonical_id": "native_pool:testnet:764784483",
+                "pool_id": "1cb20528d4d71c4be0ff09429130677059911bc9d89b434cb472ea2e82192e48",
+                "app_id": 764784483,
+                "asset_in": 0,
+                "asset_out": 764766481,
+                "amount_in": 2000,
+                "input_consumed": 2000,
+                "remaining_input": 0,
+                "amount_out": 381843,
+                "minimum_out": 379933,
+                "lp_fee_bps": 30,
+                "lp_fee_amount": 6,
+                "network_fee_microalgo": 3000,
+                "price_impact_bps": 68,
+                "source_round": 64567394,
+                "executable": true,
+                "virtual_orderbook": true,
+                "selection_rank": 1,
+                "selection_reason": "best executable route matching pinned source 'native_pool'",
+                "note": "native AMM quote; not a real orderbook level"
+              },
+              "second_best": null,
+              "candidates": [
+                {
+                  "route_hash": "d97cc880ae458cf4f164c27f89cd5332bc78882200fa96d655a6772c873c91d1",
+                  "source_type": "native_pool",
+                  "source_id": "native_pool",
+                  "source_label": "OpenNodia AMM",
+                  "execution": "native_amm_swap",
+                  "canonical_id": "native_pool:testnet:764784483",
+                  "pool_id": "1cb20528d4d71c4be0ff09429130677059911bc9d89b434cb472ea2e82192e48",
+                  "app_id": 764784483,
+                  "asset_in": 0,
+                  "asset_out": 764766481,
+                  "amount_in": 2000,
+                  "input_consumed": 2000,
+                  "remaining_input": 0,
+                  "amount_out": 381843,
+                  "minimum_out": 379933,
+                  "lp_fee_bps": 30,
+                  "lp_fee_amount": 6,
+                  "network_fee_microalgo": 3000,
+                  "price_impact_bps": 68,
+                  "source_round": 64567394,
+                  "executable": true,
+                  "virtual_orderbook": true,
+                  "selection_rank": 1,
+                  "selection_reason": "best executable route matching pinned source 'native_pool'",
+                  "note": "native AMM quote; not a real orderbook level"
+                }
+              ],
+              "warnings": [
+                "native pool 764783351 unavailable: application 764783351 is not an OpenNodia native pool: approval program mismatch",
+                "external AMM source Local differs from route ledger source Public"
+              ]
+            },
+            "router_submit": {
+              "source_type": "native_pool",
+              "source_id": "native_pool",
+              "tx_id": "25SAXVSLW6BVT2HFYGK3HHBG6X4EGL75CHWT3VIY3OVUMLSXNU3A",
+              "tx_ids": [
+                "25SAXVSLW6BVT2HFYGK3HHBG6X4EGL75CHWT3VIY3OVUMLSXNU3A"
+              ],
+              "confirmed_round": 64567402,
+              "outcome": "filled",
+              "result": {
+                "confirmed_round": 64567402,
+                "pool": {
+                  "active_liquidity": true,
+                  "app_address": "U5RAWGKU5LX5S4NFO3STRRVLNPU6FBOP4X26SJ6ATDIFAQMILP6NQVNJO4",
+                  "app_id": 764784483,
+                  "asset_0": 0,
+                  "asset_1": 764766481,
+                  "bootstrap_required": false,
+                  "contract_version": 2,
+                  "curve_id": 1,
+                  "fee_bps": 30,
+                  "lifecycle": "bootstrapped",
+                  "lp_asset_id": 764784496,
+                  "pool_id": "1cb20528d4d71c4be0ff09429130677059911bc9d89b434cb472ea2e82192e48",
+                  "reserve_0": 512000,
+                  "reserve_1": 97663141,
+                  "setup_required": false,
+                  "source": "native",
+                  "source_round": 64567402,
+                  "status_note": "pool has active two-sided liquidity",
+                  "total_lp_supply": 7071067,
+                  "tradable": true
+                },
+                "quote": {
+                  "amount_in": 2000,
+                  "amount_out": 381843,
+                  "asset_in": 0,
+                  "asset_out": 764766481,
+                  "fee_amount_estimate": 6,
+                  "fee_bps": 30,
+                  "minimum_out": 379933,
+                  "pool_id": "1cb20528d4d71c4be0ff09429130677059911bc9d89b434cb472ea2e82192e48",
+                  "price_impact_bps": 68,
+                  "source_round": 64567398
+                },
+                "txid": "25SAXVSLW6BVT2HFYGK3HHBG6X4EGL75CHWT3VIY3OVUMLSXNU3A"
+              }
+            },
+            "sources_seen": [
+              "native_pool"
+            ],
+            "matrix_case_hints": {
+              "unified_routing": [
+                "native_pool_only_pair"
+              ],
+              "dex_additional_matrix": []
+            },
+            "network": "testnet",
+            "run_at_utc": "2026-06-21T03:43:12Z",
+            "api_url": "http://192.168.0.36:30080",
+            "node": {
+              "last_round": 64567393,
+              "source": "public"
+            }
+          },
+          {
+            "scenario": "orderbook_only_pair_with_pair_reversal_decimals",
+            "wallet_addresses": [
+              "IONMV3L2BGCNKBPSCVGSFEEFWCYZWCYROZNCMCUKI6AAKQULI3XYUAHZDM",
+              "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ"
+            ],
+            "base_asset_id": 764789093,
+            "quote_asset_id": 0,
+            "base_decimals": 0,
+            "quote_decimals": 6,
+            "startup_cleanup": [
+              {
+                "escrow_addr": "SV6XI2DNTZXLU6XUGZVVGR4JUUTYML7NSQEIWBJ6ARLGAKIXSMXWWL5ESY",
+                "cancel_tx_id": "HCAPNMZC34FCMAMQ3YXSK3RQOGRKDG4X3BGQUYSWLYJBGWTOJI3A",
+                "confirmed_round": 64567335
+              }
+            ],
+            "standing_order_create_tx_ids": [
+              "A4YZGLZQX5JOD3POR7YHVARNX4P47QR2K4MKH25OR4HT4BXF2EIQ"
+            ],
+            "standing_order_create_round": 64567338,
+            "created_order": {
+              "escrow_addr": "ADHQ3A34UXQPMNZBCAAFYW66JG4NQRWNHOXQD6NMEHMDUDRPFS55VITOEI",
+              "side": "sell",
+              "sell_asset": 764789093,
+              "sell_amount": 1,
+              "buy_asset": 0,
+              "buy_amount": 10000,
+              "price": 10000000000,
+              "owner": "IONMV3L2BGCNKBPSCVGSFEEFWCYZWCYROZNCMCUKI6AAKQULI3XYUAHZDM",
+              "created_round": 64567338,
+              "expire_round": 64577335,
+              "status": "active",
+              "filled_amount": 0
+            },
+            "router_quote": {
+              "quote_id": "dab0cd32de3d8df17a013ab116e172845711b4541ad6a7bc589fa91c1162725c",
+              "network": "testnet",
+              "asset_in": 0,
+              "asset_out": 764789093,
+              "amount_in": 10000,
+              "slippage_bps": 50,
+              "source_round": 64567338,
+              "expires_after_round": 64567358,
+              "comparison_basis": "exact-input asset_out amount; ALGO output subtracts network fee for route selection while non-ALGO output reports network fee separately",
+              "selected": {
+                "route_hash": "08eea324265ebdd32979a84f83a057cf2c7077a0400f8aa86b3337f6012fb3ef",
+                "source_type": "orderbook",
+                "source_id": "orderbook",
+                "source_label": "OpenNodia Orderbook",
+                "execution": "native_orderbook_ioc_buy",
+                "canonical_id": "orderbook:testnet:0:764789093",
+                "pool_id": null,
+                "app_id": null,
+                "asset_in": 0,
+                "asset_out": 764789093,
+                "amount_in": 10000,
+                "input_consumed": 10000,
+                "remaining_input": 0,
+                "amount_out": 1,
+                "minimum_out": 0,
+                "lp_fee_bps": 0,
+                "lp_fee_amount": 0,
+                "network_fee_microalgo": 2000,
+                "price_impact_bps": 0,
+                "source_round": 64567338,
+                "executable": true,
+                "virtual_orderbook": false,
+                "selection_rank": 1,
+                "selection_reason": "best executable route matching pinned source 'orderbook'",
+                "note": "native orderbook candidate from matching-engine buy IOC against active escrows"
+              },
+              "second_best": null,
+              "candidates": [
+                {
+                  "route_hash": "08eea324265ebdd32979a84f83a057cf2c7077a0400f8aa86b3337f6012fb3ef",
+                  "source_type": "orderbook",
+                  "source_id": "orderbook",
+                  "source_label": "OpenNodia Orderbook",
+                  "execution": "native_orderbook_ioc_buy",
+                  "canonical_id": "orderbook:testnet:0:764789093",
+                  "pool_id": null,
+                  "app_id": null,
+                  "asset_in": 0,
+                  "asset_out": 764789093,
+                  "amount_in": 10000,
+                  "input_consumed": 10000,
+                  "remaining_input": 0,
+                  "amount_out": 1,
+                  "minimum_out": 0,
+                  "lp_fee_bps": 0,
+                  "lp_fee_amount": 0,
+                  "network_fee_microalgo": 2000,
+                  "price_impact_bps": 0,
+                  "source_round": 64567338,
+                  "executable": true,
+                  "virtual_orderbook": false,
+                  "selection_rank": 1,
+                  "selection_reason": "best executable route matching pinned source 'orderbook'",
+                  "note": "native orderbook candidate from matching-engine buy IOC against active escrows"
+                }
+              ],
+              "warnings": [
+                "external AMM source Local differs from route ledger source Public"
+              ]
+            },
+            "router_submit": {
+              "source_type": "orderbook",
+              "source_id": "orderbook",
+              "tx_id": "DNM7RDTSQHT7TLZJT756MLK4PZJGXALM7LO3YORIIV3K5D6AWNWA",
+              "tx_ids": [
+                "DNM7RDTSQHT7TLZJT756MLK4PZJGXALM7LO3YORIIV3K5D6AWNWA"
+              ],
+              "confirmed_round": 64567344,
+              "outcome": "filled",
+              "result": {
+                "outcome": "filled",
+                "total_cost": 10000,
+                "total_received": 1,
+                "remaining": 0,
+                "fills": [
+                  {
+                    "amount": 1,
+                    "confirmed_round": 64567344,
+                    "cost": 10000,
+                    "error": null,
+                    "escrow_address": "ADHQ3A34UXQPMNZBCAAFYW66JG4NQRWNHOXQD6NMEHMDUDRPFS55VITOEI",
+                    "status": "recorded",
+                    "tx_id": "DNM7RDTSQHT7TLZJT756MLK4PZJGXALM7LO3YORIIV3K5D6AWNWA"
+                  }
+                ]
+              }
+            },
+            "sources_seen": [
+              "orderbook"
+            ],
+            "matrix_case_hints": {
+              "unified_routing": [
+                "orderbook_only_pair",
+                "pair_reversal_decimals"
+              ],
+              "dex_additional_matrix": []
+            },
+            "network": "testnet",
+            "run_at_utc": "2026-06-21T03:40:35Z",
+            "api_url": "http://192.168.0.36:30080",
+            "node": {
+              "last_round": 64567331,
+              "source": "public"
+            }
+          },
+          {
+            "scenario": "limit_partial_then_standing_remainder",
+            "wallet_addresses": [
+              "IONMV3L2BGCNKBPSCVGSFEEFWCYZWCYROZNCMCUKI6AAKQULI3XYUAHZDM",
+              "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ"
+            ],
+            "standing_order_create_tx_ids": [
+              "TKNFJNCPKRAMN64YTDHXOFPCUJXJMQ7UQMCONSAGFP4LI7FHZG4Q"
+            ],
+            "standing_order_create_round": 64567416,
+            "matched_order": {
+              "escrow_addr": "5M6FXGRM7FRP7DZG7YFW234TPLR4G242RGJZFYYSANXN2MX4KBJJOABB4Y",
+              "side": "sell",
+              "sell_asset": 764789093,
+              "sell_amount": 1,
+              "buy_asset": 0,
+              "buy_amount": 10000,
+              "price": 10000000000,
+              "owner": "IONMV3L2BGCNKBPSCVGSFEEFWCYZWCYROZNCMCUKI6AAKQULI3XYUAHZDM",
+              "created_round": 64567416,
+              "expire_round": 64577414,
+              "status": "active",
+              "filled_amount": 0
+            },
+            "dex_route_prepare": {
+              "decision": "filled_and_placed",
+              "fills": [
+                {
+                  "escrow_address": "5M6FXGRM7FRP7DZG7YFW234TPLR4G242RGJZFYYSANXN2MX4KBJJOABB4Y",
+                  "amount": 1,
+                  "price_micro": 10000000000
+                }
+              ],
+              "total_cost": 10000,
+              "total_received": 1,
+              "remaining": 0,
+              "new_orders_needed": 1
+            },
+            "dex_route_submit": {
+              "tx_id": "OWSLZZ7CBIIBTWISWFJJQNTVMBYWQ4FBYE6755LGWCXXZY2JL6KA",
+              "tx_ids": [
+                "BUX63SQW2SOTAISHKP7BTI7BFPSRTE7R2ZBRH4MNONW2DMD56VDA",
+                "OWSLZZ7CBIIBTWISWFJJQNTVMBYWQ4FBYE6755LGWCXXZY2JL6KA"
+              ],
+              "outcome": "filled_and_placed",
+              "total_cost": 10000,
+              "total_received": 1,
+              "remaining": 0,
+              "fills": [
+                {
+                  "escrow_address": "5M6FXGRM7FRP7DZG7YFW234TPLR4G242RGJZFYYSANXN2MX4KBJJOABB4Y",
+                  "status": "recorded",
+                  "tx_id": "BUX63SQW2SOTAISHKP7BTI7BFPSRTE7R2ZBRH4MNONW2DMD56VDA",
+                  "confirmed_round": 64567419,
+                  "amount": 1,
+                  "cost": 10000,
+                  "error": null
+                }
+              ],
+              "created_orders": [
+                {
+                  "escrow_addr": "UN3U4LNTJPULXN4TP253PVEFG3BH23VNCAQJSPLFTK3YRN2QUIRDNTWDO4",
+                  "side": "buy",
+                  "sell_asset": 0,
+                  "sell_amount": 10000,
+                  "buy_asset": 764789093,
+                  "buy_amount": 1,
+                  "price": 10000000000,
+                  "owner": "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ",
+                  "created_round": 64567421,
+                  "expire_round": 64577416,
+                  "status": "active",
+                  "filled_amount": 0
+                }
+              ]
+            },
+            "cleanup_cancels": [
+              {
+                "escrow_addr": "UN3U4LNTJPULXN4TP253PVEFG3BH23VNCAQJSPLFTK3YRN2QUIRDNTWDO4",
+                "cancel_tx_id": "UJO2WI6JY2PWDGFJBAKK4SN2AZGGG3FZZPOWMKRB7W3DHSI6CQCQ",
+                "confirmed_round": 64567424,
+                "recovered_amount": 110000
+              }
+            ],
+            "sources_seen": [
+              "orderbook"
+            ],
+            "matrix_case_hints": {
+              "unified_routing": [
+                "limit_partial_then_standing_remainder"
+              ],
+              "dex_additional_matrix": []
+            },
+            "network": "testnet",
+            "run_at_utc": "2026-06-21T03:44:12Z",
+            "api_url": "http://192.168.0.36:30080",
+            "node": {
+              "last_round": 64567393,
+              "source": "public"
+            }
+          },
+          {
+            "scenario": "orderbook_amm_price_cross_and_network_fee_best_route_change",
+            "wallet_addresses": [
+              "IONMV3L2BGCNKBPSCVGSFEEFWCYZWCYROZNCMCUKI6AAKQULI3XYUAHZDM",
+              "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ"
+            ],
+            "standing_order_create_tx_ids": [
+              "OO6J5XGNSHDJDYOR6F2UY7RULFTBE4HPKHRQFDT7EWY75UANT2HA"
+            ],
+            "standing_order_create_round": 64567407,
+            "created_order": {
+              "escrow_addr": "KQJVQ3X5O3MRJNFFCFUAQLJIWYB7SFAPEDKRMD3SNVDBPM67XXIACHOEDI",
+              "side": "sell",
+              "sell_asset": 0,
+              "sell_amount": 4673,
+              "buy_asset": 764766481,
+              "buy_amount": 1000000,
+              "price": 213995292,
+              "owner": "IONMV3L2BGCNKBPSCVGSFEEFWCYZWCYROZNCMCUKI6AAKQULI3XYUAHZDM",
+              "created_round": 64567407,
+              "expire_round": 64577405,
+              "status": "active",
+              "filled_amount": 0
+            },
+            "native_surface_amount_out": 5173,
+            "orderbook_surface_amount_out": 4673,
+            "router_quote": {
+              "quote_id": "db09f6938f949995de70418ef2e096c07c859d5708fc48afcd42ddaa91fe13c4",
+              "network": "testnet",
+              "asset_in": 764766481,
+              "asset_out": 0,
+              "amount_in": 1000000,
+              "slippage_bps": 50,
+              "source_round": 64567408,
+              "expires_after_round": 64567428,
+              "comparison_basis": "exact-input asset_out amount; ALGO output subtracts network fee for route selection while non-ALGO output reports network fee separately",
+              "selected": {
+                "route_hash": "eb61dd4e555c6f92873c37916891682b795a27dac8522e4048c198ee51404028",
+                "source_type": "orderbook",
+                "source_id": "orderbook",
+                "source_label": "OpenNodia Orderbook",
+                "execution": "native_orderbook_ioc_buy",
+                "canonical_id": "orderbook:testnet:764766481:0",
+                "pool_id": null,
+                "app_id": null,
+                "asset_in": 764766481,
+                "asset_out": 0,
+                "amount_in": 1000000,
+                "input_consumed": 1000000,
+                "remaining_input": 0,
+                "amount_out": 4673,
+                "minimum_out": 4649,
+                "lp_fee_bps": 0,
+                "lp_fee_amount": 0,
+                "network_fee_microalgo": 2000,
+                "price_impact_bps": 0,
+                "source_round": 64567407,
+                "executable": true,
+                "virtual_orderbook": false,
+                "selection_rank": 1,
+                "selection_reason": "best executable final output after LP/protocol fee quote; ALGO output accounts for network fee",
+                "note": "native orderbook candidate from matching-engine buy IOC against active escrows"
+              },
+              "second_best": {
+                "route_hash": "3fb6955a698856571257ddd146f9b76a7370fa8d173bc0c85bbf919fb331e8a5",
+                "source_type": "native_pool",
+                "source_id": "native_pool",
+                "source_label": "OpenNodia AMM",
+                "execution": "native_amm_swap",
+                "canonical_id": "native_pool:testnet:764784483",
+                "pool_id": "1cb20528d4d71c4be0ff09429130677059911bc9d89b434cb472ea2e82192e48",
+                "app_id": 764784483,
+                "asset_in": 764766481,
+                "asset_out": 0,
+                "amount_in": 1000000,
+                "input_consumed": 1000000,
+                "remaining_input": 0,
+                "amount_out": 5173,
+                "minimum_out": 5147,
+                "lp_fee_bps": 30,
+                "lp_fee_amount": 3000,
+                "network_fee_microalgo": 3000,
+                "price_impact_bps": 131,
+                "source_round": 64567408,
+                "executable": true,
+                "virtual_orderbook": true,
+                "selection_rank": 2,
+                "selection_reason": "lower final output than the selected route",
+                "note": "native AMM quote; not a real orderbook level"
+              },
+              "candidates": [
+                {
+                  "route_hash": "3fb6955a698856571257ddd146f9b76a7370fa8d173bc0c85bbf919fb331e8a5",
+                  "source_type": "native_pool",
+                  "source_id": "native_pool",
+                  "source_label": "OpenNodia AMM",
+                  "execution": "native_amm_swap",
+                  "canonical_id": "native_pool:testnet:764784483",
+                  "pool_id": "1cb20528d4d71c4be0ff09429130677059911bc9d89b434cb472ea2e82192e48",
+                  "app_id": 764784483,
+                  "asset_in": 764766481,
+                  "asset_out": 0,
+                  "amount_in": 1000000,
+                  "input_consumed": 1000000,
+                  "remaining_input": 0,
+                  "amount_out": 5173,
+                  "minimum_out": 5147,
+                  "lp_fee_bps": 30,
+                  "lp_fee_amount": 3000,
+                  "network_fee_microalgo": 3000,
+                  "price_impact_bps": 131,
+                  "source_round": 64567408,
+                  "executable": true,
+                  "virtual_orderbook": true,
+                  "selection_rank": 2,
+                  "selection_reason": "lower final output than the selected route",
+                  "note": "native AMM quote; not a real orderbook level"
+                },
+                {
+                  "route_hash": "eb61dd4e555c6f92873c37916891682b795a27dac8522e4048c198ee51404028",
+                  "source_type": "orderbook",
+                  "source_id": "orderbook",
+                  "source_label": "OpenNodia Orderbook",
+                  "execution": "native_orderbook_ioc_buy",
+                  "canonical_id": "orderbook:testnet:764766481:0",
+                  "pool_id": null,
+                  "app_id": null,
+                  "asset_in": 764766481,
+                  "asset_out": 0,
+                  "amount_in": 1000000,
+                  "input_consumed": 1000000,
+                  "remaining_input": 0,
+                  "amount_out": 4673,
+                  "minimum_out": 4649,
+                  "lp_fee_bps": 0,
+                  "lp_fee_amount": 0,
+                  "network_fee_microalgo": 2000,
+                  "price_impact_bps": 0,
+                  "source_round": 64567407,
+                  "executable": true,
+                  "virtual_orderbook": false,
+                  "selection_rank": 1,
+                  "selection_reason": "best executable final output after LP/protocol fee quote; ALGO output accounts for network fee",
+                  "note": "native orderbook candidate from matching-engine buy IOC against active escrows"
+                }
+              ],
+              "warnings": [
+                "native pool 764783351 unavailable: application 764783351 is not an OpenNodia native pool: approval program mismatch",
+                "external AMM source Local differs from route ledger source Public"
+              ]
+            },
+            "router_submit": {
+              "source_type": "orderbook",
+              "source_id": "orderbook",
+              "tx_id": "XWSXZBSJZ4DCTIJHAPRTPIQPJ5K5WTW3AOMY4PCO2CAWL3VVWMFQ",
+              "tx_ids": [
+                "XWSXZBSJZ4DCTIJHAPRTPIQPJ5K5WTW3AOMY4PCO2CAWL3VVWMFQ"
+              ],
+              "confirmed_round": 64567414,
+              "outcome": "filled",
+              "result": {
+                "outcome": "filled",
+                "total_cost": 1000000,
+                "total_received": 4673,
+                "remaining": 0,
+                "fills": [
+                  {
+                    "amount": 4673,
+                    "confirmed_round": 64567414,
+                    "cost": 1000000,
+                    "error": null,
+                    "escrow_address": "KQJVQ3X5O3MRJNFFCFUAQLJIWYB7SFAPEDKRMD3SNVDBPM67XXIACHOEDI",
+                    "status": "recorded",
+                    "tx_id": "XWSXZBSJZ4DCTIJHAPRTPIQPJ5K5WTW3AOMY4PCO2CAWL3VVWMFQ"
+                  }
+                ]
+              }
+            },
+            "sources_seen": [
+              "orderbook",
+              "native_pool"
+            ],
+            "matrix_case_hints": {
+              "unified_routing": [
+                "orderbook_amm_price_cross_pair",
+                "network_fee_changes_best_route"
+              ],
+              "dex_additional_matrix": []
+            },
+            "network": "testnet",
+            "run_at_utc": "2026-06-21T03:43:43Z",
+            "api_url": "http://192.168.0.36:30080",
+            "node": {
+              "last_round": 64567393,
+              "source": "public"
+            }
+          },
+          {
+            "scenario": "quote_then_state_change_rejected",
+            "wallet_addresses": [
+              "IONMV3L2BGCNKBPSCVGSFEEFWCYZWCYROZNCMCUKI6AAKQULI3XYUAHZDM",
+              "AOQQPP7TZYIL4HLQ3UMOOS6ATFT6JVRQTOSQ2XY53SDGIESVGG4MPFYUMQ"
+            ],
+            "standing_order_create_tx_ids": [
+              "DB6ZH44USMN3VWRPU3LWFADAZQBHC7WALHO2GUIGV652XES5KXRA"
+            ],
+            "standing_order_create_round": 64567427,
+            "cancel_tx_id": "NV2A2B6SODJLKVZR3ZV3UBN6PRLP6ZW42VKAJUCC7O4JWGTIO2SQ",
+            "cancel_confirmed_round": 64567434,
+            "router_quote": {
+              "quote_id": "dab0cd32de3d8df17a013ab116e172845711b4541ad6a7bc589fa91c1162725c",
+              "network": "testnet",
+              "asset_in": 0,
+              "asset_out": 764789093,
+              "amount_in": 10000,
+              "slippage_bps": 50,
+              "source_round": 64567428,
+              "expires_after_round": 64567448,
+              "comparison_basis": "exact-input asset_out amount; ALGO output subtracts network fee for route selection while non-ALGO output reports network fee separately",
+              "selected": {
+                "route_hash": "08eea324265ebdd32979a84f83a057cf2c7077a0400f8aa86b3337f6012fb3ef",
+                "source_type": "orderbook",
+                "source_id": "orderbook",
+                "source_label": "OpenNodia Orderbook",
+                "execution": "native_orderbook_ioc_buy",
+                "canonical_id": "orderbook:testnet:0:764789093",
+                "pool_id": null,
+                "app_id": null,
+                "asset_in": 0,
+                "asset_out": 764789093,
+                "amount_in": 10000,
+                "input_consumed": 10000,
+                "remaining_input": 0,
+                "amount_out": 1,
+                "minimum_out": 0,
+                "lp_fee_bps": 0,
+                "lp_fee_amount": 0,
+                "network_fee_microalgo": 2000,
+                "price_impact_bps": 0,
+                "source_round": 64567428,
+                "executable": true,
+                "virtual_orderbook": false,
+                "selection_rank": 1,
+                "selection_reason": "best executable route matching pinned source 'orderbook'",
+                "note": "native orderbook candidate from matching-engine buy IOC against active escrows"
+              },
+              "second_best": null,
+              "candidates": [
+                {
+                  "route_hash": "08eea324265ebdd32979a84f83a057cf2c7077a0400f8aa86b3337f6012fb3ef",
+                  "source_type": "orderbook",
+                  "source_id": "orderbook",
+                  "source_label": "OpenNodia Orderbook",
+                  "execution": "native_orderbook_ioc_buy",
+                  "canonical_id": "orderbook:testnet:0:764789093",
+                  "pool_id": null,
+                  "app_id": null,
+                  "asset_in": 0,
+                  "asset_out": 764789093,
+                  "amount_in": 10000,
+                  "input_consumed": 10000,
+                  "remaining_input": 0,
+                  "amount_out": 1,
+                  "minimum_out": 0,
+                  "lp_fee_bps": 0,
+                  "lp_fee_amount": 0,
+                  "network_fee_microalgo": 2000,
+                  "price_impact_bps": 0,
+                  "source_round": 64567428,
+                  "executable": true,
+                  "virtual_orderbook": false,
+                  "selection_rank": 1,
+                  "selection_reason": "best executable route matching pinned source 'orderbook'",
+                  "note": "native orderbook candidate from matching-engine buy IOC against active escrows"
+                }
+              ],
+              "warnings": [
+                "external AMM source Local differs from route ledger source Public"
+              ]
+            },
+            "router_prepare": {
+              "source_type": "orderbook",
+              "source_id": "orderbook",
+              "quote_id": "dab0cd32de3d8df17a013ab116e172845711b4541ad6a7bc589fa91c1162725c",
+              "route_hash": "08eea324265ebdd32979a84f83a057cf2c7077a0400f8aa86b3337f6012fb3ef",
+              "selected": {
+                "route_hash": "08eea324265ebdd32979a84f83a057cf2c7077a0400f8aa86b3337f6012fb3ef",
+                "source_type": "orderbook",
+                "source_id": "orderbook",
+                "source_label": "OpenNodia Orderbook",
+                "execution": "native_orderbook_ioc_buy",
+                "canonical_id": "orderbook:testnet:0:764789093",
+                "pool_id": null,
+                "app_id": null,
+                "asset_in": 0,
+                "asset_out": 764789093,
+                "amount_in": 10000,
+                "input_consumed": 10000,
+                "remaining_input": 0,
+                "amount_out": 1,
+                "minimum_out": 0,
+                "lp_fee_bps": 0,
+                "lp_fee_amount": 0,
+                "network_fee_microalgo": 2000,
+                "price_impact_bps": 0,
+                "source_round": 64567429,
+                "executable": true,
+                "virtual_orderbook": false,
+                "selection_rank": 1,
+                "selection_reason": "best executable route matching pinned source 'orderbook'",
+                "note": "native orderbook candidate from matching-engine buy IOC against active escrows"
+              }
+            },
+            "router_submit_rejection": {
+              "status": 500,
+              "message": "escrow state changed since prepare: unexpected ALGO balance: have 0, expected 200000"
+            },
+            "sources_seen": [
+              "orderbook"
+            ],
+            "matrix_case_hints": {
+              "unified_routing": [
+                "quote_then_state_change_rejected"
+              ],
+              "dex_additional_matrix": []
+            },
+            "network": "testnet",
+            "run_at_utc": "2026-06-21T03:44:39Z",
+            "api_url": "http://192.168.0.36:30080",
+            "node": {
+              "last_round": 64567393,
+              "source": "public"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

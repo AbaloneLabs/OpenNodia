@@ -1,0 +1,19 @@
+[package]
+name = "opennodia-dex"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+description = "Local orderbook (SQLite cache + on-chain event tracking) for OpenNodia DEX"
+
+[dependencies]
+opennodia-core.workspace = true
+opennodia-node.workspace = true
+opennodia-swap.workspace = true
+thiserror.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+hex.workspace = true
+base64.workspace = true
+rusqlite.workspace = true
+tracing.workspace = true

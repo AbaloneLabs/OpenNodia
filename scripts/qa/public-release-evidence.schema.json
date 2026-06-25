@@ -1,0 +1,219 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://opennodia.local/schemas/public-release-evidence.schema.json",
+  "title": "OpenNodia public release evidence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "cross_platform",
+    "release_artifact",
+    "external_review",
+    "upgrade_rollback"
+  ],
+  "properties": {
+    "cross_platform": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["macos", "windows", "linux_arm64"],
+      "properties": {
+        "macos": {
+          "$ref": "#/$defs/desktopInstallEvidence"
+        },
+        "windows": {
+          "$ref": "#/$defs/desktopInstallEvidence"
+        },
+        "linux_arm64": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "full_stack_sync_restart",
+            "run_at_utc",
+            "os",
+            "architecture",
+            "docker_version",
+            "compose_version",
+            "run_url"
+          ],
+          "properties": {
+            "full_stack_sync_restart": {
+              "const": "passed"
+            },
+            "run_at_utc": {
+              "$ref": "#/$defs/utcTimestamp"
+            },
+            "os": {
+              "type": "string",
+              "minLength": 1
+            },
+            "architecture": {
+              "const": "arm64"
+            },
+            "docker_version": {
+              "type": "string",
+              "minLength": 1
+            },
+            "compose_version": {
+              "type": "string",
+              "minLength": 1
+            },
+            "run_url": {
+              "$ref": "#/$defs/httpsUrl"
+            }
+          }
+        }
+      }
+    },
+    "release_artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tag",
+        "workflow_run_url",
+        "git_commit",
+        "image_digest",
+        "checksums_verified",
+        "provenance_verified",
+        "signatures_verified",
+        "licenses_verified"
+      ],
+      "properties": {
+        "tag": {
+          "type": "string",
+          "pattern": "^v[0-9A-Za-z._-]+$"
+        },
+        "workflow_run_url": {
+          "$ref": "#/$defs/httpsUrl"
+        },
+        "git_commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "image_digest": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "checksums_verified": {
+          "const": true
+        },
+        "provenance_verified": {
+          "const": true
+        },
+        "signatures_verified": {
+          "const": true
+        },
+        "licenses_verified": {
+          "const": true
+        }
+      }
+    },
+    "external_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "reviewer", "completed_at_utc", "report_url", "blockers_open"],
+      "properties": {
+        "status": {
+          "const": "passed"
+        },
+        "reviewer": {
+          "type": "string",
+          "minLength": 1
+        },
+        "completed_at_utc": {
+          "$ref": "#/$defs/utcTimestamp"
+        },
+        "report_url": {
+          "$ref": "#/$defs/httpsUrl"
+        },
+        "blockers_open": {
+          "const": 0
+        }
+      }
+    },
+    "upgrade_rollback": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "clean_install",
+        "upgrade",
+        "rollback",
+        "testnet_validation",
+        "run_at_utc",
+        "source_version",
+        "target_version",
+        "run_url"
+      ],
+      "properties": {
+        "clean_install": {
+          "const": "passed"
+        },
+        "upgrade": {
+          "const": "passed"
+        },
+        "rollback": {
+          "const": "passed"
+        },
+        "testnet_validation": {
+          "const": "passed"
+        },
+        "run_at_utc": {
+          "$ref": "#/$defs/utcTimestamp"
+        },
+        "source_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "run_url": {
+          "$ref": "#/$defs/httpsUrl"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "desktopInstallEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "install_upgrade_reboot",
+        "secret_reuse",
+        "run_at_utc",
+        "os",
+        "architecture",
+        "run_url"
+      ],
+      "properties": {
+        "install_upgrade_reboot": {
+          "const": "passed"
+        },
+        "secret_reuse": {
+          "const": "passed"
+        },
+        "run_at_utc": {
+          "$ref": "#/$defs/utcTimestamp"
+        },
+        "os": {
+          "type": "string",
+          "minLength": 1
+        },
+        "architecture": {
+          "type": "string",
+          "minLength": 1
+        },
+        "run_url": {
+          "$ref": "#/$defs/httpsUrl"
+        }
+      }
+    },
+    "httpsUrl": {
+      "type": "string",
+      "pattern": "^https://[^\\s]+$"
+    },
+    "utcTimestamp": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+    }
+  }
+}

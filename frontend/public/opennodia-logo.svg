@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="OpenNodia logo">
+  <defs>
+    <!-- Algorand-inspired teal gradient -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00d4aa"/>
+      <stop offset="100%" stop-color="#00a584"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Rounded square background -->
+  <rect width="256" height="256" rx="56" fill="url(#bg)"/>
+
+  <!-- N: 4 vertices connected sequentially (BL -> TL -> BR -> TR) -->
+  <g stroke="#ffffff" stroke-width="10" stroke-linecap="round" fill="none">
+    <!-- Left vertical: BL -> TL -->
+    <line x1="84" y1="178" x2="84" y2="78"/>
+    <!-- Diagonal: TL -> BR -->
+    <line x1="84" y1="78" x2="172" y2="178"/>
+    <!-- Right vertical: BR -> TR -->
+    <line x1="172" y1="178" x2="172" y2="78"/>
+  </g>
+
+  <!-- Network nodes at each vertex (ring style) -->
+  <g>
+    <!-- Top-Left: HIGHLIGHTED — "my node" (larger, filled, accent ring) -->
+    <circle cx="84" cy="78" r="21" fill="none" stroke="#ffffff" stroke-width="3" stroke-opacity="0.45"/>
+    <circle cx="84" cy="78" r="15" fill="#ffffff"/>
+    <circle cx="84" cy="78" r="7" fill="#00d4aa"/>
+
+    <!-- Bottom-Left -->
+    <circle cx="84" cy="178" r="15" fill="#ffffff"/>
+    <circle cx="84" cy="178" r="6.5" fill="#00a584"/>
+
+    <!-- Bottom-Right -->
+    <circle cx="172" cy="178" r="15" fill="#ffffff"/>
+    <circle cx="172" cy="178" r="6.5" fill="#00a584"/>
+
+    <!-- Top-Right -->
+    <circle cx="172" cy="78" r="15" fill="#ffffff"/>
+    <circle cx="172" cy="78" r="6.5" fill="#00a584"/>
+  </g>
+</svg>

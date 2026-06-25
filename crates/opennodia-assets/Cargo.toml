@@ -1,0 +1,13 @@
+[package]
+name = "opennodia-assets"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+description = "ASA asset management logic for OpenNodia"
+
+[dependencies]
+opennodia-core.workspace = true
+opennodia-node.workspace = true
+thiserror.workspace = true
+serde.workspace = true

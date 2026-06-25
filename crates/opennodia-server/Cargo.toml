@@ -1,0 +1,50 @@
+[package]
+name = "opennodia-server"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+description = "HTTP server, web UI, and PIN auth for OpenNodia daemon"
+
+[[bin]]
+name = "opennodia-server"
+path = "src/main.rs"
+
+[lib]
+name = "opennodia_server"
+path = "src/lib.rs"
+
+[dependencies]
+opennodia-core.workspace = true
+opennodia-node.workspace = true
+opennodia-assets.workspace = true
+opennodia-amm.workspace = true
+opennodia-swap.workspace = true
+opennodia-dex.workspace = true
+thiserror.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tokio.workspace = true
+async-stream.workspace = true
+axum.workspace = true
+tower.workspace = true
+tower-http.workspace = true
+argon2.workspace = true
+hmac.workspace = true
+sha2.workspace = true
+zeroize.workspace = true
+rand.workspace = true
+base64.workspace = true
+hex.workspace = true
+reqwest.workspace = true
+toml.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+time.workspace = true
+once_cell.workspace = true
+anyhow.workspace = true
+clap.workspace = true
+tokio-postgres.workspace = true
+rusqlite.workspace = true
+ed25519-dalek = { version = "2", features = ["zeroize"] }
+curve25519-dalek = "4"

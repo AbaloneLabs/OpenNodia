@@ -1,0 +1,106 @@
+# OpenNodia sample configuration.
+# Copy to opennodia.toml and edit as needed.
+# All fields have defaults; only override what you need.
+
+# Directory for persistent data (PIN hash, session DB).
+data_dir = "data"
+
+[server]
+# Bind address. Keep loopback unless remote access is explicitly required.
+bind = "127.0.0.1"
+port = 30080
+# Session token lifetime in seconds (default: 8 hours).
+session_ttl_secs = 28800
+# Max PIN attempts before temporary lockout.
+max_pin_attempts = 5
+# Lockout duration in seconds.
+lockout_secs = 300
+
+[algod]
+# algod REST API URL.
+url = "http://localhost:4001"
+# Optional read-only algod REST API URL for current-state reads. Docker uses
+# the follower algod for discovery and quote reads while transaction writes
+# continue to use the participation node above.
+# read_url = "http://algod-follower:8080"
+# algod API token.
+token = ""
+# Prefer token_file for production deployments. Docker supplies this through
+# OPENNODIA_ALGOD_TOKEN_FILE.
+# token_file = "/run/secrets/algod_token"
+# Optional read-only algod token or token file. Omit to reuse the algod token.
+# read_token = ""
+# read_token_file = "/run/secrets/algod_token"
+# Target network: mainnet, testnet, betanet, local.
+network = "testnet"
+
+[kmd]
+# kmd (Key Management Daemon) REST API URL.
+url = "http://localhost:7833"
+# kmd API token. Ignored if token_file is set and exists.
+token = ""
+# Optional: path to a file containing the kmd API token.
+# kmd generates a random token on each start, so in Docker you should
+# point this to the kmd.token file inside the algod data directory.
+# token_file = "/algod/data/kmd-v0.5/kmd.token"
+
+[indexer]
+# Local indexer REST API URL. The indexer is always part of the Docker
+# stack. The full data pipeline is:
+#
+#   algod-follower → conduit → postgres ← indexer API
+#
+# Conduit reads blocks from the follower node and populates PostgreSQL;
+# the Indexer daemon serves the read-only search/history API from that
+# database. In Docker, use "http://indexer:8980".
+url = "http://localhost:8980"
+# Use a public indexer relay (e.g. algonode.cloud) as a fallback when the
+# local indexer is still bootstrapping or unreachable. This ensures asset
+# search and transaction history remain available immediately. Does NOT
+# affect algod consensus or block rewards.
+use_public_fallback = true
+# The default Docker deployment is a recent-history-only Indexer. Current
+# account/asset state comes from algod read_url when configured, then the
+# participation algod or public fallback. Set true only when restoring a
+# complete Indexer state database.
+local_state_complete = false
+# Docker overrides this from INDEXER_HISTORY_ROUNDS in .env.
+history_retention_rounds = 20000
+
+[wallet_history]
+# Permanently cache transactions involving registered OpenNodia wallet
+# addresses in a separate PostgreSQL schema. Docker supplies the password as a
+# file-based secret and keeps it out of this configuration.
+enabled = true
+page_size = 1000
+pages_per_sync = 2
+sync_interval_secs = 60
+
+[dex]
+# Keep transaction construction and submission disabled until this installation
+# has passed the real-node escrow validation suite.
+write_enabled = false
+# Prepared transaction intents expire after five minutes.
+intent_ttl_secs = 300
+# Reconcile local order state with the confirmed ledger every minute.
+reconcile_interval_secs = 60
+
+[lp]
+# Optional OpenNodia native AMM registry app ID for this network. When set,
+# new native pool creation is atomically registered on-chain to prevent a
+# second active pool for the same canonical pool key.
+# native_registry_app_id = 123456
+# Require registry-backed pool creation. Enable for mainnet writes after the
+# registry app is deployed and independently verified.
+require_registry = false
+# Mainnet native AMM writes stay fail-closed until an independent contract
+# audit is complete and this installation explicitly opts in.
+mainnet_write_enabled_after_audit = false
+
+[external_liquidity]
+# External AMM discovery, quote, and LP position reads are available without
+# enabling writes. Swap and LP add/remove prepare/submit are disabled by
+# default and should be enabled only after the target deployment has passed the
+# external-liquidity QA matrix for its network.
+swap_enabled = false
+liquidity_enabled = false

@@ -1,0 +1,385 @@
+# OpenNodia — self-hosted Algorand node + DEX daemon.
+#
+# Usage:
+#   docker compose up -d                          # start full stack
+#   docker compose logs -f opennodia              # tail server logs
+#   docker compose down                           # stop (keeps data volumes)
+#
+# The full stack includes the core services plus lightweight Indexer helpers:
+#   - algod           (participation node: consensus, block rewards, kmd, TX submit)
+#   - algod-follower  (follower node: lightweight data source for Conduit,
+#                      does NOT participate in consensus)
+#   - postgres        (database populated by Conduit, read by the Indexer API)
+#   - conduit         (reads blocks from the follower node, writes to postgres)
+#   - indexer         (read-only REST API serving search/history from postgres)
+#   - indexer-bootstrap (one-shot recent-history initialization)
+#   - indexer-pruner  (bounded recent-history retention)
+#   - opennodia       (the OpenNodia server + web UI)
+#
+# Architecture / data flow:
+#
+#   [algod (participation)] ← opennodia (kmd, TX submit, block rewards)
+#   [algod-follower]        ← opennodia (read-only current state)
+#   [algod-follower]        ← conduit (reads blocks)
+#   [conduit]               → [postgres] ← [indexer API] ← opennodia (search/history)
+#
+# The participation node is completely independent of the follower node and
+# Conduit pipeline. It keeps proposing blocks and earning rewards as usual.
+# The follower node is a lightweight, non-archival node that only serves block
+# data to Conduit. Neither the follower nor Conduit affect consensus or rewards.
+#
+# While the local indexer is bootstrapping, OpenNodia automatically falls back
+# to a public indexer relay so search/history work immediately.
+#
+# To use a different network or mainnet, set env vars:
+#   ALGOD_NETWORK=mainnet docker compose up -d
+#   ALGOD_DEV_MODE=1 docker compose up -d
+#
+# First-time setup: open the LAN URL printed by the initializer and follow the
+# PIN setup wizard.
+
+x-default-logging: &default-logging
+  driver: local
+  options:
+    max-size: "20m"
+    max-file: "3"
+
+services:
+  # ======================================================================
+  # Participation node — the real Algorand node that earns block rewards,
+  # manages wallets via kmd, and relays transactions. This is the node
+  # OpenNodia uses for all write operations (swaps, transfers, opt-in).
+  # ======================================================================
+  algod:
+    image: algorand/algod@sha256:4951703d6e0eb9fa6126ad6556938bfaae4227c4274d75c77245ecc6fcb552c4
+    container_name: opennodia-algod
+    restart: unless-stopped
+    logging: *default-logging
+    entrypoint: /algod-entrypoint.sh
+    environment:
+      # Default: Testnet with kmd enabled for wallet management.
+      NETWORK: ${ALGOD_NETWORK:-testnet}
+      DEV_MODE: ${ALGOD_DEV_MODE:-0}
+      START_KMD: ${ALGOD_START_KMD:-1}
+      ALGOD_PORT: "8080"
+      KMD_PORT: "7833"
+      TOKEN_FILE: /run/secrets/algod_token
+      OPENNODIA_UID: "1001"
+    secrets:
+      - algod_token
+    volumes:
+      - algod-data:/algod/data
+      # Shared volume for kmd token files (readable by opennodia).
+      - kmd-shared:/kmd-shared
+      # Entrypoint wrapper that copies kmd tokens to the shared volume.
+      - ./docker/algod-entrypoint.sh:/algod-entrypoint.sh:ro
+      - ./docker/secret-utils.sh:/secret-utils.sh:ro
+    ports:
+      - "${ALGOD_BIND_ADDRESS:-127.0.0.1}:${ALGOD_HOST_PORT:-4001}:8080"
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:8080/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 15s
+
+  # ======================================================================
+  # Follower node — a lightweight, non-archival algod node configured with
+  # the "conduit" profile (EnableFollowMode=true). It does NOT participate
+  # in consensus, cannot propose blocks, and cannot submit transactions.
+  # Its sole purpose is to stream block data (including ledger state deltas)
+  # to Conduit, which writes the data to PostgreSQL for the Indexer API.
+  # ======================================================================
+  algod-follower:
+    image: algorand/algod@sha256:4951703d6e0eb9fa6126ad6556938bfaae4227c4274d75c77245ecc6fcb552c4
+    container_name: opennodia-algod-follower
+    restart: unless-stopped
+    logging: *default-logging
+    entrypoint: /algod-follower-entrypoint.sh
+    environment:
+      NETWORK: ${ALGOD_NETWORK:-testnet}
+      DEV_MODE: "0"
+      START_KMD: "0"
+      ALGOD_PORT: "8080"
+      TOKEN_FILE: /run/secrets/algod_token
+      FOLLOWER_MAX_ACCT_LOOKBACK: ${ALGOD_FOLLOWER_LOOKBACK:-2000}
+    secrets:
+      - algod_token
+    volumes:
+      - algod-follower-data:/algod/data
+      - ./docker/algod-follower-entrypoint.sh:/algod-follower-entrypoint.sh:ro
+      - ./docker/secret-utils.sh:/secret-utils.sh:ro
+    # No ports exposed to the host — only accessible within the Docker
+    # network (Conduit connects to it internally).
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "test -f /tmp/follower-ready && curl -sf http://localhost:8080/health",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 15s
+
+  # ======================================================================
+  # PostgreSQL — database backend populated by Conduit and read by the
+  # Indexer API. The one-shot bootstrap installs the pinned Indexer schema
+  # before Conduit starts.
+  # ======================================================================
+  postgres:
+    image: postgres:16-alpine
+    container_name: opennodia-postgres
+    restart: unless-stopped
+    logging: *default-logging
+    environment:
+      POSTGRES_USER: ${INDEXER_DB_USER:-algorand}
+      POSTGRES_PASSWORD_FILE: /run/secrets/indexer_db_password
+      POSTGRES_DB: ${INDEXER_DB_NAME:-indexer}
+    secrets:
+      - indexer_db_password
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -U ${INDEXER_DB_USER:-algorand} -d ${INDEXER_DB_NAME:-indexer}",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  # ======================================================================
+  # Conduit — the data pipeline that reads blocks from the follower node
+  # and writes them into PostgreSQL. It is stateless itself; all indexed
+  # state lives in PostgreSQL.
+  # ======================================================================
+  conduit:
+    image: algorand/conduit:1.9.1@sha256:99b0d128797739d506d3eb8422461d5726ca9b8403c2c477e15a76ef2361cc1b
+    container_name: opennodia-conduit
+    restart: unless-stopped
+    logging: *default-logging
+    depends_on:
+      algod-follower:
+        condition: service_started
+      postgres:
+        condition: service_healthy
+      indexer-bootstrap:
+        condition: service_completed_successfully
+    # The wrapper always resumes from PostgreSQL/metadata state. On a fresh
+    # lightweight deployment, indexer-bootstrap creates the pinned upstream
+    # schema and initializes the import cursor near the follower tip.
+    entrypoint: /conduit-entrypoint.sh
+    command: ["-d", "/data"]
+    environment:
+      CONDUIT_DATA_DIR: "/data"
+      ALGOD_TOKEN_FILE: /run/secrets/algod_token
+      INDEXER_DB_USER: ${INDEXER_DB_USER:-algorand}
+      INDEXER_DB_PASSWORD_FILE: /run/secrets/indexer_db_password
+      INDEXER_DB_NAME: ${INDEXER_DB_NAME:-indexer}
+      INDEXER_DB_HOST: postgres
+      INDEXER_DB_PORT: "5432"
+    secrets:
+      - algod_token
+      - indexer_db_password
+    volumes:
+      - conduit-data:/data
+      - ./docker/conduit.yml:/etc/algorand/conduit.yml:ro
+      - ./docker/conduit-entrypoint.sh:/conduit-entrypoint.sh:ro
+      - ./docker/http-healthcheck.pl:/usr/local/bin/http-healthcheck.pl:ro
+      - ./docker/secret-utils.sh:/secret-utils.sh:ro
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "perl",
+          "/usr/local/bin/http-healthcheck.pl",
+          "127.0.0.1",
+          "8981",
+          "/health",
+        ]
+      interval: 15s
+      timeout: 5s
+      retries: 20
+      start_period: 30s
+
+  # ======================================================================
+  # One-shot lightweight bootstrap. It creates the pinned upstream Indexer
+  # schema and initializes its import cursor close to the follower tip.
+  # Current-state reads use the follower algod when available; writes remain
+  # on the participation algod because this local Indexer is recent-history-only.
+  # ======================================================================
+  indexer-bootstrap:
+    image: postgres:16-alpine
+    container_name: opennodia-indexer-bootstrap
+    restart: "no"
+    logging: *default-logging
+    depends_on:
+      algod-follower:
+        condition: service_started
+      postgres:
+        condition: service_healthy
+    environment:
+      INDEXER_DB_USER: ${INDEXER_DB_USER:-algorand}
+      INDEXER_DB_PASSWORD_FILE: /run/secrets/indexer_db_password
+      INDEXER_DB_NAME: ${INDEXER_DB_NAME:-indexer}
+      ALGOD_TOKEN_FILE: /run/secrets/algod_token
+      INDEXER_LIGHT_BOOTSTRAP: ${INDEXER_LIGHT_BOOTSTRAP:-1}
+      INDEXER_BOOTSTRAP_SAFETY_ROUNDS: ${INDEXER_BOOTSTRAP_SAFETY_ROUNDS:-64}
+    secrets:
+      - algod_token
+      - indexer_db_password
+    entrypoint: /indexer-bootstrap.sh
+    volumes:
+      - ./docker/indexer-bootstrap.sh:/indexer-bootstrap.sh:ro
+      - ./docker/indexer-schema-v3.9.0.sql:/indexer-schema.sql:ro
+      - ./docker/secret-utils.sh:/secret-utils.sh:ro
+
+  # ======================================================================
+  # Indexer retention manager. Transactions, participation rows, and matching
+  # block headers are pruned atomically. The permanent wallet cache uses the
+  # separate `opennodia` PostgreSQL schema and is not touched.
+  # ======================================================================
+  indexer-pruner:
+    image: postgres:16-alpine
+    container_name: opennodia-indexer-pruner
+    restart: unless-stopped
+    logging: *default-logging
+    depends_on:
+      postgres:
+        condition: service_healthy
+      conduit:
+        condition: service_healthy
+    environment:
+      INDEXER_DB_USER: ${INDEXER_DB_USER:-algorand}
+      INDEXER_DB_PASSWORD_FILE: /run/secrets/indexer_db_password
+      INDEXER_DB_NAME: ${INDEXER_DB_NAME:-indexer}
+      INDEXER_HISTORY_ROUNDS: ${INDEXER_HISTORY_ROUNDS:-20000}
+      INDEXER_PRUNE_INTERVAL_SECONDS: ${INDEXER_PRUNE_INTERVAL_SECONDS:-300}
+    secrets:
+      - indexer_db_password
+    entrypoint: /indexer-pruner.sh
+    volumes:
+      - ./docker/indexer-pruner.sh:/indexer-pruner.sh:ro
+      - ./docker/secret-utils.sh:/secret-utils.sh:ro
+
+  # ======================================================================
+  # Indexer daemon — a read-only REST API that serves search and history
+  # queries from PostgreSQL. In Indexer 3.9+, the daemon no longer imports
+  # blocks (that is Conduit's job); it only reads from the database.
+  # It does NOT connect to algod at all.
+  # ======================================================================
+  indexer:
+    image: algorand/indexer:3.9.0@sha256:e3216d30d0e609857b9af74090652d0f97971a7c15c6bb543bfa19d857b31fb3
+    container_name: opennodia-indexer
+    restart: unless-stopped
+    logging: *default-logging
+    depends_on:
+      postgres:
+        condition: service_healthy
+      conduit:
+        condition: service_healthy
+    # The wrapper creates an ephemeral Indexer configuration from the secret
+    # file, keeping the password out of Compose output and process arguments.
+    entrypoint: /indexer-entrypoint.sh
+    environment:
+      INDEXER_DB_USER: ${INDEXER_DB_USER:-algorand}
+      INDEXER_DB_PASSWORD_FILE: /run/secrets/indexer_db_password
+      INDEXER_DB_NAME: ${INDEXER_DB_NAME:-indexer}
+      INDEXER_DB_HOST: postgres
+      INDEXER_DB_PORT: "5432"
+    secrets:
+      - indexer_db_password
+    ports:
+      - "${INDEXER_BIND_ADDRESS:-127.0.0.1}:${INDEXER_HOST_PORT:-8980}:8980"
+    volumes:
+      - ./docker/http-healthcheck.pl:/usr/local/bin/http-healthcheck.pl:ro
+      - ./docker/indexer-entrypoint.sh:/indexer-entrypoint.sh:ro
+      - ./docker/secret-utils.sh:/secret-utils.sh:ro
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "perl",
+          "/usr/local/bin/http-healthcheck.pl",
+          "127.0.0.1",
+          "8980",
+          "/health",
+        ]
+      interval: 15s
+      timeout: 5s
+      retries: 20
+      start_period: 30s
+
+  # ======================================================================
+  # OpenNodia server + web UI.
+  # ======================================================================
+  opennodia:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: opennodia:latest
+    container_name: opennodia-server
+    user: "0:0"
+    entrypoint: /opennodia-entrypoint.sh
+    restart: unless-stopped
+    logging: *default-logging
+    depends_on:
+      algod:
+        condition: service_healthy
+      algod-follower:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+    environment:
+      RUST_LOG: ${RUST_LOG:-opennodia=info,tower_http=info}
+      OPENNODIA_WEB_DIR: /app/web
+      OPENNODIA_ALGOD_TOKEN_FILE: /run/secrets/algod_token
+      OPENNODIA_ALGOD_READ_URL: http://algod-follower:8080
+      OPENNODIA_INDEXER_HISTORY_ROUNDS: ${INDEXER_HISTORY_ROUNDS:-20000}
+      OPENNODIA_WALLET_HISTORY_DATABASE_HOST: postgres
+      OPENNODIA_WALLET_HISTORY_DATABASE_PORT: "5432"
+      OPENNODIA_WALLET_HISTORY_DATABASE_USER: ${INDEXER_DB_USER:-algorand}
+      OPENNODIA_WALLET_HISTORY_DATABASE_NAME: ${INDEXER_DB_NAME:-indexer}
+      OPENNODIA_WALLET_HISTORY_DATABASE_PASSWORD_FILE: /run/secrets/indexer_db_password
+    secrets:
+      - algod_token
+      - indexer_db_password
+    volumes:
+      # Persistent data: PIN hash, sessions, DEX SQLite DB.
+      - opennodia-data:/app/data
+      # Mount your config file here (copy opennodia.sample.toml -> opennodia.toml).
+      - ./opennodia.toml:/app/opennodia.toml:ro
+      # Shared volume for kmd token (copied by algod entrypoint wrapper).
+      - kmd-shared:/kmd-shared:ro
+      - ./docker/opennodia-entrypoint.sh:/opennodia-entrypoint.sh:ro
+      - ./docker/secret-utils.sh:/secret-utils.sh:ro
+    command:
+      [
+        "opennodia-server",
+        "--config",
+        "/app/opennodia.toml",
+        "--web-dir",
+        "/app/web",
+        "--bind",
+        "0.0.0.0",
+      ]
+    ports:
+      - "${OPENNODIA_BIND_ADDRESS:-127.0.0.1}:${OPENNODIA_HOST_PORT:-30080}:30080"
+    # The initializer selects one private host interface. Compose falls back to
+    # loopback when initialization has not been run.
+
+volumes:
+  algod-data:
+  algod-follower-data:
+  conduit-data:
+  opennodia-data:
+  kmd-shared:
+  postgres-data:
+
+secrets:
+  algod_token:
+    file: "${OPENNODIA_SECRETS_DIR:?run the platform init-secrets script}/algod.token"
+  indexer_db_password:
+    file: "${OPENNODIA_SECRETS_DIR:?run the platform init-secrets script}/indexer-db-password"

@@ -1,0 +1,50 @@
+# OpenNodia-specific (local only)
+AGENTS.md
+opensource/
+# Internal development documentation (local-only)
+docs/
+plans/*
+
+# Rust build artifacts
+/target
+/dist
+**/*.rs.bk
+*.pdb
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+secrets/
+.secrets/
+
+# Local databases
+*.db
+*.db-journal
+*.sqlite
+*.sqlite-journal
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+
+# OpenNodia runtime data (local only)
+data/
+opennodia.toml
+
+# Frontend (Svelte)
+frontend/node_modules/
+frontend/dist/

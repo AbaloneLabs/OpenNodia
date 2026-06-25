@@ -1,0 +1,148 @@
+# ============================================================
+# OpenNodia GitLab CI
+#
+# Runs on the "Ubuntu Runner" shell executor. The runner provides
+# cargo/rustup, node/npm, docker, and docker compose.
+# ============================================================
+
+workflow:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_COMMIT_BRANCH && $CI_OPEN_MERGE_REQUESTS
+      when: never
+    - if: $CI_COMMIT_BRANCH
+    - if: $CI_COMMIT_TAG
+
+stages:
+  - lint
+  - test
+  - security
+  - config
+  - build
+
+variables:
+  BUILDKIT_PROGRESS: plain
+  CARGO_INCREMENTAL: "0"
+  CARGO_TERM_COLOR: "always"
+  DOCKER_BUILDKIT: "1"
+  NPM_CONFIG_FUND: "false"
+  OPENNODIA_MSRV: "1.88.0"
+  OPENNODIA_SECRETS_DIR: "/tmp/opennodia-ci-secrets"
+  SHELLCHECK_IMAGE: "koalaman/shellcheck:stable"
+  TRIVY_IMAGE: "aquasec/trivy:latest"
+
+.default_job: &default_job
+  tags: ["Ubuntu Runner"]
+  interruptible: true
+  before_script:
+    - export NVM_DIR="$HOME/.nvm"
+    - |
+      if [ -s "$NVM_DIR/nvm.sh" ]; then
+        . "$NVM_DIR/nvm.sh"
+        nvm use --silent default
+      fi
+
+toolchain:versions:
+  <<: *default_job
+  stage: lint
+  script:
+    - rustc --version
+    - cargo --version
+    - node --version
+    - npm --version
+    - python3 --version
+    - docker --version
+    - docker compose version
+
+lint:ci-yaml:
+  <<: *default_job
+  stage: lint
+  script:
+    - |
+      python3 - <<'PY'
+      import yaml
+
+      with open(".gitlab-ci.yml", "r", encoding="utf-8") as ci_file:
+          yaml.safe_load(ci_file)
+      print("yaml ok")
+      PY
+
+lint:shell:
+  <<: *default_job
+  stage: lint
+  script:
+    - ./scripts/ci/shellcheck.sh
+
+rust:fmt:
+  <<: *default_job
+  stage: lint
+  script:
+    - cargo fmt --all -- --check
+
+rust:clippy:
+  <<: *default_job
+  stage: test
+  script:
+    - cargo clippy --workspace --all-targets --locked -- -D warnings
+
+rust:test:
+  <<: *default_job
+  stage: test
+  script:
+    - cargo test --workspace --all-targets --locked
+
+rust:doc:
+  <<: *default_job
+  stage: test
+  script:
+    - RUSTDOCFLAGS="-D warnings" cargo doc --workspace --no-deps --locked
+
+rust:msrv:
+  <<: *default_job
+  stage: test
+  script:
+    - rustup toolchain install "$OPENNODIA_MSRV" --profile minimal
+    - cargo "+${OPENNODIA_MSRV}" check --workspace --all-targets --locked
+
+frontend:test-build:
+  <<: *default_job
+  stage: test
+  script:
+    - node --version
+    - npm --version
+    - npm ci --prefix frontend
+    - npm --prefix frontend test
+    - npm --prefix frontend audit --audit-level=moderate
+    - npm --prefix frontend run build
+
+qa:helpers:
+  <<: *default_job
+  stage: test
+  script:
+    - OPENNODIA_QA_SKIP_RUST=1 OPENNODIA_QA_SKIP_FRONTEND=1 OPENNODIA_QA_SKIP_SECRETS=1 ./scripts/qa/check.sh
+
+security:audit:
+  <<: *default_job
+  stage: security
+  script:
+    - if ! command -v cargo-audit >/dev/null 2>&1; then cargo install --locked cargo-audit; fi
+    - ./scripts/release/audit.sh
+
+security:secrets:
+  <<: *default_job
+  stage: security
+  script:
+    - ./scripts/check-secrets.sh
+
+config:compose:
+  <<: *default_job
+  stage: config
+  script:
+    - docker compose config --quiet
+
+build:docker:
+  <<: *default_job
+  stage: build
+  script:
+    - docker compose config --quiet
+    - docker build --target runtime --tag "opennodia:${CI_COMMIT_SHORT_SHA}" .

@@ -1,0 +1,37 @@
+# Rust build artifacts
+target/
+
+# Frontend dependencies and build output
+frontend/node_modules/
+frontend/dist/
+frontend/.svelte-kit/
+
+# Local data (runtime state, secrets)
+data/
+secrets/
+.secrets/
+*.db
+*.db-shm
+*.db-wal
+*.hash
+# Exclude the runtime config (may contain secrets); sample is kept.
+opennodia.toml
+
+# Git
+.git/
+.gitignore
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+*.swp
+
+# Plans and internal docs (gitignored locally, keep out of image)
+plans/
+AGENTS.md
+
+# Docker artifacts
+Dockerfile
+docker-compose.yml
+.dockerignore
